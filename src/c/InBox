@@ -1,0 +1,490 @@
+From brathfon@elmer Fri Aug 16 14:17 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA24835; Fri, 16 Aug 1996 14:17:45 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA22788; Fri, 16 Aug 1996 14:17:32 -0600
+Date: Fri, 16 Aug 1996 14:17:32 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608162017.OAA22788@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: ALFA and BETA enviroments
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 315
+X-Mozilla-Status: 0001
+
+
+I am going to be reloading ALFA and BETA environments with the data
+that was captured from production last Friday night.  I will begin
+at 5:00PM.  Replication will be turned off and data will be reloaded,
+so please stop using the databases at 5:00 PM.
+J¨ÿô
+
+Any questions or concerns, please contact me.
+
+Thanks,
+
+Bill
+
+From lmattie@elmer.tcinc.com Fri Aug 16 15:29 MDT 1996
+Return-Path: <lmattie@elmer.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA26044; Fri, 16 Aug 1996 15:29:25 -0600
+Received: from elmer.tcinc.com (elmer [165.137.245.4]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id PAA01249 for <sms@tcinc.com>; Fri, 16 Aug 1996 15:28:48 -0600 (MDT)
+Received: from aitsun13.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA26025; Fri, 16 Aug 1996 15:28:53 -0600
+Received: by aitsun13.tcinc.com (5.x/SMI-SVR4)
+	id AA09963; Fri, 16 Aug 1996 15:28:44 -0600
+Date: Fri, 16 Aug 1996 15:28:44 -0600
+From: lmattie@elmer.tcinc.com (Llad Mattie)
+Message-Id: <9608162128.AA09963@aitsun13.tcinc.com>
+To: sms@tcinc.com
+Subject: no frills
+Cc: lmattie@elmer.tcinc.com
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 173
+X-Mozilla-Status: 0001
+
+Hey,
+J¨ÿô
+
+Deb Thomas and I are going to the No Frills Grill on Hampden (East of 25)
+for a few soda pops after work (5:30 - 6:00).  If you're interested then
+come on down.
+
+Llad
+
+From chnatkow@elmer Fri Aug 16 16:23 MDT 1996
+Return-Path: <chnatkow@elmer>
+Received: from aitsun27. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id QAA26930; Fri, 16 Aug 1996 16:23:14 -0600
+Received: by aitsun27. (SMI-8.6/SMI-SVR4)
+	id QAA13278; Fri, 16 Aug 1996 16:23:02 -0600
+Date: Fri, 16 Aug 1996 16:23:02 -0600
+From: chnatkow@elmer (Cheryl Hnatkowycz)
+Message-Id: <199608162223.QAA13278@aitsun27.>
+To: sms@aitsun27
+Subject: lite humor
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 1030
+X-Mozilla-Status: 0001
+
+All,
+I know we have all been working too many hours to be exercising as
+much as we should and I wanted to share a list of Non-Athletic calorie
+burning tasks with you.
+
+J¨ÿô
+tasks                                   calories
+beating around the bush                    75
+jogging your memory                       125 
+jumping to conclusions                    100
+climbing the walls                        150
+passing the buck                           25
+grasping at straws                         75
+throwing your weight around            50-300--depending on your weight
+dragging your heels                       100
+pushing your luck                         250
+making mountains out of mole hills        500
+spinning your wheels                      175
+Flying off the handle                     225
+beating your head against the wall         90
+running around in circles                 350
+chewing nails                             200
+eating crow                               225
+pouring salt on the wound                  50
+
+
+	
+
+From brathfon@elmer Fri Aug 16 19:07 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id TAA29065; Fri, 16 Aug 1996 19:07:06 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id TAA15350; Fri, 16 Aug 1996 19:06:56 -0600
+Date: Fri, 16 Aug 1996 19:06:56 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608170106.TAA15350@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: loading ALFA and BETA
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 135
+X-Mozilla-Status: 0001
+
+
+
+I am going to load ALFA and BETA in about 15 minutes.  Please stop using
+the databases if you are currently doing so.
+
+J¨ÿô
+Thanks,
+
+Bill
+
+From hawkins.tyson@tcinc.com Fri Aug 16 20:22 MDT 1996
+Return-Path: <hawkins.tyson@tcinc.com>
+Received: from dal-ops1.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id UAA29521; Fri, 16 Aug 1996 20:22:19 -0600
+Received: from dal-ops1 by dal-ops1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id VAA09492; Fri, 16 Aug 1996 21:22:11 -0500
+Sender: thawkins@tcinc.com
+Message-ID: <32152CD2.5DAE@tcinc.com>
+Date: Fri, 16 Aug 1996 21:22:10 -0500
+From: Tyson Hawkins <hawkins.tyson@tcinc.com>
+X-Mailer: Mozilla 3.0b6Gold (X11; I; SunOS 5.5 sun4m)
+MIME-Version: 1.0
+To: smmt-oper@tcinc.com
+Subject: .netscape dir under ~oper
+References: <199608170149.UAA09467@dal-ops1.tcinc.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=us-ascii
+Content-Length: 394
+X-Mozilla-Status: 0001
+
+My Fellow Operators:
+J¨ÿô
+
+        At the request of the SAs, I removed the .netscape dir from the
+oper account on animas.   rdist should remove it from all the systems.
+the SA's have chown'd it to root, so no new .netscape stuff can be made.
+
+        I also removed a dir called .doomsave at my own discretion,
+because
+I feel that if they don't want Netscape, they definitely don't want
+doom.
+
+-Ty
+
+From akittel@elmer Fri Aug 16 23:26 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00549; Fri, 16 Aug 1996 23:26:03 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23794; Fri, 16 Aug 1996 23:25:55 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170525.XAA23794@den-ops3.>
+Subject: elmtest
+To: kittel.adam@den-ops3
+Date: Fri, 16 Aug 1996 23:25:55 -0600 (MDT)
+X-Mailer: ELM [version 2.4 PL23]
+Content-Type: text
+Content-Length: 1679
+X-Mozilla-Status: 0001
+
+# @(#)ait.profile - 03/28/94a
+#
+# Sample TCI/AIT UNIX system user's .profile.
+# Copy ait.profile to ${HOME}/.profile, exit and re-login again.
+
+J¨ÿô
+stty istrip
+stty erase 
+
+# Fix terminal type if 'dec-vt100'
+if [ "$TERM" = "dec-vt100" ];then
+	export TERM=vt100
+fi
+
+PATH=/usr/bin:/usr/sbin:${HOME}/usr/bin:${HOME}/usr/bin/X11:/usr/openwin/bin:/usr/ucb:/usr/local/bin:/opt/SUNWwabi/bin:/bin:/home/akittel/usr/netpbm;
+export PATH
+
+# Hostname
+HOSTN="`/usr/bin/uname -n`"
+export HOSTN
+
+# Login username
+LOGNAME="`/usr/bin/logname`"
+export LOGNAME
+
+# Manual pages paths for man(1)
+MANPATH=/usr/man:${HOME}/man
+export MANPATH
+
+# Mail
+MAILRC=${HOME}/.mailrc
+export MAILRC
+
+# Neuron Data software
+# Comment this out if you don't need to use it
+#ND=3.0.1
+#export ND
+
+#  Printer Stuff
+#
+LPDEST=wdc-qms
+PRINTER=wdc-qms
+
+
+# Setup local TCI / AIT environment variables
+if [ -r /usr/local/bin/ait_startup ]; then
+	. /usr/local/bin/ait_startup
+fi
+
+# Shell prompt
+#PS1="${LOGNAME}@${HOSTN}[`pwd`]: "
+#export PS1
+
+# KSH environment profile
+ENV=${HOME}/.kshrc
+export ENV
+. ${ENV}
+
+#
+# If possible, start the windows system (on a Sun console only)
+#
+if [ `tty` = "/dev/console" -a "$TERM" = "sun" ] ; then
+
+	if [ ${OPENWINHOME:-""} = "" ] ; then
+		OPENWINHOME=/usr/openwin
+		export OPENWINHOME
+	fi
+
+	echo ""
+	echo "Starting OpenWindows in 5 seconds (type Control-C to interrupt)"
+	sleep 5
+	echo ""
+
+	$OPENWINHOME/bin/openwin -wm /home/akittel/usr/bin/X11/fvwm95-2
+#	$OPENWINHOME/bin/openwin -wm /home/akittel/usr/bin/X11/fvwm
+       # $OPENWINHOME/bin/openwin -wm /home/akittel/usr/bin/X11/tvtwm
+	clear		# get rid of annoying cursor rectangle
+	exit		# logout after leaving windows system
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+From akittel@elmer Fri Aug 16 23:26 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+export FCEDIT=$EDITOR
+export VISUAL=$EDITOR
+export HOSTNAME=$HOSTN
+set -o $EDITOR
+PS1='$PWD==> '
+# Set up aliases
+
+# Convenience items
+alias pop='cd ..'
+alias ll='/bin/ls -la'
+
+export LM_LICENSE_FILE=/net/yukon/export/third-party/adobe/flexlm/licenses/license.dat
+alias photoshop='/net/yukon/export/third-party/adobe/bin_sun4/photoshop'
+alias illustrator='/net/yukon/export/third-party/adobe/bin_sun4/illustrator'
+
+# Third-party tools
+alias oi='cd /net/animas/export/third-party/openint'
+
+# Open Systems Development Directories
+alias os='cd /net/animas/export/home/opensys'
+alias sms='cd /net/animas/export/home/opensys/sms'
+alias msr='cd /net/animas/export/home/opensys/msr'
+alias ls='ls -CF'
+alias la='ls -CF'
+alias e='emacs -nw'
+alias xe='xemacs'
+alias x='xterm -ls -sb -fg white -bg grey30 -fn 9x15 &'
+alias bye='exit'
+alias rlog='rlogin -l oper'
+alias ps='ps -eaf'
+alias md='mkdir'
+alias lose='wabi'
+alias clock='clock -fg white -bg black'
+alias color='/usr/local/lib/tk4.0/demos/tcolor'
+alias cdc='cd ~/usr/src/c'
+alias cdk='cd ~/usr/src/ksh'
+
+From dradtke@elmer Sat Aug 17 06:04 MDT 1996
+Return-Path: <dradtke@elmer>
+Received: from aitsun49.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id GAA04569; Sat, 17 Aug 1996 06:04:13 -0600
+Received: by aitsun49.tcinc.com (5.x/SMI-SVR4)
+	id AA23921; Sat, 17 Aug 1996 06:04:02 -0600
+Date: Sat, 17 Aug 1996 06:04:02 -0600
+From: dradtke@elmer (Doug Radtke)
+Message-Id: <9608171204.AA23921@aitsun49.tcinc.com>
+To: Bergeron.Dave@elmer, Breeds.George@elmer, Cordero.Mel@elmer,
+        Logan.James@elmer, Molatch.Carmen@elmer, Rierden.Bill@elmer,
+        SmsDatamig@elmer, SmsDba@elmer, SmsOper@elmer, SmsSysadmin@elmer,
+        smmt-tech-supt@aitsun49
+Subject: Production Server Usage Report
+Content-Type: text
+Content-Length: 1390
+X-Mozilla-Status: 0001
+
+Performing get_srvlist on DDSD_2
+    Primary Site   - Denver
+    Secondary Site - Dallas
+J¨ÿô
+
+ PrimaryServer        SecondaryServer      ActiveServer   
+ -------------------- -------------------- ---------------
+ ADDRD_1              ADDRL_1              PRIMARY        
+ ALPSBUD_1            ALPSBUD_1            PRIMARY        
+ ALPSCTRLD_1          ALPSCTRLD_1          PRIMARY        
+ ALPSMESD_1           ALPSMESD_1           PRIMARY        
+ ALPSLOADD_1          ALPSLOADD_1          PRIMARY        
+ BILLD_1              BILLL_1              PRIMARY        
+ CCD_1                CCD_1                PRIMARY        
+ CUSTD_1              CUSTL_1              PRIMARY        
+ DISPD_1              DISPL_1              PRIMARY        
+ DMSD_1               DMSL_1               PRIMARY        
+ DUSD_1               DUSL_1               PRIMARY        
+ EQPTD_1              EQPTL_1              PRIMARY        
+ EXECD_1              EXECL_1              PRIMARY        
+ LOADD_1              LOADL_1              PRIMARY        
+ LOGD_1               LOGL_1               PRIMARY        
+ DATAMIG              DATAMIG              PRIMARY        
+ NARUD_1              NARUL_1              PRIMARY        
+ OARSD_1              OARSD_1              PRIMARY        
+ PAYD_1               PAYL_1               PRIMARY        
+ XREFD_1              XREFL_1              PRIMARY        
+
+
+
+From brathfon@elmer Sat Aug 17 08:22 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA05227; Sat, 17 Aug 1996 08:22:15 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA15748; Sat, 17 Aug 1996 08:22:02 -0600
+Date: Sat, 17 Aug 1996 08:22:02 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171422.IAA15748@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: loading ALFA and BETA
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 254
+X-Mozilla-Status: 0001
+
+
+Had a problem with syslogs filling up, so loads did not finish over night.
+Have cleared the problem and loads are continuing, but it could be one
+to two hours before the loading is done, replication is back on, and final
+scripts are run.
+J¨ÿô
+
+Thanks,
+
+Bill
+
+From brathfon@elmer Sat Aug 17 09:59 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA05716; Sat, 17 Aug 1996 09:59:00 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA18398; Sat, 17 Aug 1996 09:58:48 -0600
+Date: Sat, 17 Aug 1996 09:58:48 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171558.JAA18398@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: Loading ALFA, BETA:  it is worse than I thought
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 150
+X-Mozilla-Status: 0001
+
+
+
+Due to the customer db load hanging with full syslogs, and gmt needing to
+be run, we may not have ALFA and BETA ready to go until about noon.
+
+J¨ÿô
+Bill
+
+From Chomic.Ken@tcinc.com Sat Aug 17 14:21 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Disclose-Recipients: Prohibited
+Alternate-Recipient: Allowed
+X400-Originator: Chomic.Ken@tcinc.com
+X400-Recipients: non-disclosure;
+Message-Id: 
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+Date: 17 Aug 1996 14:08:25 -0600
+From: "Chomic, Ken" <Chomic.Ken@tcinc.com>
+To: "barber, terry" <barber.terry@tcinc.com> (Return requested),
+        "rathfon, bill" <rathfon.bill@tcinc.com> (Return requested)
+cc: "sms@aitsun87.tcinc.com" <sms@aitsun87.tcinc.com> (Return requested)
+Subject: Re: ALFA and BETA enviroments
+MIME-Version: 1.0
+Content-Type: text
+Content-Length: 710
+X-Mozilla-Status: 0011
+
+Loofa and alfaloofa are some other good choices.
+ ----------
+From: barber, terry
+To: rathfon, bill
+Cc: sms@aitsun87.tcinc.com
+Subject: Re: ALFA and BETA enviroments
+Date: Friday, August 16, 1996 2:18PM
+
+Just a quick question.  Why do we call it ALFA testing instead of
+ALPHA testing?  I'm not against Alfalfa or anything but just thought it
+odd.
+
+:-)
+T.B.
+
+Bill Rathfon wrote:
+> > I am going to be reloading ALFA and BETA environments with the data
+> that was captured from production last Friday night.  I will begin
+> at 5:00PM.  Replication will be turned off and data will be reloaded,
+> so please stop using the databases at 5:00 PM.
+> > Any questions or concerns, please contact me.
+> > Thanks,
+> > Bill
+

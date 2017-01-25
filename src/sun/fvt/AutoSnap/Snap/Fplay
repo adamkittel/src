@@ -1,0 +1,130 @@
+#
+#  FPLAY module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+Fplay()
+{
+#set -x
+
+#------------------------------------------------------------------------
+#	This function plays ras snaps.  The user is asked for the location
+#	and ID.  Next it checks to see if the path to the ras_snap 
+#	exists.  If not it makes:
+#	/var/opt/SUNWstade/SNAP and links ras_snap directory.
+#
+#	Verbose screen output is offered.  If not output is redirected to 
+#	a /tmp/logfile.
+#
+#	After the playback is complete, the user can play another,
+#	return to the main menu or quit.
+##------------------------------------------------------------------------
+
+#------------------------------  PINFO  -------------------------------
+Pinfo()
+{
+#set -x
+###clear ;
+SNAP=/var/opt/SUNWstade/SNAP
+
+#	Give the option to save current DATA directory
+#
+#	Check for the existence of playback $SN_DIR
+#	make $SN_DIR if it doesn't exist
+#
+#	Get the $FULL_PLOCAL of the ras_snap to be played
+#
+
+##-----  Get ras_snap directory where the snap shot is located 
+if [ ! $NSLOCALDN ]
+   then
+     ##clear
+     print "\n\n\n	The default play directory is \n";
+     print "	$SLOCAL";
+     print "\n	Do you want to use the default directory 
+	for to retieve the ras_snaps? (Y-N): \c";
+     input ; PDIR=$INPUT
+
+   else
+     print "\n\n\n	The current ras_snap directory is:\n";
+     print "	$SLOCAL";
+     print "\n	Do you want continue to use this directory? (Y-N): \c";
+     input ; PDIR=$INPUT
+fi
+
+NSLOCALDN=Y
+
+if [[ "$PDIR" = [Nn] ]]
+   then
+      print "\n	Enter the ras_snap directory that holds the ras_snap ID to be played:" ; print "              : \c" ; 
+      input ; NSLOCAL=$INPUT
+      SLOCAL=$NSLOCAL ;
+    
+      if [ ! -d $SLOCAL ]
+         then  
+            mkdir -p $NSLOCAL  >> $LOG #2>&1 ; 
+      fi
+fi
+
+print "\n	Enter the ras_snap ID you want to play:" ;
+print "              : \c"; 
+input ; P_ID=$INPUT
+
+##-----  Set ras_snap play directories
+SN_DIR=$SNAP/$P_ID 
+FULL_SLOCAL=$SLOCAL/$P_ID
+##-----  Verifying the $SNAP and creating if not present
+if [ ! -d $SNAP ]
+   then
+      print "\n	!! $SNAP" ;
+      print "	doesn't exist...making it now." ;
+      mkdir $SNAP # >> $LOG #2>&1 ;
+fi
+
+##-----  Verifying the $SN_DIR and linking if not present
+if [ ! -d $SN_DIR ]
+   then
+      print "\n	!! $SN_DIR
+	doesn't exist...linking it now." 
+      ln -s $FULL_SLOCAL $SN_DIR >> $LOG #2>&1 ;
+
+##-----  Verifying that the $SN_DIR dir was created and if not exiting.
+##-----  This would probably be caused by incorrect or non existent
+##-----  $SLOCAL and or $P_ID directories
+  if [ ! -d $SN_DIR ]
+     then
+       	print " \n
+      !!!Directory creation error, probable causes:\n
+         1.  The $SLOCAL directory
+         and or ras_snap ID $P_ID are incorrect or do not exist.\n
+         2.  `id | cut -c 1-11` on `hostname` doesn't have read permissions in this directory\n.
+    ---> Check log file $LOG for details. \n\n" ;
+
+print "     ----> press enter to try another.  \c " ; read ENT
+        Pinfo ;
+  fi
+fi
+
+print "\n	$SN_DIR is in place, \n" ;
+
+} #-----------------------------  PINFO  ------------------------------
+
+
+dataMv			#> 
+confMv			#> 
+Pinfo			#> PLAY SELECT RAS_SNAP
+Splay				#> ASK FOR VERBOSE OR NOT
+stopagent			#> 
+SplayQ			#> QUIT PLAYING RAS_SNAPS
+
+} #------------------------------  FPLAY  -----------------------------
+
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

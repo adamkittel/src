@@ -1,0 +1,23 @@
+#
+#  CLEAN module for RASSNAP Function
+#
+#  CREATED:             11/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+clean()
+{
+#set -x
+
+/bin/rm -rf $C_FILE >> $LOG #2>&1 ;
+/bin/rm -rf $A_FILE >> $LOG #2>&1 ;
+/bin/rm -rf $R_FILE >> $LOG #2>&1 ;
+
+} #------------------------------  CLEAN  -----------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

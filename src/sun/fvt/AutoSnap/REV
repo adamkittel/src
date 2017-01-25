@@ -1,0 +1,36 @@
+#
+#  REV for RASSNAP Function
+#
+#  AUTHOR:              Adam Kittel
+#                       adam.kittel@sun.com
+#                       303 272 6561 -- x76561
+#
+#  CREATED:             11/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+FPATH=$PWD/RevInfo 
+
+REV()
+{
+#set -x
+
+FPATH=$PWD/RevInfo #--------  RevInfo FUNCTIONS  ----------------------------
+
+autoload rv_list_patch rv_show_patch rv_select
+
+trap rv_select EXIT
+
+##-------------  RevInfo $VARIABLES and File Preparation  ---------------
+
+rv_select
+
+} #---------------------------- REV  ---------------------------------
+
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

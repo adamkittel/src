@@ -1,0 +1,35 @@
+#
+#  REV for RASSNAP Function
+#
+#  AUTHOR:              Adam Kittel
+#                       adam.kittel@sun.com
+#                       303 272 6561 -- x76561
+#
+#  CREATED:             11/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+FPATH=$PWD/BugInfo 
+
+BUG()
+{
+set -x
+
+FPATH=$PWD/BugInfo #--------  BugInfo FUNCTIONS  ----------------------------
+
+autoload dsqa_info
+
+#trap dsqa_info EXIT
+
+##-------------  BugInfo $VARIABLES and File Preparation  ---------------
+
+dsqa_info
+
+} #---------------------------- REV  ---------------------------------
+
+#
+#  $.Log.$
+# 
+#  Copyright 2005 Sun Microsystems, Inc. 
+#

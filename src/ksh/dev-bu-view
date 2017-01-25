@@ -1,0 +1,26 @@
+#!/bin/ksh
+#view production backups in xterms
+#
+
+#DATE=`date |awk '{print $1" "$2" "$3" "$4} ' `
+#DAY=`date |awk '{print $3}'`
+print "enter the day of the month"
+read DAY
+#if [ $1 = '-y' ]
+#  then
+#    DAY=$((DAY - 1))
+#fi
+#if [ "$DAY" -lt 10 ];then
+#   DAY="0$DAY"
+#fi
+LIST='poudre blab1 den1 colorado mancos arkansas'
+  
+for SYS in `echo $LIST`
+do
+  rsh -l oper $SYS tail /var/log/backup/ufsbackup."$DAY" &
+done
+rsh -l oper animas tail /var/log/backup/full_backup_int."$DAY" &
+rsh -l oper animas tail /var/log/backup/full_backup_st1."$DAY" &
+rsh -l oper animas tail /var/log/backup/full_backup_st2."$DAY" &
+rsh -l oper gunnison tail /var/log/backup/full_backup_int."$DAY" &
+rsh -l oper gunnison tail /var/log/backup/full_backup_st1."$DAY" &

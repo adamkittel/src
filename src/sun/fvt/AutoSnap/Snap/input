@@ -1,0 +1,26 @@
+#
+#  input module for RASSNAP Function
+#
+#  CREATED:             MM/YYYY
+#  LAST UPDATE:         MM/YYYY
+#
+#-------------------------------------------------------------------------
+
+input()
+{
+#----- Generic Function to get and verify input
+#set -x
+INPUT=""
+read INPUT
+     while [[ $INPUT = "" ]]
+       do
+         print "\n >>:: Nothing entered, Please retry: \c" ;
+         read INPUT ;
+      done   
+} #----------------------------  FUNCT_NAME  -----------------------------
+
+#
+#  $.Log.$
+# 
+#  Copyright 2005 Sun Microsystems, Inc. 
+#

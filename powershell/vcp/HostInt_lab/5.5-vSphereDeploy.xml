@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<MasterConfig>
+<vcenterconfig>
+<vcusername>"administrator@vsphere.local"</vcusername>
+<vcpassword>"solidF!r3"</vcpassword>
+</vcenterconfig>
+
+<Config>
+<vcsahostname>vcsa55</vcsahostname>
+<MgmtNetwork>"VM Network"</MgmtNetwork>
+</Config>
+</MasterConfig>

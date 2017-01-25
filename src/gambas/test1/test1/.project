@@ -1,0 +1,10 @@
+# Gambas Project File 2.0
+Title=test1
+Startup=FTest
+Library=gb.db
+Library=gb.pcre
+Library=gb.gtk
+Library=gb.gtk.ext
+Library=gb.form
+Library=gb.db.form
+MakeComponent=1

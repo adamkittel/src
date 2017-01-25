@@ -1,0 +1,137 @@
+#!/bin/ksh
+# THIS CODE (FROM HERE ON REFERED ONLY TO AS CRAP) IS LICENSED UNDER THE
+# STRICT AND TYRANICAL BAITSHOP LICENSE.  PERPETUAL RIGHTS AND
+# OWNERSHIP ARE CONVEYED TO USER BY AN UNCONDITIONAL BEER CLAUSE
+# (U BUY ADAM OR TO A LESSER EXTENT MIKE A BEER AND U BOUGHT THE CODE)
+# 
+# ALWAYS FEEL FREE TO:
+# DISRTIBUTE FREELY
+# CHANGE, DELETE AND/OR LAUGH OUT LOUD AT THIS CODE
+# CALL IT YOUR OWN (IF YOU CAN STAND THE EMBARASSMENT)
+# DON'T CRY ABOUT MISSING COMMENTS. (COMMENTS ARE FOR SISSIES)
+# 
+# NEVER EVER UNDER ANY CIRCUMSTANCE DO THE FOLLOWING;
+# 	ADD USFULL COMMENTS
+#         MAKE MONEY FROM THIS CODE
+#         INCLUDE IT IN YOUR 1 ON 1 REVIEW (THIS MEANS U WAGNER)
+#         BRAG ABOUT IT OVER A SUSHI LUNCH (mcdonald's is ok)
+#         AND MOST OF ALL - EXPECT IT TO WORK!
+
+Mplay()
+{
+#set -x
+INDEXFILE='/net/zila/export/dsqa/RAS_SNAP/DSQA_SNAPS/SNAPINDEX.txt'
+TSTAMP=`date '+%m-%d-%y.%H.%M.%S'`
+SNAP=/var/opt/SUNWstade/SNAP
+TMPFILE="/tmp/RAS_$TSTAMP"
+REPORT="/tmp/mass_report.$TSTAMP"
+UNAME=`uname -a`
+STADEVER=`pkginfo -l SUNWstade`
+
+##clear
+print "\n\n\t ----> Mass ras_snap playback <----\n
+\tThis function will playback all available ras_snaps
+\tof a chosen device type. The list of ras_snaps is available
+\tin $INDEXFILE
+\tTo see the available ras_snaps of your chosen device type
+\tpoint your browser to http://dsqa.central/akittel/php/snapsearch.php\n"
+
+## ask for the device type to play snaps against
+print "\tEnter a device type: \c" ; read DTYPE
+
+## save the DATA directory?
+dataMv
+
+## set up email and providers
+confMv
+
+## stop the agent
+stopagent
+
+
+## make a file with those device types
+egrep -i $DTYPE $INDEXFILE > $TMPFILE
+
+## how many snapshots?
+COUNT=$(wc -l $TMPFILE|awk '{print $1}')
+print "ras_snaps to play: $COUNT\nhost info: $UNAME\n$STADEVER\n\n" >> $REPORT
+
+## gather the snapshot parent directories
+n=0
+for x in `awk -F'|' '{print $10}'  $TMPFILE`
+do
+	NSLOCAL[$n]=$x
+	((n = n + 1))
+done
+
+## gather the snapshot id's
+n=0
+for x in `awk -F'|' '{print $1}'  $TMPFILE`
+do
+	P_ID[$n]=$x
+	((n = n + 1))
+done
+
+## join the parent dirs and snapshot id's and play them
+n=0
+until ((n == $COUNT))
+do
+	FULL_SLOCAL="${NSLOCAL[$n]}/${P_ID[$n]}"
+	SN_DIR=$SNAP/$P_ID
+	if [[ -d $FULL_SLOCAL ]]
+		then
+			print "\nPlaying snapshot\n$FULL_SLOCAL" >> $REPORT
+##-----  Verifying the $SNAP and creating if not present
+			if [ ! -d $SNAP ]
+   			then
+      			print "\n	!! $SNAP" ;
+   				print "	doesn't exist...making it now." ;
+      			mkdir $SNAP # >> $LOG #2>&1 ;	
+			fi
+##-----  Verifying the $SN_DIR and linking if not present
+			if [ ! -d $SN_DIR ]
+   			then
+      			print "\n	!! $SN_DIR
+	doesn't exist...linking it now." 
+      			ln -s $FULL_SLOCAL $SN_DIR >> $LOG #2>&1 ;
+##-----  Verifying that the $SN_DIR dir was created and if not exiting.
+##-----  This would probably be caused by incorrect or non existent
+##-----  $SLOCAL and or $P_ID directories
+				if [ ! -d $SN_DIR ]
+     			then
+					print " \n
+	!!!Directory creation error, probable causes:\n
+   	1.  The $SLOCAL directory
+   	and or ras_snap ID $P_ID are incorrect or do not exist.\n
+   	2.  `id | cut -c 1-11` on `hostname` doesn't have read permissions in this directory\n.
+   	---> Check log file $LOG for details. \n\n" 
+				else
+					Splay
+				fi
+## check and document the system load
+			/usr/bin/uptime >> $REPORT
+			fi
+## remove snapshot link
+			rm -f $SN_DIR
+		fi
+	((n = n + 1))
+done
+
+## finish up
+/usr/bin/mailx -r RAS_SNAP -s "RMFVT TEST REPORT - mass playback: $DTYPE" $EMAIL < $REPORT
+if (( $? == 0 ))
+then
+	print "\nTest report email sent to $EMAIL\n" 
+else
+	print "\nAn error occured emailing report to $EMAIL\n" 
+fi
+/usr/bin/rm -f $REPORT
+/usr/bin/rm -f $TMPFILE
+SplayQ
+}
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

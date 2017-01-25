@@ -1,0 +1,117 @@
+#
+#  SINFO module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+Sinfo()
+{
+#set -x
+
+##-------------  Set DIR Based on ras_snap type
+##clear
+
+if [ ! $EADDR ]
+    then
+        print "\n\n	Enter You Email address (first.last): \c" ;
+        input ; EADDR=$INPUT
+fi
+
+
+if [ ! $NSLOCAL ]
+   then
+     ##clear
+     print "\n\n	The default ras_snap repository is \n";
+     print "	$SLOCAL";
+     print "\n	Do you want to use the default directory 
+	for the placement of your ras_snaps? (Y-N): \c";
+     
+     input ; SDIR=$INPUT
+   
+   else
+     print "\n\n\n	The current ras_snap repository is:\n";
+     print "	$SLOCAL";
+     print "\n	Do you want to continue to use this directory? (Y-N): \c";
+ 
+     input ; SDIR=$INPUT
+fi
+
+NSLOCAL=Y
+
+if [[ "$SDIR" = [Nn] ]]
+   then
+      print "\n	Where do you want the $TYPE snapshots
+        to be placed? \c " ; 
+      input ; NSLOCAL=$INPUT
+      SLOCAL=$NSLOCAL ;
+      if [ ! -d $SLOCAL ]
+         then  
+            mkdir -p $NSLOCAL  >> $LOG #2>&1 ; 
+      fi
+fi
+
+
+     S_ID=`date '+%m-%d-%y.%H:%M:%S'`
+     print "\n        Snapshot ID is: $S_ID\n"
+
+     
+while [[ -d $SLOCAL/$S_ID ]]
+  do
+     print "\n	$SLOCAL/$S_ID exists, Overwrite? (Y/N): \c" ;
+     input ; OVERWRITE=$INPUT
+     if [[ $OVERWRITE = [Yy]* ]]
+        then
+           /bin/rm -rf $SLOCAL/$S_ID ;
+
+	    if [[ -d $SLOCAL/$S_ID ]]
+              then
+                   print "\n  $SLOCAL/$S_ID Can not be removed!" ;
+                   print "The Directory must write protected.\n" ;
+                   print "You need to choose a different snapshot ID.\n" ;
+		   input ; S_ID="$INPUT"
+	    fi
+        
+     fi
+  done
+
+print "\n	The following information is required:" ;
+
+     
+print "\n	Enter a Synopsis: \c" ; 
+input ; SYNOP=$INPUT
+              
+print "\n	Enter Project: \c" ;
+input ; PROJ="$INPUT"
+          
+print "\n	Enter Device type: \c" ;
+input ; DTYPE="$INPUT"
+          
+print "\n	Enter Testcast Number (leave Blank if none): \c" ; read TCASE
+print "\n	Enter BUGID (leave Blank if none): \c" ; read BID
+      
+debugL
+clearA
+
+SVER=`pkginfo -l SUNWstade | grep PSTAMP | cut -c 14-23` >> $LOG #2>&1 
+
+INDEXDN=Y  
+#fi
+     
+print "\n              --------------------------------------" ;
+print "              |    Running $0 |" ;
+print "              --------------------------------------\n" ;
+
+print "	Note: The snapshot location is set to:
+	$SLOCAL/$S_ID\n" ;
+
+} #----------------------------  SINFO  -------------------------------
+
+
+#
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

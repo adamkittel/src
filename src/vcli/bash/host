@@ -1,0 +1,149 @@
+#!/bin/bash
+#
+#
+# VMware vMA/RCLI ESX Administration Helper
+# managing hosts
+
+## SHUTDOWN ESX HOST
+function host_shutdown {
+	MODE=`/usr/bin/vicfg-hostops $COM_OPS --operation info|grep Maint | awk -F':' '{print $2}'`
+	if [ $MODE = 'no' ]; then 
+		printf "${red}$VI_SERVER must be in maintenance mode before proceeding${white}\n"
+		host_mode
+	fi
+
+	if [ $DATACENTER ]; then
+		printf "${yellow}Do you wish to shutdown all hosts in datacenter $DATACENTER? [y/n]${white} "
+		read YN
+		if [ $YN = 'y' ]; then
+			printf "${green}Executing.......\n/usr/bin/vicfg-hostops $COM_OPS --operation shutdown --datacenter $DATACENTER${white}\n"
+			/usr/bin/vicfg-hostops $COM_OPS --operation shutdown --datacenter $DATACENTER
+		fi
+
+	elif [ $CLUSTER ]; then
+		printf "${yellow}Do you wish to shutdown all hosts in cluster $CLUSTER? [y/n]${white} "
+		read YN
+		if [ $YN = 'y' ]; then
+			printf "${green}Executing.......\n/usr/bin/vicfg-hostops $COM_OPS --operation shutdown --cluster $CLUSTER${white}\n"
+			/usr/bin/vicfg-hostops $COM_OPS --operation shutdown --cluster $CLUSTER
+		fi
+	else
+		printf "${yellow}Are you sure you want to shutdown host $VI_SERVER? [y/n]${white} "
+		read YN
+		if [ $YN = 'y' ]; then
+			printf "${green}Executing.......\n/usr/bin/vicfg-hostops $COM_OPS --operation shutdown${white}\n"
+			/usr/bin/vicfg-hostops $COM_OPS --operation shutdown
+		fi
+	fi
+}
+
+## REBOOT ESX HOST
+function host_reboot {
+	MODE=`/usr/bin/vicfg-hostops $COM_OPS --operation info|grep Maint | awk -F':' '{print $2}'`
+	if [ $MODE = 'no' ]; then 
+		printf "${red}$VI_SERVER must be in maintenance mode before proceeding${white}\n"
+		host_mode
+	fi
+
+	if [ $DATACENTER ]; then
+		printf "${yellow}Do you wish to reboot all hosts in datacenter $DATACENTER? [y/n]${white} "
+		read YN
+		if [ $YN = 'y' ]; then
+			printf "${green}Executing.......\n/usr/bin/vicfg-hostops $COM_OPS --operation reboot ${white}\n"
+			/usr/bin/vicfg-hostops $COM_OPS --operation reboot 	
+		fi
+
+	elif [ $CLUSTER ]; then
+		printf "${yellow}Do you wish to reboot all hosts in cluster $CLUSTER? [y/n]${white} "
+		read YN
+		if [ $YN = 'y' ]; then
+			printf "${green}Executing.......\n/usr/bin/vicfg-hostops $COM_OPS --operation reboot \n"
+			/usr/bin/vicfg-hostops $COM_OPS --operation reboot 
+		fi
+	else
+		printf "${yellow}Are you sure you want to reboot host $VI_SERVER? [y/n]${white} "
+		read YN
+		if [ $YN = 'y' ]; then
+			printf "${green}Executing.......\n/usr/bin/vicfg-hostops $COM_OPS --operation reboot${white}\n"
+			/usr/bin/vicfg-hostops $COM_OPS --operation reboot
+		fi
+	fi
+}
+
+## RETRIEVE ESX HOST INFO
+function host_info {
+	printf "${green}Executing.......\n/usr/bin/vicfg-hostops $COM_OPS --operation info${white}\n"
+	/usr/bin/vicfg-hostops $COM_OPS --operation info
+}
+
+## ESX HOST MAINTENANCE MODE
+function host_mode {
+	printf "${green}** Ensure all vm's are suspended or powered off before proceeding **${white}\n\n"
+	MODE=`/usr/bin/vicfg-hostops $COM_OPS --operation info|grep Maint | awk -F':' '{print $2}'`
+	if [ $MODE = 'no' ]; then
+		printf "$VI_SERVER is not currently in maintenance mode.\nPutting it in maintenance mode will suspend all running VM's\nand take considerable time.\n${yellow}Proceed to maintenance mode? [y/n]${white} "
+		read YN
+		if [ $YN = 'y' ]; then
+		printf "${green}Executing.......\n/usr/bin/vicfg-hostops $COM_OPS --operation enter${white}\n"
+		/usr/bin/vicfg-hostops $COM_OPS --operation enter
+		else
+			host_menu
+		fi
+	elif [ $MODE = 'yes' ]; then
+		printf "$VI_SERVER is currently in maintenance mode.\n${yellow}Take $VI_SERVER out of maintenance mode? [y/n]${white} "
+		read YN
+		if [ $YN = 'y' ]; then
+			printf "${green}Executing.......\n/usr/bin/vicfg-hostops $COM_OPS --operation exit${white}\n"
+			/usr/bin/vicfg-hostops $COM_OPS --operation exit
+		else
+			host_menu
+		fi
+	fi
+}
+
+## BACKUP/RESTORE ESXi CONFIG
+function esxi_bu_re {
+	printf "${yellow}Backup or Restore ESXi system? [b/r]${white} "
+	read YN
+	if [ $YN = 'b' ]; then
+		printf "${yellow}Enter backup filename including full path to create:${white} "
+		read BUPATH
+		printf "${green}Executing.......\n/usr/bin/vicfg-cfgbackup $COM_OPS -s $BUPATH${white}\n"
+		/usr/bin/vicfg-cfgbackup $COM_OPS -s $BUPATH
+	else
+		printf "${yellow}Enter backup filename including full path to restore "
+		read BUPATH
+		printf "${green}Executing.......\n/usr/bin/vicfg-cfgbackup $COM_OPS -l $BUPATH${white}\n"
+		/usr/bin/vicfg-cfgbackup $COM_OPS -l $BUPATH
+	fi
+}
+
+function host_menu {
+PS3='Host Ops Menu> '
+cls
+select CASE in "Shutdown host(s)" "Reboot host(s)" "Get host info" "Enter/Exit Maintenance mode" "Backup/Restore ESXi" "Return to main menu"
+do
+	case $CASE in
+		"Shutdown host(s)") 
+			host_shutdown;;
+		"Reboot host(s)")
+	       		host_reboot;;	
+		"Get host info")
+	       		host_info;;	
+		"Enter/Exit Maintenance mode") 
+			host_mode;;
+		"Backup/Restore ESXi")
+			esxi_bu_re;;
+		"Return to main menu")
+			main;;
+		*)
+			host_menu;;
+	esac
+done
+PS3='Select or Enter to continue> '
+}
+
+
+
+
+

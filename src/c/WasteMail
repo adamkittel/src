@@ -1,0 +1,1976 @@
+ü
+From Mailer-Daemon@den-mon1 Fri Aug 16 10:45 MDT 1996
+Return-Path: <Mailer-Daemon@den-mon1>
+Received: from den-mon1.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id KAA21432; Fri, 16 Aug 1996 10:45:47 -0600
+Received: from localhost by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id KAA12793; Fri, 16 Aug 1996 10:45:35 -0600
+Date: Fri, 16 Aug 1996 10:45:35 -0600
+From: Mailer-Daemon@den-mon1 (Mail Delivery Subsystem)
+Subject: Returned mail: User unknown
+Message-Id: <199608161645.KAA12793@den-mon1.tcinc.com>
+To: oper@den-mon1
+Content-Type: text
+Content-Length: 1918
+X-Mozilla-Status: 0001
+
+The original message was received at Fri, 16 Aug 1996 10:45:05 -0600
+from oper@localhost
+
+   ----- The following addresses had delivery problems -----
+lasda.andrew@tcinc.com  (unrecoverable error)
+
+   ----- Transcript of session follows -----
+... while talking to peacock.tcinc.com.:
+>>> RCPT To:<lasda.andrew@tcinc.com>
+<<< 550 <lasda.andrew@tcinc.com>... User unknown
+550 lasda.andrew@tcinc.com... User unknown
+
+   ----- Original message follows -----
+Return-Path: <oper>
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id KAA12791; Fri, 16 Aug 1996 10:45:05 -0600
+Date: Fri, 16 Aug 1996 10:45:05 -0600
+From: oper (Summit Operator)
+Message-Id: <199608161645.KAA12791@den-mon1.tcinc.com>
+To: lasda.andrew@tcinc.com
+Subject: **DENVER OPERATOR 3RD SHIFT LOG: /tci/logs/oper/hlog/den.3RDshift.Aug16**
+content-length: 1092
+
+Fri Aug 16 02:00:09 MDT 1996
+****************************
+RSM just went yellow AGAIN, only one side though.  rc
+
+Fri Aug 16 03:00:07 MDT 1996
+****************************
+everything looks good
+ak
+
+Fri Aug 16 04:00:07 MDT 1996
+****************************
+everything is ok
+ak
+
+Fri Aug 16 05:00:24 MDT 1996
+****************************
+Everthing but Tivoli is looking good.  rc
+
+Fri Aug 16 06:00:09 MDT 1996
+****************************
+Nothing new.  rc
+
+Fri Aug 16 06:35:05 MDT 1996
+****************************
+Tom from the NPPV operators just called and said that the ARU drivers are going to be
+taken down for about an hour.  rc
+
+Fri Aug 16 07:00:11 MDT 1996
+****************************
+restarted the following backups;
+den-cst1, den-oras1, den-disp2, & den-bill2
+ak
+
+Fri Aug 16 08:00:06 MDT 1996
+****************************
+ab1_rs is yellow again
+ak
+
+Fri Aug 16 09:00:07 MDT 1996
+****************************
+allen james called, he knows about the tivoli problems
+ak
+
+Fri Aug 16 10:00:06 MDT 1996
+****************************
+Everything quiet. Still no change on the tivoli problem.
+TB
+
+
+
+From oper@den-mon1.tcinc.com Fri Aug 16 11:28 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id LAA22062; Fri, 16 Aug 1996 11:28:34 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id LAA27082; Fri, 16 Aug 1996 11:28:20 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id LAA13355; Fri, 16 Aug 1996 11:27:58 -0600
+Date: Fri, 16 Aug 1996 11:27:58 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608161727.LAA13355@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0001
+
+    OPS RSM reports
+
+    BC1_RS    Suspect     Fri Aug 16 11:27:47 MDT 1996
+
+From oper@den-mon1.tcinc.com Fri Aug 16 11:31 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id LAA22086; Fri, 16 Aug 1996 11:31:09 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id LAA27100; Fri, 16 Aug 1996 11:30:30 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id LAA13406; Fri, 16 Aug 1996 11:30:13 -0600
+Date: Fri, 16 Aug 1996 11:30:13 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608161730.LAA13406@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0001
+
+    OPS RSM reports
+
+    AR1_RS    Suspect     Fri Aug 16 11:30:05 MDT 1996
+
+From oper@den-mon1.tcinc.com Fri Aug 16 11:47 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id LAA22331; Fri, 16 Aug 1996 11:47:20 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id LAA27400; Fri, 16 Aug 1996 11:47:08 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id LAA13668; Fri, 16 Aug 1996 11:46:53 -0600
+Date: Fri, 16 Aug 1996 11:46:53 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608161746.LAA13668@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0001
+
+    OPS RSM reports
+
+    AR1_RS    Active     Fri Aug 16 11:46:51 MDT 1996
+
+From oper@den-mon1.tcinc.com Fri Aug 16 11:59 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id LAA22479; Fri, 16 Aug 1996 11:59:33 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id LAA27584; Fri, 16 Aug 1996 11:59:10 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id LAA13758; Fri, 16 Aug 1996 11:58:51 -0600
+Date: Fri, 16 Aug 1996 11:58:51 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608161758.LAA13758@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0001
+
+    OPS RSM reports
+
+    BC1_RS    Active     Fri Aug 16 11:58:49 MDT 1996
+
+From oper@den-mon1.tcinc.com Fri Aug 16 12:02 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id MAA22588; Fri, 16 Aug 1996 12:02:20 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id MAA27844; Fri, 16 Aug 1996 12:01:38 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id MAA13877; Fri, 16 Aug 1996 12:01:17 -0600
+Date: Fri, 16 Aug 1996 12:01:17 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608161801.MAA13877@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0001
+
+    OPS RSM reports
+
+    BC1_RS    Suspect     Fri Aug 16 12:01:11 MDT 1996
+
+From oper@den-mon1.tcinc.com Fri Aug 16 12:06 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id MAA22656; Fri, 16 Aug 1996 12:06:38 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id MAA27962; Fri, 16 Aug 1996 12:06:12 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id MAA13947; Fri, 16 Aug 1996 12:05:55 -0600
+Date: Fri, 16 Aug 1996 12:05:55 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608161805.MAA13947@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0001
+
+    OPS RSM reports
+
+    BC1_RS    Active     Fri Aug 16 12:05:53 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 00:13 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id AAA02792; Sat, 17 Aug 1996 00:13:33 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id AAA04912; Sat, 17 Aug 1996 00:13:21 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id AAA24543; Sat, 17 Aug 1996 00:13:06 -0600
+Date: Sat, 17 Aug 1996 00:13:06 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608170613.AAA24543@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0001
+
+    OPS RSM reports
+
+    AE1_RS    Suspect     Sat Aug 17 00:12:59 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 00:15 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id AAA02800; Sat, 17 Aug 1996 00:15:46 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id AAA04919; Sat, 17 Aug 1996 00:15:35 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id AAA24603; Sat, 17 Aug 1996 00:15:20 -0600
+Date: Sat, 17 Aug 1996 00:15:20 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608170615.AAA24603@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AE1_RS    Active     Sat Aug 17 00:15:18 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 00:54 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id AAA02968; Sat, 17 Aug 1996 00:54:07 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id AAA05023; Sat, 17 Aug 1996 00:53:56 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id AAA25020; Sat, 17 Aug 1996 00:53:41 -0600
+Date: Sat, 17 Aug 1996 00:53:41 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608170653.AAA25020@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BC1_RS    Suspect     Sat Aug 17 00:53:35 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 00:56 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id AAA02980; Sat, 17 Aug 1996 00:56:25 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id AAA05034; Sat, 17 Aug 1996 00:56:14 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id AAA25070; Sat, 17 Aug 1996 00:55:59 -0600
+Date: Sat, 17 Aug 1996 00:55:59 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608170655.AAA25070@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BC1_RS    Active     Sat Aug 17 00:55:57 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 03:16 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id DAA03693; Sat, 17 Aug 1996 03:16:48 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id DAA05492; Sat, 17 Aug 1996 03:16:37 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id DAA26747; Sat, 17 Aug 1996 03:16:22 -0600
+Date: Sat, 17 Aug 1996 03:16:22 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608170916.DAA26747@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AC1_RS    Suspect     Sat Aug 17 03:16:14 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 03:19 MDT 1996
+Return-Path: <akittel@elmer>
+Received: from den-ops3. by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA00554; Fri, 16 Aug 1996 23:26:23 -0600
+Received: by den-ops3. (SMI-8.6/SMI-SVR4)
+	id XAA23798; Fri, 16 Aug 1996 23:26:16 -0600
+Date: Fri, 16 Aug 1996 23:26:16 -0600
+From: akittel@elmer (Adam Kittel)
+Message-Id: <199608170526.XAA23798@den-ops3.>
+Apparently-To: kittel.adam@den-ops3
+Content-Type: text
+Content-Length: 1241
+X-Mozilla-Status: 0001
+
+# @(#)ait.kshrc - 03/07/94a
+#
+# Sample .kshrc for TCI/AIT UNIX systems.  Copy to ${HOME}/.kshrc and
+# change as you like.
+
+# Set command history editing, default is vi(1).
+export EDITOR=emacs
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id DAA03716; Sat, 17 Aug 1996 03:19:01 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id DAA05499; Sat, 17 Aug 1996 03:18:50 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id DAA26784; Sat, 17 Aug 1996 03:18:35 -0600
+Date: Sat, 17 Aug 1996 03:18:35 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608170918.DAA26784@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AC1_RS    Active     Sat Aug 17 03:18:34 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 08:51 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA05227; Sat, 17 Aug 1996 08:22:15 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA15748; Sat, 17 Aug 1996 08:22:02 -0600
+Date: Sat, 17 Aug 1996 08:22:02 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171422.IAA15748@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: loading ALFA and BETA
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 254
+X-Mozilla-Status: 0001
+
+
+Had a problem with syslogs filling up, so loads did not finish over night.
+Have cleared the problem and loads are continuing, but it could be one
+to two hours before the loading is done, replication is back on, and final
+scripts are run.
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA05380; Sat, 17 Aug 1996 08:51:16 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id IAA06433; Sat, 17 Aug 1996 08:51:05 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA01014; Sat, 17 Aug 1996 08:50:49 -0600
+Date: Sat, 17 Aug 1996 08:50:49 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608171450.IAA01014@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BE1_RS    Suspect     Sat Aug 17 08:50:43 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 08:53 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA05227; Sat, 17 Aug 1996 08:22:15 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA15748; Sat, 17 Aug 1996 08:22:02 -0600
+Date: Sat, 17 Aug 1996 08:22:02 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171422.IAA15748@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: loading ALFA and BETA
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 254
+X-Mozilla-Status: 0001
+
+
+Had a problem with syslogs filling up, so loads did not finish over night.
+Have cleared the problem and loads are continuing, but it could be one
+to two hours before the loading is done, replication is back on, and final
+scripts are run.
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA05393; Sat, 17 Aug 1996 08:53:31 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id IAA06444; Sat, 17 Aug 1996 08:53:20 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA01032; Sat, 17 Aug 1996 08:53:05 -0600
+Date: Sat, 17 Aug 1996 08:53:05 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608171453.IAA01032@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BE1_RS    Active     Sat Aug 17 08:53:03 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 09:34 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA05227; Sat, 17 Aug 1996 08:22:15 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA15748; Sat, 17 Aug 1996 08:22:02 -0600
+Date: Sat, 17 Aug 1996 08:22:02 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171422.IAA15748@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: loading ALFA and BETA
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 254
+X-Mozilla-Status: 0001
+
+
+Had a problem with syslogs filling up, so loads did not finish over night.
+Have cleared the problem and loads are continuing, but it could be one
+to two hours before the loading is done, replication is back on, and final
+scripts are run.
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA05595; Sat, 17 Aug 1996 09:34:18 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id JAA06815; Sat, 17 Aug 1996 09:34:07 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA01561; Sat, 17 Aug 1996 09:33:52 -0600
+Date: Sat, 17 Aug 1996 09:33:52 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608171533.JAA01561@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AE1_RS    Suspect     Sat Aug 17 09:33:40 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 09:36 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA05227; Sat, 17 Aug 1996 08:22:15 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id IAA15748; Sat, 17 Aug 1996 08:22:02 -0600
+Date: Sat, 17 Aug 1996 08:22:02 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171422.IAA15748@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: loading ALFA and BETA
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 254
+X-Mozilla-Status: 0001
+
+
+Had a problem with syslogs filling up, so loads did not finish over night.
+Have cleared the problem and loads are continuing, but it could be one
+to two hours before the loading is done, replication is back on, and final
+scripts are run.
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA05604; Sat, 17 Aug 1996 09:36:29 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id JAA06824; Sat, 17 Aug 1996 09:36:17 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA01618; Sat, 17 Aug 1996 09:36:02 -0600
+Date: Sat, 17 Aug 1996 09:36:02 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608171536.JAA01618@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AE1_RS    Active     Sat Aug 17 09:36:00 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 12:26 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA05716; Sat, 17 Aug 1996 09:59:00 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA18398; Sat, 17 Aug 1996 09:58:48 -0600
+Date: Sat, 17 Aug 1996 09:58:48 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171558.JAA18398@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: Loading ALFA, BETA:  it is worse than I thought
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 150
+X-Mozilla-Status: 0001
+
+
+
+Due to the customer db load hanging with full syslogs, and gmt needing to
+be run, we may not have ALFA and BETA ready to go until about noon.
+
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id MAA06647; Sat, 17 Aug 1996 12:26:34 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id MAA07604; Sat, 17 Aug 1996 12:26:21 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id MAA03860; Sat, 17 Aug 1996 12:26:05 -0600
+Date: Sat, 17 Aug 1996 12:26:05 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608171826.MAA03860@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AX1_RS    Suspect     Sat Aug 17 12:25:51 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 12:28 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA05716; Sat, 17 Aug 1996 09:59:00 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA18398; Sat, 17 Aug 1996 09:58:48 -0600
+Date: Sat, 17 Aug 1996 09:58:48 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171558.JAA18398@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: Loading ALFA, BETA:  it is worse than I thought
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 150
+X-Mozilla-Status: 0001
+
+
+
+Due to the customer db load hanging with full syslogs, and gmt needing to
+be run, we may not have ALFA and BETA ready to go until about noon.
+
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id MAA06665; Sat, 17 Aug 1996 12:28:40 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id MAA07610; Sat, 17 Aug 1996 12:28:28 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id MAA03876; Sat, 17 Aug 1996 12:28:13 -0600
+Date: Sat, 17 Aug 1996 12:28:13 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608171828.MAA03876@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AX1_RS    Active     Sat Aug 17 12:28:11 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 14:14 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA05716; Sat, 17 Aug 1996 09:59:00 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA18398; Sat, 17 Aug 1996 09:58:48 -0600
+Date: Sat, 17 Aug 1996 09:58:48 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171558.JAA18398@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: Loading ALFA, BETA:  it is worse than I thought
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 150
+X-Mozilla-Status: 0001
+
+
+
+Due to the customer db load hanging with full syslogs, and gmt needing to
+be run, we may not have ALFA and BETA ready to go until about noon.
+
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07691; Sat, 17 Aug 1996 14:14:07 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08029; Sat, 17 Aug 1996 14:13:51 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA05382; Sat, 17 Aug 1996 14:13:22 -0600
+Date: Sat, 17 Aug 1996 14:13:22 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172013.OAA05382@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AC1_RS    Suspect     Sat Aug 17 14:13:15 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 14:14 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA05716; Sat, 17 Aug 1996 09:59:00 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA18398; Sat, 17 Aug 1996 09:58:48 -0600
+Date: Sat, 17 Aug 1996 09:58:48 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171558.JAA18398@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: Loading ALFA, BETA:  it is worse than I thought
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 150
+X-Mozilla-Status: 0001
+
+
+
+Due to the customer db load hanging with full syslogs, and gmt needing to
+be run, we may not have ALFA and BETA ready to go until about noon.
+
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07689; Sat, 17 Aug 1996 14:14:07 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08030; Sat, 17 Aug 1996 14:13:51 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA05422; Sat, 17 Aug 1996 14:13:32 -0600
+Date: Sat, 17 Aug 1996 14:13:32 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172013.OAA05422@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BC1_RS    Suspect     Sat Aug 17 14:13:27 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 14:14 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA05716; Sat, 17 Aug 1996 09:59:00 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA18398; Sat, 17 Aug 1996 09:58:48 -0600
+Date: Sat, 17 Aug 1996 09:58:48 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171558.JAA18398@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: Loading ALFA, BETA:  it is worse than I thought
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 150
+X-Mozilla-Status: 0001
+
+
+
+Due to the customer db load hanging with full syslogs, and gmt needing to
+be run, we may not have ALFA and BETA ready to go until about noon.
+
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07699; Sat, 17 Aug 1996 14:14:18 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08034; Sat, 17 Aug 1996 14:14:05 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA05405; Sat, 17 Aug 1996 14:13:27 -0600
+Date: Sat, 17 Aug 1996 14:13:27 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172013.OAA05405@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AR1_RS    Suspect     Sat Aug 17 14:13:20 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 14:16 MDT 1996
+Return-Path: <brathfon@elmer>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA05716; Sat, 17 Aug 1996 09:59:00 -0600
+Received: by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id JAA18398; Sat, 17 Aug 1996 09:58:48 -0600
+Date: Sat, 17 Aug 1996 09:58:48 -0600
+From: brathfon@elmer (Bill Rathfon)
+Message-Id: <199608171558.JAA18398@aitsun87.tcinc.com>
+To: sms@aitsun87
+Subject: Loading ALFA, BETA:  it is worse than I thought
+X-Sun-Charset: US-ASCII
+Content-Type: text
+Content-Length: 150
+X-Mozilla-Status: 0001
+
+
+
+Due to the customer db load hanging with full syslogs, and gmt needing to
+be run, we may not have ALFA and BETA ready to go until about noon.
+
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07709; Sat, 17 Aug 1996 14:16:25 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08037; Sat, 17 Aug 1996 14:16:13 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA05489; Sat, 17 Aug 1996 14:15:58 -0600
+Date: Sat, 17 Aug 1996 14:15:58 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172015.OAA05489@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BC1_RS    Active     Sat Aug 17 14:15:56 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 14:31 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07828; Sat, 17 Aug 1996 14:31:09 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08100; Sat, 17 Aug 1996 14:30:54 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA05786; Sat, 17 Aug 1996 14:30:34 -0600
+Date: Sat, 17 Aug 1996 14:30:34 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172030.OAA05786@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AD1_RS    Suspect     Sat Aug 17 14:30:23 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 14:33 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07845; Sat, 17 Aug 1996 14:33:17 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08109; Sat, 17 Aug 1996 14:33:04 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA05814; Sat, 17 Aug 1996 14:32:47 -0600
+Date: Sat, 17 Aug 1996 14:32:47 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172032.OAA05814@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AD1_RS    Active     Sat Aug 17 14:32:46 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 14:57 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07977; Sat, 17 Aug 1996 14:57:13 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08193; Sat, 17 Aug 1996 14:56:58 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA06154; Sat, 17 Aug 1996 14:56:42 -0600
+Date: Sat, 17 Aug 1996 14:56:42 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172056.OAA06154@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BC1_RS    Suspect     Sat Aug 17 14:56:36 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 15:04 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA08055; Sat, 17 Aug 1996 15:04:10 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id PAA08421; Sat, 17 Aug 1996 15:03:58 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA06308; Sat, 17 Aug 1996 15:03:43 -0600
+Date: Sat, 17 Aug 1996 15:03:43 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172103.PAA06308@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AD1_RS    Suspect     Sat Aug 17 15:03:37 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 15:06 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA08067; Sat, 17 Aug 1996 15:06:30 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id PAA08426; Sat, 17 Aug 1996 15:06:18 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA06335; Sat, 17 Aug 1996 15:06:03 -0600
+Date: Sat, 17 Aug 1996 15:06:03 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172106.PAA06335@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AD1_RS    Active     Sat Aug 17 15:06:01 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 15:23 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA08158; Sat, 17 Aug 1996 15:23:02 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id PAA08459; Sat, 17 Aug 1996 15:22:50 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA06586; Sat, 17 Aug 1996 15:22:33 -0600
+Date: Sat, 17 Aug 1996 15:22:33 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172122.PAA06586@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 77
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    DGTP_RS    Suspect     Sat Aug 17 15:22:27 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 15:25 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA08168; Sat, 17 Aug 1996 15:25:00 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id PAA08475; Sat, 17 Aug 1996 15:24:48 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA06630; Sat, 17 Aug 1996 15:24:33 -0600
+Date: Sat, 17 Aug 1996 15:24:33 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172124.PAA06630@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    DGTP_RS    Active     Sat Aug 17 15:24:31 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 15:49 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA08292; Sat, 17 Aug 1996 15:49:37 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id PAA08520; Sat, 17 Aug 1996 15:49:25 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA07042; Sat, 17 Aug 1996 15:49:10 -0600
+Date: Sat, 17 Aug 1996 15:49:10 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172149.PAA07042@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AC1_RS    Active     Sat Aug 17 15:49:08 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 15:56 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA08328; Sat, 17 Aug 1996 15:56:52 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id PAA08548; Sat, 17 Aug 1996 15:56:40 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id PAA07112; Sat, 17 Aug 1996 15:56:25 -0600
+Date: Sat, 17 Aug 1996 15:56:25 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172156.PAA07112@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BC1_RS    Active     Sat Aug 17 15:56:24 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 16:06 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id QAA08412; Sat, 17 Aug 1996 16:06:19 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id QAA08570; Sat, 17 Aug 1996 16:06:07 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id QAA07457; Sat, 17 Aug 1996 16:05:52 -0600
+Date: Sat, 17 Aug 1996 16:05:52 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608172205.QAA07457@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AR1_RS    Active     Sat Aug 17 16:05:50 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 18:26 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id SAA09138; Sat, 17 Aug 1996 18:26:46 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id SAA09216; Sat, 17 Aug 1996 18:26:35 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id SAA09386; Sat, 17 Aug 1996 18:26:19 -0600
+Date: Sat, 17 Aug 1996 18:26:19 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180026.SAA09386@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AD1_RS    Suspect     Sat Aug 17 18:26:08 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 18:29 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id SAA09152; Sat, 17 Aug 1996 18:28:58 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id SAA09219; Sat, 17 Aug 1996 18:28:46 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id SAA09397; Sat, 17 Aug 1996 18:28:31 -0600
+Date: Sat, 17 Aug 1996 18:28:31 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180028.SAA09397@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AD1_RS    Active     Sat Aug 17 18:28:30 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 19:31 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id TAA09428; Sat, 17 Aug 1996 19:31:52 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id TAA09408; Sat, 17 Aug 1996 19:31:41 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id TAA10056; Sat, 17 Aug 1996 19:31:26 -0600
+Date: Sat, 17 Aug 1996 19:31:26 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180131.TAA10056@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AR1_RS    Suspect     Sat Aug 17 19:31:15 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 19:34 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id TAA09441; Sat, 17 Aug 1996 19:34:03 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id TAA09413; Sat, 17 Aug 1996 19:33:52 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id TAA10065; Sat, 17 Aug 1996 19:33:37 -0600
+Date: Sat, 17 Aug 1996 19:33:37 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180133.TAA10065@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AR1_RS    Active     Sat Aug 17 19:33:35 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 20:03 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id UAA09617; Sat, 17 Aug 1996 20:03:35 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id UAA09509; Sat, 17 Aug 1996 20:03:24 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id UAA10379; Sat, 17 Aug 1996 20:03:09 -0600
+Date: Sat, 17 Aug 1996 20:03:09 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180203.UAA10379@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 77
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    DGTP_RS    Suspect     Sat Aug 17 20:03:04 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 20:05 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id UAA09625; Sat, 17 Aug 1996 20:05:34 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id UAA09515; Sat, 17 Aug 1996 20:05:24 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id UAA10416; Sat, 17 Aug 1996 20:05:08 -0600
+Date: Sat, 17 Aug 1996 20:05:08 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180205.UAA10416@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    DGTP_RS    Active     Sat Aug 17 20:05:07 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 22:39 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id WAA10503; Sat, 17 Aug 1996 22:39:46 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id WAA10204; Sat, 17 Aug 1996 22:39:34 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id WAA12288; Sat, 17 Aug 1996 22:39:17 -0600
+Date: Sat, 17 Aug 1996 22:39:17 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180439.WAA12288@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BB1_RS    Suspect     Sat Aug 17 22:39:08 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 22:42 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id WAA10516; Sat, 17 Aug 1996 22:42:02 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id WAA10216; Sat, 17 Aug 1996 22:41:47 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id WAA12340; Sat, 17 Aug 1996 22:41:30 -0600
+Date: Sat, 17 Aug 1996 22:41:30 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180441.WAA12340@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BB1_RS    Active     Sat Aug 17 22:41:29 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 22:58 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id WAA10628; Sat, 17 Aug 1996 22:58:47 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id WAA10280; Sat, 17 Aug 1996 22:58:35 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id WAA12441; Sat, 17 Aug 1996 22:58:18 -0600
+Date: Sat, 17 Aug 1996 22:58:18 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180458.WAA12441@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BD1_RS    Suspect     Sat Aug 17 22:58:11 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 23:01 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA10677; Sat, 17 Aug 1996 23:01:00 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id XAA10286; Sat, 17 Aug 1996 23:00:48 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA12556; Sat, 17 Aug 1996 23:00:32 -0600
+Date: Sat, 17 Aug 1996 23:00:32 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180500.XAA12556@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    BD1_RS    Active     Sat Aug 17 23:00:30 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 23:03 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA10694; Sat, 17 Aug 1996 23:03:16 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id XAA10292; Sat, 17 Aug 1996 23:03:04 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA12585; Sat, 17 Aug 1996 23:02:49 -0600
+Date: Sat, 17 Aug 1996 23:02:49 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180502.XAA12585@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AD1_RS    Suspect     Sat Aug 17 23:02:43 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 23:05 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA10703; Sat, 17 Aug 1996 23:05:33 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id XAA10297; Sat, 17 Aug 1996 23:05:21 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA12624; Sat, 17 Aug 1996 23:05:06 -0600
+Date: Sat, 17 Aug 1996 23:05:06 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180505.XAA12624@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AD1_RS    Active     Sat Aug 17 23:05:04 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 23:29 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA10807; Sat, 17 Aug 1996 23:29:38 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id XAA10338; Sat, 17 Aug 1996 23:29:23 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA12809; Sat, 17 Aug 1996 23:29:07 -0600
+Date: Sat, 17 Aug 1996 23:29:07 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180529.XAA12809@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 76
+X-Mozilla-Status: 0001
+
+    OPS RSM reports
+
+    AE1_RS    Suspect     Sat Aug 17 23:28:55 MDT 1996
+
+From oper@den-mon1.tcinc.com Sat Aug 17 23:31 MDT 1996
+Return-Path: <Chomic.Ken@tcinc.com>
+Received: from aitsun87.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA07748; Sat, 17 Aug 1996 14:21:04 -0600
+Received: from peacock.tcinc.com by aitsun87.tcinc.com (SMI-8.6/SMI-SVR4)
+	id OAA19354; Sat, 17 Aug 1996 14:20:50 -0600
+Received: from crystal.tcinc.com (crystal [165.137.245.203]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id OAA08055 for <sms@aitsun87.tcinc.com>; Sat, 17 Aug 1996 14:20:45 -0600 (MDT)
+  17 Aug 1996 14:08:25 -0600
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+  <0481A321626B9006*/c=us/admd=attmail/prmd=tci/o=mailhub/ou=msmaildos/s=Chomic/g=Ken/@MHS>
+X400-Received: by /c=us/admd=attmail/prmd=tci/; converted ( IA5-Text);  Relayed; 
+  17 Aug 1996 14:08:25 -0600
+X400-Received: by mta tciMTA in /c=us/admd=attmail/prmd=tci/; converted (
+   IA5-Text);  Relayed; 17 Aug 1996 14:08:25 -0600
+X400-MTS-Identifier: [/c=us/admd=attmail/prmd=tci/; 0481A321626B9006-tciMTA]
+Content-Identifier: 0481A321626B9006
+Content-Return: Allowed
+X400-Content-Type: P2-1988 ( 22 )
+Conversion: Allowed
+Original-Encoded-Information-Types: ( IA5-Text); 
+Priority: normal
+J¨ÿô
+Return-Path: <oper@den-mon1.tcinc.com>
+Received: from peacock.tcinc.com by elmer.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA10827; Sat, 17 Aug 1996 23:31:47 -0600
+Received: from den-mon1.tcinc.com (den-mon1 [205.148.158.59]) by peacock.tcinc.com (8.7.1/8.7.1) with SMTP id XAA10350; Sat, 17 Aug 1996 23:31:35 -0600 (MDT)
+Received: by den-mon1.tcinc.com (SMI-8.6/SMI-SVR4)
+	id XAA12879; Sat, 17 Aug 1996 23:31:20 -0600
+Date: Sat, 17 Aug 1996 23:31:20 -0600
+From: oper@den-mon1.tcinc.com (Summit Operator)
+Message-Id: <199608180531.XAA12879@den-mon1.tcinc.com>
+To: evans.brett@tcinc.com, sms-oper@tcinc.com
+Subject: Prod RSM Mail
+Content-Type: text
+Content-Length: 75
+X-Mozilla-Status: 0000
+
+    OPS RSM reports
+
+    AE1_RS    Active     Sat Aug 17 23:31:18 MDT 1996
+
+

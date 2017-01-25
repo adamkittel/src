@@ -1,0 +1,114 @@
+#!/bin/bash
+#
+source host
+source files
+
+# set the prompt
+PS3='Select or Enter to continue> '
+
+# fun color stuff. default is white fg and black bg
+bold='\033[1m'
+unbold='\033[0m'
+black='\E[30;40m'	##
+red='\E[31;40m'		## error
+green='\E[32;40m'	## question / w/bold succesful return
+yellow='\E[33;40m'	## infomation 
+blue='\E[34;40m'	## sub header
+magenta='\E[35;40m'	##
+cyan='\E[36;40m'	## header
+white='\E[37;40m' 	## normal text
+
+alias reset_txt="tput sgr0"
+
+function cls {
+	echo -e $unbold$white
+	clear
+	printf "${bold}${cyan}VMware vMA/RCLI ESX Administration Helper${unbold}${white}\n\n"
+}
+
+function test_server_user_pw {
+	cls
+	printf "${yellow}Testing server $VI_SERVER, username $VI_USERNAME and password${white}\n"
+	/usr/bin/vicfg-hostops --server $VI_SERVER --username $VI_USERNAME --password $VI_PASSWORD --operation info 2>&1
+	if [ $? -eq 0 ]; then
+		printf "${bold}${green}Test succeeded${unbold}${white}\n"
+	else
+		printf "${bold}${red}Test command failed.${unbold}${white}\n "
+	fi
+}
+
+function set_server {
+	cls
+	printf "${yellow}Enter the ESX host name or IP to perform operations on:${white} "
+	read VI_SERVER
+}
+
+function set_user_passwd {
+	printf "${yellow}Enter the userid for issuing commands:${white} "
+	read VI_USERNAME
+	stty -echo
+	printf "${yellow}Enter password:${white} "
+	read VI_PASSWORD
+	stty echo
+	printf "\n\n"
+	printf "${yellow}Server is set to ${white}$VI_SERVER\n${yellow}User is set to ${white}$VI_USERNAME\n"
+}
+
+function set_dc_cl {
+	printf "${yellow}Set name for datacenter or cluster? [dc/cl${white}] "
+	read DC_CL
+	if [ $DC_CL = 'dc' ]; then
+		printf "${yellow}Enter datacenter name:${white} "
+		read DATACENTER
+		COM_OPS="$COM_OPS --datacenter $DC_CL"
+	elif [ $DC_CL = 'cl']; then
+		printf "${yellow}Enter cluster name:${white} "
+		read CLUSTER
+		COM_OPS="$COM_OPS --cluster $DC_CL"
+	fi
+}
+
+## MAIN
+function main {
+cls
+
+select CASE in "Set ESX server and username for this session" "Set Cluster or Datacenter name for this session" "Test connectivity to ESX server" "Managing Hosts" "Managing Files" "Managing Storage" "Managing Users" "Managing VM's" "Managing vSphere Networking" "Quit"
+	do
+		case $CASE in
+			"Set ESX server and username for this session") 
+	   			set_server
+	   			set_user_passwd
+				COM_OPS=" --server $VI_SERVER --username $VI_USERNAME --password $VI_PASSWORD";;
+			"Set Cluster or Datacenter name for this session")
+				set_dc_cl;;
+			"Test connectivity to ESX server") 
+	   			test_server_user_pw;;
+			"Managing Hosts") 
+				host_menu;;
+			"Managing Files") 
+				file_menu;;
+			"Managing Storage") 
+				storage;;
+			"Managing Users") 
+				users;;
+			"Managing VM's") 
+				vms;;
+			"Managing vSphere Networking") 
+				network;;
+			"Quit") 
+				exit;;
+        		*) 
+				main;; 
+		esac
+	done
+}
+
+
+if [ -e $HOME/.esxadmrc ]; then
+	printf "Using $HOME/.esxadmrc to set variables"
+	source $HOME/.esxadmrc
+	COM_OPS=" --server $VI_SERVER --username $VI_USERNAME --password $VI_PASSWORD"
+fi
+
+main
+

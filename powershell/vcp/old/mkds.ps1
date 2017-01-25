@@ -1,0 +1,10 @@
+new-datastore -vmhost 172.26.201.51 -name 5tb00001 -path naa.6f47acc1000000007238677500000026 -filesystemversion 5
+new-datastore -vmhost 172.26.201.51 -name 5tb00002 -path naa.6f47acc1000000007238677500000027 -filesystemversion 5
+new-datastore -vmhost 172.26.201.51 -name 5tb00003 -path naa.6f47acc1000000007238677500000028 -filesystemversion 5
+new-datastore -vmhost 172.26.201.51 -name 5tb00004 -path naa.6f47acc100000000723867750000001f -filesystemversion 5
+new-datastore -vmhost 172.26.201.51 -name 5tb00005 -path naa.6f47acc1000000007238677500000020 -filesystemversion 5
+new-datastore -vmhost 172.26.201.51 -name 5tb00006 -path naa.6f47acc1000000007238677500000021 -filesystemversion 5
+new-datastore -vmhost 172.26.201.51 -name 5tb00007 -path naa.6f47acc1000000007238677500000022 -filesystemversion 5
+new-datastore -vmhost 172.26.201.51 -name 5tb00008 -path naa.6f47acc1000000007238677500000023 -filesystemversion 5
+new-datastore -vmhost 172.26.201.51 -name 5tb00009 -path naa.6f47acc1000000007238677500000024 -filesystemversion 5
+new-datastore -vmhost 172.26.201.51 -name 5tb00010 -path naa.6f47acc1000000007238677500000025 -filesystemversion 5

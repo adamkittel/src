@@ -1,0 +1,27 @@
+#! /bin/ksh
+#
+PATH=${PATH}:/sa/bin:/opt/sa/bin:/usr/local/bin:
+cd /var/log
+for LOG in *.log; do
+	if test -s $LOG
+	then
+		test -f $LOG.6.gz && /usr/bin/mv $LOG.6.gz  $LOG.7.gz
+		test -f $LOG.5.gz && /usr/bin/mv $LOG.5.gz  $LOG.6.gz
+		test -f $LOG.4.gz && /usr/bin/mv $LOG.4.gz  $LOG.5.gz
+		test -f $LOG.3.gz && /usr/bin/mv $LOG.3.gz  $LOG.4.gz
+		test -f $LOG.2.gz && /usr/bin/mv $LOG.2.gz  $LOG.3.gz
+		test -f $LOG.1.gz && /usr/bin/mv $LOG.1.gz  $LOG.2.gz
+		test -f $LOG.0.gz && /usr/bin/mv $LOG.0.gz  $LOG.1.gz
+		/usr/bin/mv $LOG    $LOG.0
+		gzip $LOG.0
+		/usr/bin/cp /dev/null $LOG
+		#/usr/bin/chmod 664    $LOG
+	fi
+done
+#
+/usr/bin/chmod 660 epage*
+/usr/bin/chown root epage*
+/usr/bin/chgrp sys epage*
+#
+sleep 40
+kill -HUP `cat /etc/syslog.pid`

@@ -1,0 +1,9 @@
+#!/bin/ksh
+
+PIDS=`ps -eaf | grep $LOGNAME | grep $1 | awk '{print $2}'`
+
+for I in $PIDS
+ do
+	kill -kill $I
+	print "killing $I"
+done

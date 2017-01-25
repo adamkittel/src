@@ -1,0 +1,24 @@
+#
+#   PLAY module for RASSNAP Function 
+#
+#  CREATED:		04/2004
+#  LAST UPDATE:		11/2004
+#
+#-------------------------------------------------------------------------
+
+Splay()
+{
+#set -x
+
+debugL
+
+print "	Playing $P_ID \n" ;
+`$RASAGENT $DPARAM -r -M -a -T$P_ID` # #2>&1 | >> $LOG` ;
+
+} #--------------------------- PLAY -----------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

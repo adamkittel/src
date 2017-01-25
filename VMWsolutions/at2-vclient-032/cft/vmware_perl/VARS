@@ -1,0 +1,12 @@
+export CLUSTER_MVIP=192.168.139.165
+export CLUSTER_ADMIN=admin
+export VI_PASSWORD=solidfire
+export VI_SERVER=192.168.129.184
+export VI_USERNAME=sqd
+export VCENTER=192.168.129.184
+export CLUSTER_ADMIN_PASS=admin
+export CLUSTER_ACCOUNT=sqd
+export INIT_SECRET=solidfire123
+export VOLGRP=sqdVAG
+export VMHOST=192.168.129.126
+

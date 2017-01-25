@@ -1,0 +1,35 @@
+{
+    "__comments":
+    [
+        "Sample template to deploy a vCenter Server with an embedded Platform Services Controller."
+    ],
+
+    "deployment":
+    {
+        "esx.hostname":"192.168.133.126",
+        "esx.datastore":"HostIntInfra",
+        "esx.username":"root",
+        "esx.password":"solidfire",
+        "deployment.option":"tiny",
+        "deployment.network":"VM Network",
+        "appliance.name":"embedded-node",
+        "appliance.thin.disk.mode":true
+    },
+
+    "vcsa":
+    {
+
+        "system":
+        {
+            "root.password":"solidF!r3",
+            "ssh.enable":true
+        },
+
+        "sso":
+        {
+            "password":"solidF!r3",
+            "domain-name":"solidfire.eng",
+            "site-name":"Default-First-Site"
+        }
+    }
+}

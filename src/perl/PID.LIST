@@ -1,0 +1,10 @@
+    oper 29655 29617  0 22:38:20 pts/0    0:00 tail -f /var/log/backup/full_backup.29 /var/log/backup/full_backup_remote.29 /v
+
+
+
+
+
+
+
+
+

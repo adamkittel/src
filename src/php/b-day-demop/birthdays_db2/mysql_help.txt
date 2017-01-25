@@ -1,0 +1,42 @@
+PHP/MYSQL - Birthdays Database
+The files contained in this collection make up an integrated database management system.  Included are a simple interface, and scripts for adding, editing, displaying and deleting records.  There are 2 utility files for testing your db connection and creating a table.
+
+The scripts can be easily modified to create your own unique db management tool.
+
+Utility Files
+test_db.php (*)
+birthdays_create_table.php (*)
+
+Management Files
+birthdays_dbase_interface.php
+Add Records (2 scripts)
+birthdays_insert_form.php
+birthdays_insert_record.php (*)
+Display records (1 script)
+birthdays_display_records.php (*)
+Update Records (3 scripts)
+birthdays_update_form.php (*)
+birthdays_change_form.php (*)
+birthdays_change_record.php (*)
+Delete Records (2 scripts)
+birthdays_delete_form.php (*)
+birthdays_delete_record.php (*)
+(* Scripts marked with (*) will require the change to the $link and $db lines ( See below ) for connecting to the database.  Do not change them until you get a successful connection using the test_db.php script. Be sure to CHMOD all scripts to 755 after uploading. ) 
+
+Read Instructions:
+
+1.. Create an MySqL database using your web host's control panel.  Record the servername, port number if required,  (provided by your host ), name of database, username and password.
+2.. Change the line below on the test_db.php script to the appropriate settings supplied by your web host.
+      $link = mysql_connect('servername.com: 3306', 'username', 'password'); (remove :3306 if not required)
+3.. Upload, CHMOD to 755 and run the test_db.php script until you get a 'successful connection' message.  
+4.. Change the birthdays_create_table.php script to reflect the settings from the test_db.php script.
+       Change this line to reflect the name of your database.  $db="nameof_database";
+5.. Upload, CHMOD to 755 and create the table 'birthdays' by running birthdays_create_table.php
+6..  Make the $link and $db changes on the rest of the scripts, upload, CHMOD to 755 and run birthdays_dbase_interface.php
+.
+There are mutliple scripts for adding,updating and deleting records.  In each instance the script that contains the word '_form' is executed first.  
+
+
+
+
+

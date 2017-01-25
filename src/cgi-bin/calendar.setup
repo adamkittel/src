@@ -1,0 +1,88 @@
+  $lib = "./Library";
+  $this_script_url = "http://summitraksec/cgi-bin/cgiwrap/~smmtoprd/bin/akittel/Calendar_3.0/calendar.cgi";
+  $the_current_year = "1996";
+  $greatest_year = "2011";
+  $database_file = "./Databases/$calendar_type/calendar.events";
+  $counter_file = "./Databases/$calendar_type/calendar.counter";
+  $temp_file = "./Calendar_session_files/$calendar_type/calendar_temp.file";
+  $lock_file = "./Calendar_session_files/$calendar_type/calendar_lock.file";
+
+  $auth_lib = "$lib";
+  $auth_server =                  "on";
+  $auth_cgi =                     "off";
+  $auth_user_file =    "./Databases/$calendar_type/calendar.users";
+  $auth_alt_user_file =           "";
+  $auth_default_group =           "smmt-oper";
+  $auth_add_register =            "on";
+  $auth_email_register =          "off";
+  $auth_admin_from_address =      "smmt-oper\@tci.com";
+  $auth_admin_email_address =     "smmt-oper\@tci.com";
+  $auth_session_length = 365;
+  $auth_session_dir = "./Calendar_session_files";
+  $auth_register_message = "Thanks, you may now logon with your new username
+        and password.";
+
+  $auth_allow_register =          "on";
+  $auth_allow_search =            "off";
+  $auth_generate_password =       "off";
+  $auth_check_duplicates =        "on";
+  $auth_password_message =
+        "Thanks for applying to our site, your password is";
+  @auth_extra_fields = ("auth_first_name",
+                      "auth_last_name",
+                      "auth_email");
+  @auth_extra_desc = ("First Name",
+                    "Last Name",
+                    "Email");
+
+  @day_names = ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+                "Friday", "Saturday");
+
+  @month_names = ("January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November",
+                  "December");
+
+  %MONTH_ARRAY = ('January', '1',       'February', '2',
+                  'March', '3',         'April', '4',
+                  'May', '5',           'June', '6',
+                  'July', '7',          'August', '8',
+                  'September', '9',     'October', '10',
+                  'November', '11',     'December', '12');
+
+  %TIME = ('01:00', '1 AM',     '02:00', '2 AM',        '03:00', '3 AM',
+           '04:00', '4 AM',     '05:00', '5 AM',        '06:00', '6 AM',
+           '07:00', '7 AM',     '08:00', '8 AM',        '09:00', '9 AM',
+           '10:00', '10 AM',    '11:00', '11 AM',       '12:00', '12 Noon',
+           '13:00', '1 PM',     '14:00', '2 PM',        '15:00', '3 PM',
+           '16:00', '4 PM',     '17:00', '5 PM',        '18:00', '6 PM',
+           '19:00', '7 PM',     '20:00', '8 PM',        '21:00', '9 PM',
+           '22:00', '10 PM',    '23:00', '11 PM',       '24:00',
+           '12 Midnight');
+
+  @time_values = ("01:00", "02:00", "03:00", "04:00", "05:00", "06:00",
+                  "07:00", "08:00", "09:00", "10:00", "11:00", "12:00",
+                  "13:00", "14:00", "15:00", "16:00", "17:00", "18:00",
+                  "19:00", "20:00", "21:00", "22:00", "23:00", "24:00");
+
+  %FIELD_ARRAY = ('Day', 'day',
+                  'Month', 'month',
+                  'Year', 'year',
+                  'Username', 'username',
+                  'First Name', 'first_name',
+                  'Last Name', 'last_name',
+                  'Email Address', 'email',
+                  'Subject', 'subject',
+                  'Event Time', 'time',
+                  'Body', 'body',
+                  'Database Id Number', 'databse_id_number');
+
+  @field_names = ("Day", "Month", "Year", "Username", "First Name",
+                  "Last Name", "Email Address", "Subject", "Event Time",
+                  "Body", "Database Id Number");
+
+  @field_values = ("day", "month", "year", "username", "first_name",
+                   "last_name", "email", "subject", "time", "body",
+                   "databse_id_number");
+
+  $field_num_time = "8";
+

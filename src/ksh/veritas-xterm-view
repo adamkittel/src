@@ -1,0 +1,19 @@
+#!/bin/ksh
+#view production backups in xterms
+#
+
+print "enter the day of the month"
+read DAY
+LIST='adr1 adr2 bill1 bill2 cst1 cst2 dds1 dds6 disp1 disp2 eq1 eq2 naru2 ndb2 oars1 xref1 xref2 help1 mon1'
+  
+for SYS in `echo $LIST`
+do
+  xterm -T den-$SYS-OS -geometry 80x5 -fn 6x10 -e rsh -l oper den-$SYS tail -f /var/log/backup/ufsbackup."$DAY"V &
+  sleep 2
+done
+
+
+
+
+
+

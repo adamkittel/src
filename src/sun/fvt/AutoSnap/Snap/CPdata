@@ -1,0 +1,122 @@
+#
+#   CPDATA module for RASSNAP Function 
+#
+#  CREATED:		04/2004
+#  LAST UPDATE:		11/2004
+#
+#-------------------------------------------------------------------------
+
+CPdata()
+{
+#set -x
+
+print "\n\n\n	The DATA directory repository is:\n";
+     print "	$CPLOCAL";
+
+print "	\n	-- Do you want to copy this DATA directory (Y/N) \c";
+input ; CP=$INPUT
+
+  if [[ "$CP" = [Yy] ]]
+    then
+
+     CP_ID=DATA.`date '+%m-%d-%y.%H:%M:%S'`
+     print "\n        DATA_ID is: $CP_ID\n"
+     
+     print "	The following information is required:" ;
+     
+     if [ ! $EADDR ]
+        then
+        print "\n	Enter You Email address (first.last): \c" ;
+        input ; EADDR=$INPUT
+     fi
+     
+     print "\n	Enter a Description: \c" ; 
+     input ; SYNOP=$INPUT
+              
+     print "\n	Enter Project: \c" ;
+     input ; PROJ="$INPUT"
+          
+     print "\n	Enter Testcast Number (leave Blank if none): \c" ; read TCASE
+     print "\n	Enter BUGID (leave Blank if none): \c" ; read BID
+
+     SVER=`pkginfo -l SUNWstade | grep PSTAMP | cut -c 14-23` >> $LOG #2>&1
+     
+     print "$CP_ID | $PROJ | $BID | $TCASE | $SVER | $SYNOP | $CPLOCAL | $EADDR " >> $CPINDEX ;
+     
+     
+CPDUMP=$CPLOCAL/$CP_ID/
+CPFILE=$CPDUMP/DATA.txt		# DATA file to be emailed
+/bin/mkdir -p $CPDUMP
+      
+##clear
+print " --=-=-=-=-=-=-=-=-=-=-=-= DATA SUMMARY ==-=-=-=-=-=-=-=-=-=-=-=--" >> $CPFILE ;
+print " FVT Test         :  "  $EADDR " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " DATA ID          :  "  $CP_ID " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " Description      :  "  $SYNOP " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " DATA Directory   :  "  $CPLOCAL " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " UE Test Case     :  "  $TCASE " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " Bug ID           :  "  $BID " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " Storade Version  :  "  $SVER " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " Storade Patch    :  "  `/usr/bin/showrev -p | grep 11765 | cut -c 8-17` " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " Operating System :  " `uname -a | cut -c 1-5,14-48` " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " PERL Version     :  "  `$RBIN/perl -v | grep "This is perl" | cut -c 8-60` " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print "\n Site Info        :\n  "  `$RAS_ADMIN site_info` " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " \n Hosts List    :\n"  `$RAS_ADMIN host_list` " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " \n Hosts Detail  :\n"  `$RAS_ADMIN host_detail` " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " \n Devices       :\n"  `$RAS_ADMIN device_list` " \n -=-=-=-=-=-=-=-=-=" >> $CPFILE ;
+print " \n FVT FILES     :\n"  `ls $CPDUMP` >> $CPFILE ;
+
+print "\n --=-=-=-=-=-=-=-=-=-=-=-= DATA SUMMARY ==-=-=-=-=-=-=-=-=-=-=-=--\n" >> $CPFILE ;
+
+#set -x
+
+####  tar / compress / mv /var/opt/SUNWstade/DATA  to $CPLOCAL
+/bin/cp -rf $D_DIR $CPDUMP
+ 
+(cd $CPDUMP ; `tar -cf DATA.tar DATA ; compress DATA.tar` ; /bin/rm -rf DATA)
+
+chmod 775 $CPDUMP
+/bin/cp -rf $LOG $CPDUMP
+
+/usr/bin/mailx -r RAS_SNAP -s "`hostname` DATA Copied: $CP_ID" $FVT_MAIL$EMAILEXT < $CPFILE
+
+#/usr/bin/mailx -r RAS_SNAP -s "`hostname` DATA Copied: $CP_ID" art.larkin@sun.com < $CPFILE
+
+print "\n\n	The DATA directory has been copied to:
+	$CPLOCAL/$CP_ID\n\n" ;
+
+  else
+      print "\n\n	DATA not copied. \n\n" ;
+      FVTtype
+
+fi
+
+
+##-----  SUB MENU: auto_ras_snap
+
+   PS3="
+        
+   	1What would you like to do next? "
+        select NEXT in "Go to Ras Snap Menu" "Go to Main Menu"
+
+   do
+      case $NEXT in
+   
+      "Go to Ras Snap Menu")
+         clear ; FVTtype ;;
+
+      "Go to Main Menu")
+         clear ; Fquit ;;
+
+      *)
+         print " !! You Didn't enter a correct choice.  Please retry" ;;
+   
+      esac
+   done   
+} #--------------------------- CPDATA ----------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

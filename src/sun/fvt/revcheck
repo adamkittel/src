@@ -1,0 +1,68 @@
+#!/usr/bin/ksh
+# THIS CODE (FROM HERE ON REFERED ONLY TO AS CRAP) IS LICENSED UNDER THE
+# STRICT AND TYRANICAL BAITSHOP LICENSE.  PERPETUAL RIGHTS AND
+# OWNERSHIP ARE CONVEYED TO USER BY AN UNCONDITIONAL BEER CLAUSE
+# (U BUY ADAM OR TO A LESSER EXTENT MIKE A BEER AND U BOUGHT THE CODE)
+#
+# ALWAYS FEEL FREE TO:
+# DISRTIBUTE FREELY
+# CHANGE, DELETE AND/OR LAUGH OUT LOUD AT THIS CODE
+# CALL IT YOUR OWN (IF YOU CAN STAND THE EMBARASSMENT)
+# DON'T CRY ABOUT MISSING COMMENTS. (COMMENTS ARE FOR SISSIES)
+#
+# NEVER EVER UNDER ANY CIRCUMSTANCE DO THE FOLLOWING;
+#       ADD USFULL COMMENTS
+#        MAKE MONEY FROM THIS CODE
+#        INCLUDE IT IN YOUR 1 ON 1 REVIEW (THIS MEANS U WAGNER)
+#        BRAG ABOUT IT OVER A SUSHI LUNCH (mcdonald's is ok)
+#        AND MOST OF ALL - EXPECT IT TO WORK!
+
+
+MATRIX="/tmp/config-matrix"
+LYNX="/net/zila/export/dsqa/tools/bin/lynx -dump"
+SUNSOLVE="http://sunsolve.central/search/advsearch.do?collection=PATCH&collection=PATCHPRTS&type=collections&max=10&queryKey1=" 
+
+
+list_patch()
+{
+	
+	#PATCH=$LINE 
+	#ROOTPATCH=`echo $LINE | grep -v xxxxxx-xx|cut -c 1-6`
+	grep $LINE /tmp/revcheck.tmp > /dev/null 2>&1 
+	if [[ $? == 1 ]]
+	then
+		echo $LINE >> /tmp/revcheck.tmp
+	fi
+}
+
+show_patch()
+{
+	for PATCH in `cat /tmp/revcheck.tmp`
+	do
+		echo "Processing $PATCH "
+		ROOTPATCH=`echo $PATCH | grep -v xxxxxx-xx|cut -c 1-6`
+		$LYNX "$SUNSOLVE"$ROOTPATCH | grep Document
+		echo
+	done	
+}
+
+if (($# < 1))
+then
+        echo "usage: revcheck [hostname]\n"
+        exit 0
+fi
+
+touch /tmp/revcheck.tmp
+rcp $1:/opt/SUNWstade/System/Matrix/config-matrix /tmp
+
+for LINE in `cat $MATRIX`
+do
+if [[ $LINE == 1?????-?? ]] 
+	then 
+		list_patch
+fi
+done
+
+show_patch 
+
+rm -f /tmp/config-matrix /tmp/revcheck.tmp

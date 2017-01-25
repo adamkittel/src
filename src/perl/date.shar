@@ -1,0 +1,343 @@
+#/bin/sh
+#In a recent posting someone was looking for perl routines that
+#manipulate dates.  Here's a perl library that implements the standard
+#jday and jdate functions (as described in Collected Algorithms of
+#the ACM).  There are also routines which return the month name and
+#weekday name given a month number of weekday number.  And there are routines
+#that return the Julian day number for today, tomorrow and yesterday.
+#
+#As a bonus prize, you also get an RPN-style date calculator.  Similar to bc,
+#it also allows you to push perl expressions onto the stack -- thanks to
+#the magic of `eval'.  Moreover, your expression can contain dates (like
+#Jan 1, 1991) or functions like `today', `tomorrow' or `yesterday'.
+#
+#Just cut everything below the cut line and feed it to sh.  You'll get
+#date.pl (the subroutine library) and dtc (the calculator).  You'll
+#probably want to edit the first line of dtc.
+#
+#I would have like to have included routines that scan for any date format
+#and extract it, but I haven't gotten around to it yet.  Consequently, dtc
+#supports only a few date formats.  Sorry, but what's here is useful enough.
+#
+#Disclaimer:  no warranty is expressed or implied
+#
+#Right to copy:  you can do anything you want with this (but if you make
+#                lots of money from it, send me some)
+#
+#------------------------ cut line ------------------------------------
+#/bin/sh
+# This is a shell archive, meaning:
+# 1. Remove everything above the #!/bin/sh line.
+# 2. Save the resulting text in a file.
+# 3. Execute the file with /bin/sh (not csh) to create the files:
+#	date.pl
+#	dtc
+# This archive created: Wed Feb  6 23:45:04 1991
+# By:	Gary Puckering ()
+export PATH; PATH=/bin:$PATH
+if test -f 'date.pl'
+then
+	echo shar: over-writing existing file "'date.pl'"
+fi
+cat << \SHAR_EOF > 'date.pl'
+package date;
+
+# The following defines the first day that the Gregorian calendar was used
+# in the British Empire (Sep 14, 1752).  The previous day was Sep 2, 1752
+# by the Julian Calendar.  The year began at March 25th before this date.
+
+$brit_jd = 2361222;
+
+sub main'jdate
+# Usage:  ($month,$day,$year,$weekday) = &jdate($julian_day)
+{
+	local($jd) = @_;
+	local($jdate_tmp);
+	local($m,$d,$y,$wkday);
+
+	warn("warning:  pre-dates British use of Gregorian calendar\n")
+		if ($jd < $brit_jd);
+
+	$wkday = ($jd + 1) % 7;       # calculate weekday (0=Sun,6=Sat)
+	$jdate_tmp = $jd - 1721119;
+	$y = int((4 * $jdate_tmp - 1)/146097);
+	$jdate_tmp = 4 * $jdate_tmp - 1 - 146097 * $y;
+	$d = int($jdate_tmp/4);
+	$jdate_tmp = int((4 * $d + 3)/1461);
+	$d = 4 * $d + 3 - 1461 * $jdate_tmp;
+	$d = int(($d + 4)/4);
+	$m = int((5 * $d - 3)/153);
+	$d = 5 * $d - 3 - 153 * $m;
+	$d = int(($d + 5) / 5);
+	$y = 100 * $y + $jdate_tmp;
+	if($m < 10) {
+		$m += 3;
+	} else {
+		$m -= 9;
+		++$y;
+	}
+	($m, $d, $y, $wkday);
+}
+
+
+sub main'jday
+# Usage:  $julian_day = &jday($month,$day,$year)
+{
+	local($m,$d,$y) = @_;
+	local($ya,$c);
+
+	$y = (localtime(time))[5] + 1900  if ($y eq '');
+
+	if ($m > 2) {
+		$m -= 3;
+	} else {
+		$m += 9;
+		--$y;
+	}
+	$c = int($y/100);
+	$ya = $y - (100 * $c);
+	$jd =  int((146097 * $c) / 4) +
+		   int((1461 * $ya) / 4) +
+		   int((153 * $m + 2) / 5) +
+		   $d + 1721119;
+	warn("warning:  pre-dates British use of Gregorian calendar\n")
+		if ($jd < $brit_jd);
+	$jd;
+}
+
+sub main'is_jday
+{
+# Usage:  if (&is_jday($number)) { print "yep - looks like a jday"; }
+	local($is_jday) = 0;
+	$is_jday = 1 if ($_[0] > 1721119);
+}
+
+sub main'monthname
+# Usage:  $month_name = &monthname($month_no)
+{
+	local($n,$m) = @_;
+	local(@names) = ('January','February','March','April','May','June',
+	                 'July','August','September','October','November',
+	                 'December');
+	if ($m ne '') {
+		substr($names[$n-1],0,$m);
+	} else {
+		$names[$n-1];
+	}
+}
+
+sub main'monthnum
+# Usage:  $month_number = &monthnum($month_name)
+{
+	local($name) = @_;
+	local(%names) = (
+		'JAN',1,'FEB',2,'MAR',3,'APR',4,'MAY',5,'JUN',6,'JUL',7,'AUG',8,
+		'SEP',9,'OCT',10,'NOV',11,'DEC',12);
+	$name =~ tr/a-z/A-Z/;
+	$name = substr($name,0,3);
+	$names{$name};
+}
+
+sub main'weekday
+# Usage:  $weekday_name = &weekday($weekday_number)
+{
+	local($wd) = @_;
+	("Sun","Mon","Tue","Wed","Thu","Fri","Sat")[$wd];
+}
+
+sub main'today
+# Usage:  $today_julian_day = &today()
+{
+	local(@today) = localtime(time);
+	local($d) = $today[3];
+	local($m) = $today[4];
+	local($y) = $today[5];
+	$m += 1;
+	$y += 1900;
+	&main'jday($m,$d,$y);
+}
+	
+sub main'yesterday
+# Usage:  $yesterday_julian_day = &yesterday()
+{
+	&main'today() - 1;
+}
+	
+sub main'tomorrow
+# Usage:  $tomorrow_julian_day = &tomorrow()
+{
+	&main'today() + 1;
+}
+	
+SHAR_EOF
+if test -f 'dtc'
+then
+	echo shar: over-writing existing file "'dtc'"
+fi
+cat << \SHAR_EOF > 'dtc'
+#/usr/local/bin/perl -I/home/garyp/perl
+
+require 'date.pl';
+
+$command = '';
+print "	Date Calculator version 1.0\n";
+print "	   (type `h' for help)\n";
+print "> ";
+
+while(<stdin>) {
+	($command) = /^\s*(\w+)\s*$/;
+	last if (index("quit",$command) == 0);
+	if (/^\s*(\d+)\s+(\d+)\s+(\d+)\s*$/) {			# quit
+		$j = &jday($1,$2,$3);
+		push(@stack,$j);
+		next;
+	}
+	elsif (/^\s*(\w+)\s+(\d+)(\s+(\d+)?)\s*$/) {	# mmm dd yy
+		# assumes this year if year is missing
+		$j = &jday(&monthnum($1),$2,$4);
+		push(@stack,$j);
+		next;
+	}
+	elsif (/^\s*([-]?\d+)\s*$/) {					# [-]n
+		push(@stack,$1);
+		next;
+	}
+	elsif (index("clear",$command)==0) {			# clear
+		@stack = ();
+		next;
+	}
+	elsif (index("duplicate",$command)==0) {		# duplicate
+		push(@stack,$stack[$#stack]);
+		next;
+	}
+	elsif (index("exchange",$command)==0 ||
+	       $command eq 'x') {						# exchange
+		$x = pop(@stack);
+		$y = pop(@stack);
+		push(@stack,$x);
+		push(@stack,$y);
+		next;
+	}
+	elsif (index("print",$command)==0) {			# print
+		do print($stack[$#stack]);
+		next;
+	}
+	elsif (index("today",$command)==0) {			# today
+		push(@stack,&today());
+		do print($stack[$#stack]);
+		next;
+	}
+	elsif (/^\s*[+]\s*$/) {							# add
+		$y = pop(@stack);
+		$x = pop(@stack);
+		if (&is_jday($x) && &is_jday($y)) {
+			print stderr "** cannot add two dates\n";
+			push(@stack,$x);
+			push(@stack,$y);
+			next;
+		}
+		$r = $x + $y;
+		push(@stack,$r);
+		do print($r);
+		next;
+	}
+	elsif (m:^\s*([\-*/%])\s*$:) {					# (-) (*) (/) and (%)
+		$y = pop(@stack);
+		$x = pop(@stack);
+		$r = eval "$x $+ $y";
+		warn "** evaluation error $@\n" if $@ ne "";
+		push(@stack,$r);
+		do print($r);
+		next;
+	}
+	elsif (index("Print",$command)==0) {				# dump
+		do dump();
+		next;
+	}
+	elsif (index("help",$command)==0) {					# help
+		print <<EOD ;
+Commands:
+
+	mmm dd		Push date for current year onto stack
+	mmm dd yyyy	Push date onto stack
+	n or -n		Push positive/negative constant or interval onto stack
+	+ - * / %	Add, subtract, multiply, divide, modulo
+	expr		Push result of Perl expression onto stack
+	<d>uplicate	Push a duplicate of the top value onto the stack
+	<c>lear		Clear stack
+	<p>rint		Print last value on stack
+	<P>rint		Print all stack values
+	<t>oday		Put today's date on the stack
+	e<x>change	Exchange top two values of stack
+	<q>uit		Exit the program
+
+Note:   expressions are scanned for embedded dates of the form `1991/Jan/2',
+        `Jan 1, 1991' or just `Jan 1'.  These dates are translated to Julian
+        Day numbers before the expression is evaluated.  Also, the tokens
+        `today', `tomorrow' and `yesterday' are replaced with their
+        respective Julian Day numbers.  If the expression does something
+        stupid with Julian Day numbers (like add them) you get silly
+        results.
+EOD
+		next;
+	}
+	else {
+		chop;
+		# replace yyyy/mmm/dd dates with Julian day number
+		  s|(\d{1,4})\W?(\w\w\w)\W?(\d\d?)|&jday(&monthnum($2),$3,$1)|ge;
+		# replace mmm dd yyyy dates with Julian day number
+		  s|(\w\w\w)[\W\s](\d\d?)[,]?[\W\s](\d{1,4})|&jday(&monthnum($1),$2,$3)|ge;
+		# replace mmm dd dates with Julian day number (for this year)
+		  s|(\w\w\w)[\W\s](\d\d?)|&jday(&monthnum($1),$2)|ge;
+		# replace 'today' with todays jday
+		  s|\b(today)\b|&today()|ge;
+		# replace 'tomorrow' with tomorrows jday
+		  s|\b(tomorrow)\b|&tomorrow()|ge;
+		# replace 'yesterday' with yesterdays jday
+		  s|\b(yesterday)\b|&yesterday()|ge;
+		print $_,"\n";
+		push(@stack,eval($_));
+		do print($stack[$#stack]);
+		next;
+	}
+#	else { warn "** invalid command - try \"help\"\n" unless ($_ eq "\n"); }
+} continue {
+	print "> ";
+	$command = "";
+}
+
+sub print #(value)
+{
+	if (&is_jday($_[0])) {
+		($m,$d,$y,$wd) = &jdate($_[0]);
+		$month = &monthname($m,3);
+		$wkday = &weekday($wd);
+		print "= $wkday $month $d, $y (JD = $_[0])\n";
+	} else {
+		if ($_[0] > 365 || $_[0] < -365) {
+			$years = int($_[0] / 365.25);
+			$days = $_[0] - int($years * 365.25);
+			print "= $_[0] days  ($years years, $days days)\n\n";
+		} else {
+			print "= $_[0] days\n\n";
+		}
+	}
+}
+
+sub dump
+{
+	for ($i = 0; $i <= $#stack; $i++) {
+		print "stack[",$i,"] ";
+		do print($stack[$i]);
+	}
+}
+SHAR_EOF
+chmod +x 'dtc'
+#	End of shell archive
+exit 0
+-- 
+Gary Puckering                             Cognos Incorporated
+  VOICE: (613) 738-1338 x6100              P.O. Box 9707
+  UUCP:  uunet!mitel!cunews!cognos!garyp   Ottawa, Ontario
+  INET:  garyp%cognos.uucp@uunet.uu.net    CANADA  K1G 3Z4
+

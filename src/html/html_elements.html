@@ -1,0 +1,5607 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+<HEAD>
+<TITLE>HTML Elements</TITLE>
+<LINK REV="made" TITLE="Michael J. Hannah" HREF="mailto:mjhanna@sandia.gov">
+<LINK REV="owns" TITLE="Michael J. Hannah" HREF="mailto:mjhanna@sandia.gov">
+<META NAME="REVIEW" CONTENT="01 Mar 1996">
+
+<!--
+Things yet to be done:
+ place the extension elements in the cross reference of all
+   the other elements which can contain or be contained
+ Math stuff not yet included
+  -->
+</HEAD>
+<BODY>
+<a href="http://www.sandia.gov/"><img src="http://www.sandia.gov/Common/snl_logo.gif" alt="Sandia National Laboratories"></a>
+<p>
+Return to <a href="html_ref.html">HTML Reference Manual</a> main document.
+<H1>HTML Elements List</H1>
+<p><code>http://www.sandia.gov/sci_compute/elements.html</code><br>
+<em>Last Modified: 7 December 1995</em>
+<H2>Index</H2>
+<p>
+<code><a href="#A">A</a></code>, 
+<code><a href="#ABBREV">ABBREV</a></code>, 
+<code><a href="#ACRONYM">ACRONYM</a></code>, 
+<code><a href="#ADDRESS">ADDRESS</a></code>, 
+<code><a href="#APP">APP</a></code>, 
+<code><a href="#APPLET">APPLET</a></code>, 
+<code><a href="#AREA">AREA</a></code>, 
+<code><a href="#AU">AU</a></code>, 
+<code><a href="#B">B</a></code>, 
+<code><a href="#BANNER">BANNER</a></code>, 
+<code><a href="#BASE">BASE</a></code>, 
+<code><a href="#BASEFONT">BASEFONT</a></code>, 
+<code><a href="#BDO">BDO</a></code>, 
+<code><a href="#BGSOUND">BGSOUND</a></code>, 
+<code><a href="#BIG">BIG</a></code>, 
+<code><a href="#BLINK">BLINK</a></code>, 
+<code><a href="#BLOCKQUOTE">BLOCKQUOTE</a></code>, 
+<code><a href="#BODY">BODY</a></code>, 
+<code><a href="#BQ">BQ</a></code>, 
+<code><a href="#BR">BR</a></code>, 
+<code><a href="#CAPTION">CAPTION</a></code>, 
+<code><a href="#CENTER">CENTER</a></code>, 
+<code><a href="#CITE">CITE</a></code>, 
+<code><a href="#CODE">CODE</a></code>, 
+<code><a href="#COL">COL</a></code>, 
+<code><a href="#COLGROUP">COLGROUP</a></code>, 
+<code><a href="#CREDIT">CREDIT</a></code>, 
+<code><a href="#DD">DD</a></code>, 
+<code><a href="#DEL">DEL</a></code>, 
+<code><a href="#DFN">DFN</a></code>, 
+<code><a href="#DIR">DIR</a></code>, 
+<code><a href="#DIV">DIV</a></code>, 
+<code><a href="#DL">DL</a></code>, 
+<code><a href="#DT">DT</a></code>, 
+<code><a href="#EM">EM</a></code>, 
+<code><a href="#EMBED">EMBED</a></code>, 
+<code><a href="#FN">FN</a></code>, 
+<code><a href="#FIG">FIG</a></code>, 
+<code><a href="#FONT">FONT</a></code>, 
+<code><a href="#FORM">FORM</a></code>, 
+<code><a href="#FRAME">FRAME</a></code>, 
+<code><a href="#FRAMESET">FRAMESET</a></code>, 
+<code><a href="#H1">H1</a></code>, 
+<code><a href="#H2">H2</a></code>, 
+<code><a href="#H3">H3</a></code>, 
+<code><a href="#H4">H4</a></code>, 
+<code><a href="#H5">H5</a></code>, 
+<code><a href="#H6">H6</a></code>, 
+<code><a href="#HEAD">HEAD</a></code>, 
+<code><a href="#HP">HP</a></code>, 
+<code><a href="#HR">HR</a></code>, 
+<code><a href="#HTML">HTML</a></code>, 
+<code><a href="#I">I</a></code>, 
+<code><a href="#IMG">IMG</a></code>, 
+<code><a href="#INPUT">INPUT</a></code>, 
+<code><a href="#INS">INS</a></code>, 
+<code><a href="#ISINDEX">ISINDEX</a></code>, 
+<code><a href="#KBD">KBD</a></code>, 
+<code><a href="#LANG">LANG</a></code>, 
+<code><a href="#LH">LH</a></code>, 
+<code><a href="#LI">LI</a></code>, 
+<code><a href="#LINK">LINK</a></code>, 
+<code><a href="#LISTING">LISTING</a></code>, 
+<code><a href="#MAP">MAP</a></code>, 
+<code><a href="#MARQUEE">MARQUEE</a></code>, 
+<code><a href="#MENU">MENU</a></code>, 
+<code><a href="#META">META</a></code>, 
+<code><a href="#NEXTID">NEXTID</a></code>, 
+<code><a href="#NOBR">NOBR</a></code>, 
+<code><a href="#NOEMBED">NOEMBED</a></code>, 
+<code><a href="#NOFRAMES">NOFRAMES</a></code>, 
+<code><a href="#NOTE">NOTE</a></code>, 
+<code><a href="#OL">OL</a></code>, 
+<code><a href="#OPTION">OPTION</a></code>, 
+<code><a href="#OVERLAY">OVERLAY</a></code>, 
+<code><a href="#P">P</a></code>, 
+<code><a href="#PARAM">PARAM</a></code>, 
+<code><a href="#PERSON">PERSON</a></code>, 
+<code><a href="#PLAINTEXT">PLAINTEXT</a></code>, 
+<code><a href="#PRE">PRE</a></code>, 
+<code><a href="#Q">Q</a></code>, 
+<code><a href="#S">S</a></code>, 
+<code><a href="#SAMP">SAMP</a></code>, 
+<code><a href="#SELECT">SELECT</a></code>, 
+<code><a href="#SMALL">SMALL</a></code>, 
+<code><a href="#SPAN">SPAN</a></code>, 
+<code><a href="#STRIKE">STRIKE</a></code>, 
+<code><a href="#STRONG">STRONG</a></code>, 
+<code><a href="#SUB">SUB</a></code>, 
+<code><a href="#SUP">SUP</a></code>, 
+<code><a href="#TAB">TAB</a></code>, 
+<code><a href="#TABLE">TABLE</a></code>, 
+<code><a href="#TBODY">TBODY</a></code>, 
+<code><a href="#TD">TD</a></code>, 
+<code><a href="#TEXTAREA">TEXTAREA</a></code>, 
+<code><a href="#TFOOT">TFOOT</a></code>, 
+<code><a href="#TH">TH</a></code>, 
+<code><a href="#THEAD">THEAD</a></code>, 
+<code><a href="#TITLE">TITLE</a></code>, 
+<code><a href="#TR">TR</a></code>, 
+<code><a href="#TT">TT</a></code>, 
+<code><a href="#U">U</a></code>, 
+<code><a href="#UL">UL</a></code>, 
+<code><a href="#VAR">VAR</a></code>,  
+<code><a href="#WBR">WBR</a></code>,
+<code><a href="#XMP">XMP</a></code>
+<br>
+<hr>
+<H2>Element Groups</H2>
+To shorten the lists in each element to describe the
+&quot;Elements Allowed Within...&quot; and &quot;Allowed In Content Of...&quot;
+various elements are defined by RFC 1866 as members of a group.
+These group names are used throughout the RFC 1866.
+Since group names can be defined to contain other group names,
+this mechanism makes nesting and recursion more obvious.
+Note that these element groups only deal with entities defined in RFC 1866
+and do not include any of the entities in proposed extensions.
+<dl>
+<dt><a name="block"><code>block</code></a>
+<dd> Contains the groups
+<code>
+<a href="#block.forms">block.forms</a>,
+<a href="#list">list</a>,
+<a href="#preformatted">preformatted</a>
+</code>
+and the entities
+<code>
+<a href="#DL">DL</a>
+</code> and <code>
+<a href="#P">P</a>
+</code>
+<br>The tables proposal defines the <a href="#TABLE">TABLE</a> element
+as a member of this group <a href="#block"><code>block</code></a>
+<dt><a name="block.forms"><code>block.forms</code></a>
+<dd> Contains the entities
+<code>
+<a href="#BLOCKQUOTE">BLOCKQUOTE</a>,
+<a href="#FORM">FORM</a>
+</code> and <code>
+<a href="#ISINDEX">ISINDEX</a>
+</code>
+<dt><a name="body.content"><code>body.content</code></a>
+<dd> Is allowed to contain the groups
+<code>
+<a href="#block">block</a>,
+<a href="#heading">heading</a>,
+<a href="#text">text</a>
+</code>
+and the entities
+<code>
+<a href="#HR">HR</a>
+</code> and <code>
+<a href="#ADDRESS">ADDRESS</a>
+</code>
+<br>
+It is <strong>recommended</strong> that it contain only the groups
+<code>
+<a href="#block">block</a>,
+<a href="#heading">heading</a>
+</code>
+and the entities
+<code>
+<a href="#HR">HR</a>,
+<a href="#ADDRESS">ADDRESS</a>
+</code> and <code>
+<a href="#IMG">IMG</a>
+</code>
+This recommended change in the members of this group means that
+all text within a body should be enclosed in some kind of block.
+This means that<br>
+&lt;h1&gt;Heading&lt;h1&gt;<br>
+&lt;p&gt;Text ...<br>
+is <strong>recommended</strong> over<br>
+&lt;h1&gt;Heading&lt;h1&gt;<br>
+Text ...<br>
+<dt><a name="font"><code>font</code></a>
+<dd> Contains the entities
+<code>
+<a href="#TT">TT</a>,
+<a href="#B">B</a>
+</code> and <code>
+<a href="#I">I</a>
+</code>
+<dt><a name="heading"><code>heading</code></a>
+<dd> Contains the entities
+<code>
+<a href="#H1">H1</a>,
+<a href="#H2">H2</a>,
+<a href="#H3">H3</a>,
+<a href="#H4">H4</a>,
+<a href="#H5">H5</a>
+</code> and <code>
+<a href="#H6">H6</a>
+</code>
+<dt><a name="list"><code>list</code></a>
+<dd> Contains the entities
+<code>
+<a href="#UL">UL</a>,
+<a href="#OL">OL</a>,
+<a href="#DIR">DIR</a>
+</code> and <code>
+<a href="#MENU">MENU</a>
+</code>
+<br>
+Note that it does not contain
+<code> <a href="#DL">DL</a> </code>
+which is identified separately.
+<dt><a name="phrase"><code>phrase</code></a>
+<dd> Contains the entities
+<code>
+<a href="#EM">EM</a>,
+<a href="#STRONG">STRONG</a>,
+<a href="#CODE">CODE</a>,
+<a href="#SAMP">SAMP</a>,
+<a href="#KBD">KBD</a>,
+<a href="#VAR">VAR</a>
+</code> and <code>
+<a href="#CITE">CITE</a>
+</code>
+<dt><a name="preformated"><code>preformated</code></a>
+<dd> Is allowed to contain the entities
+<code>
+<a href="#PRE">PRE</a>,
+<a href="#XMP">XMP</a>
+</code> and <code>
+<a href="#LISTING">LISTING</a>
+</code>
+<br>
+The last two entities are <strong>deprecated</strong>
+and this group should contain only the entity
+<code><a href="#PRE">PRE</a></code>
+<dt><a name="text"><code>text</code></a>
+<dd> Contains the groups
+<code>
+<a href="#phrase">phrase</a>
+</code> and <code>
+<a href="#font">font</a>
+</code>
+and the entities
+<code>
+<a href="#A">A</a>,
+<a href="#IMG">IMG</a>
+</code> and <code>
+<a href="#BR">BR</a>
+</code>
+and parsed character data.
+Parsed character data is any valid character data after the data
+has been parsed and all
+<a href="html_ref.html#Special Characters">special character</a>
+entities have been replaced with their character data.
+<p>
+The internationalization proposal also includes in group <code>text</code>
+the entities
+<code>
+<a href="#BDO">BDO</a>,
+<a href="#Q">Q</a>,
+<a href="#SPAN">SPAN</a>,
+<a href="#SUB">SUB</a>,
+<a href="#SUP">SUP</a>
+</code>
+</dl>
+<hr>
+<H2><A NAME="A">A</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The A element brackets (or anchors) a piece of text (and/or image) which
+is identified as a hypertext link.
+The A element must have either an HREF attribute or a NAME attribute.
+The HREF attribute identifies a destination <a href="#URL">URL</a>,
+and the bracketed text is rendered as a hypertext <em>link to</em> the URL.
+Browsers will display the contents of an A element with an HREF attribute
+in a special manner to indicate that if the contents are selected,
+the browser will execute that hypertext link.
+The NAME attribute identifies a destination tag, and the bracketed text
+is thereby identified as an available hypertext <em>target</em>
+within this document.
+Browsers do not display the contents of an A element with a NAME attribute
+in any special way.
+However, an A element with an HREF attribute can now be constructed
+by using the document URL suffixed with <code>#name</code>.
+This will load the document, but will position the display
+starting at the location of this NAME tag.
+An A element with an HREF attribute can also be constructed
+to jump directly to this destination tag within the same document
+by a URL consisting solely of <code>#name</code>
+The presence of <code>REL=</code><em>relation</em>
+in document A with HREF to document/object B
+identifies a relationship that B has to A that A recognizes/authorizes/verifies.
+The presence of <code>REV=</code><em>relation</em>
+of the identical <em>relation</em>
+in document B with HREF to document/object A
+identifies a desired/expected/claimed relationship that B has to A,
+but must be verified by checking with A.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;A HREF="..." &gt;characters...
+&lt;/A&gt;</code><br>
+or<br>
+<dd><code>&lt;A NAME="..." &gt;characters...
+&lt;/A&gt;</code><br>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;A HREF="..."
+ NAME="..."
+ REL="..."
+ REV="..."
+ URN="..."
+ TITLE="..."
+ METHODS="..."
+ LANG="..."
+ DIR=ltr|rtl
+ CHARSET="..."
+ ID="..."
+ CLASS="..."
+ MD="..."
+ TARGET="..."
+ SHAPE="..."&gt;characters...
+&lt;/A&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>
+members of groups<code>
+<a href="#heading">heading</a>
+<a href="#text">text</a>
+</code>
+but not element <code>
+<a href="#A">&lt;A&gt;</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#text">text</a></code>
+
+<dt><strong>Variations</strong>
+<dd>The LANG, DIR and CHARSET attributes are introduced with the
+internationalization proposal.
+The CHARSET attribute is a hint as to the expected
+character set used by the hyperlink.
+Earlier proposals suggest changing the NAME attribute to ID,
+declaring the NAME attribute as obsolete,
+and adding an ID attribute for various elements
+including the paragraph and heading elements.
+With the ID, MD, and CLASS attributes as part of the style sheet
+proposal, this is likely to change.
+At present REV and REL are rarely used or supported,
+and are Level 1 attributes,
+but are of growing interest to automated document environments.
+These relationships are more commonly identified in the <A HREF="#HEAD">HEAD</A>
+of the document using the <A HREF="#LINK">LINK</A> element.
+REL and REV can be either a comma-separated or white space separated
+set of relationship(s) of the HREF link.
+One proposal suggests that comma imply &quot;or&quot; and white
+space imply &quot;and&quot; for a list of values.
+These relationships and their semantics were originally proposed
+to be registered with an HTML authority, which was described at
+<code>http://www.w3.org/hypertext/WWW/MarkUp/RegistrationAuthority.html</code>,
+but that link no longer responds.  The entire topic of link relationships
+is under active discussion and change.
+Early examples of relationship names are
+<code>UseIndex, UseGlossary, Annotation, Reply, Embed,
+Precedes, Subdocument, Present, Search, Supersedes, History, Made,
+Owns, Approves, Supports, Refutes, Includes, Interested.</code>
+URN is for a Universal Resource Number, and is not currently
+used or supported, and is a Level 1 attribute.
+RFC 1866 describes it as a preferred, more persistent identifier
+than the value of HREF.
+TITLE is little used or supported, and is a Level 1 attribute,
+but is expected to be the title of the HREF document.
+RFC 1866 suggests TITLE can be displayed as a margin note
+or on a small box while the mouse is over the anchor.
+(<i>ed.</i> I am unaware of any browser that has implemented this
+feature.)
+METHODS is little used or supported, but is expected to be
+a white-space-separated list of HTTP METHODS supported by the
+object and accessible to the user.
+RFC 1866 suggests that the content of the A element may be
+rendered differently depending upon the HTTP method.
+TARGET is a Netscape 2.0 extension to define a window name for use
+by the retrieved hyperlink.   If the named window is not already
+open, Netscape 2.0 will open a new window and assign it that name.
+See also the <A HREF="#FRAME">FRAME</A> element for naming a window.
+SHAPE is proposed to provide a mechanism to define
+multiple A elements and corresponding &quot;hotzones&quot; within the
+proposed <A HREF="#FIG">FIG</A> element, to perform the equivalent function
+of ISMAP without the need for writing a responding cgi-bin program.
+For an alternate proposal, see the <A HREF="#MAP">MAP</A> element.
+A is a Level 0 element.
+
+</dl>
+<hr>
+<H2><A NAME="ABBREV">ABBREV</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The ABBREV element
+changes the character rendering of the
+contents of the element to logically represent
+abbreviations.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;ABBREV&gt;characters... &lt;/ABBREV&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;ABBREV
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/ABBREV&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The ABBREV element is a Version 3 proposed element.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="ACRONYM">ACRONYM</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The ACRONYM element
+changes the character rendering of the
+contents of the element to logically represent
+acronyms.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;ACRONYM&gt;characters... &lt;/ACRONYM&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;ACRONYM
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/ACRONYM&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The ACRONYM element is a Version 3 proposed element.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="ADDRESS">ADDRESS</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The ADDRESS element defines a separated multi-line set of text
+to be rendered for address information.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;ADDRESS&gt;characters...
+&lt;/ADDRESS&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;ADDRESS
+LANG="..."
+DIR=ltr|rtl
+ALIGN=center|left|right|justify
+ID="..."
+CLASS="..."
+CLEAR=left|right|all|"..."
+NOWRAP&gt;characters...
+&lt;/ADDRESS&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group <code><a href="#text">text</a></code>
+or element <code><a href="#P">&lt;P&gt;</a></code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#body.content">body.content</a></code>
+
+<dt><strong>Variations</strong>
+<dd>ADDRESS text is typically rendered in italics, and may be indented.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+The CLEAR and NOWRAP attributes are proposed in Version 3.
+ADDRESS is a Level 0 element.
+
+<dt><strong>Sandia Requirements</strong>
+<dd>An ADDRESS element is required to identify a &quot;point-of-contact&quot;.
+For details, see the <A HREF="#Sandia">Sandia Requirements</A>.
+
+</dl>
+<hr>
+<H2><A NAME="APP">APP</A></H2>
+<p>See the element <code><A HREF="#APPLET">APPLET</A></code>
+<hr>
+<H2><A NAME="APPLET">APPLET</A></H2>
+<dl>
+<dt><strong>Description</strong>
+<dd>The APPLET element replaced the APP element as the mechanism
+to identify and invoke a JAVA(tm) application.  A browser that
+understands this element will ignore everything in the content
+of the APPLET element except the PARAM elements.  Browsers that
+do not understand this element should ignore it and the PARAM
+elements and instead process the content of the element.
+Thus the content is the alternate HTML if the application is
+not invoked.  CODE is the name of the file that contains the
+compiled Applet subclass.  This name is relative to the base
+URL of the applet and cannot be an absolute URL.  WIDTH and HEIGHT
+give the initial width and height (in pixels) of the applet
+display area.  CODEBASE specifies the base URL of the applet.
+ALT specifies parsed character data to be displayed if the brower understands
+the APPLET tag but can't/won't run them.  NAME specifies a name
+for the applet instance, which allows applets on the same page
+to commuicate with each other.  ALIGN specifies the display
+alignment.  VSPACE and HSPACE specify the reserved space around the
+applet (in pixels).
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;APPLET
+CODE="..."
+WIDTH="..."
+HEIGHT="..."&gt;characters... &lt;/APPLET&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;APPLET
+CODE="..."
+WIDTH="..."
+HEIGHT="..."
+CODEBASE="..."
+ALT="..."
+NAME="..."
+ALIGN=left|right|top|texttop|middle|absmiddle|baseline|bottom|absbottom
+VSPACE="..."
+HSPACE="..."&gt;characters... &lt;/APPLET&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#PARAM">&lt;PARAM&gt;</a>
+</code> and any other elements which would have been allowed at this 
+point in the document.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The APPLET element is a proposed extension for JAVA(tm) applications,
+and is a Netscape 2.0 extension.
+
+</dl>
+<hr>
+<H2><A NAME="AREA">AREA</A></H2>
+<dl>
+<dt><strong>Description</strong>
+<dd>The AREA element
+specifies a single area of an image which, if selected, will
+link to the hyperlink identified by HREF.
+If multiple AREA elements in the
+same MAP define overlapping areas, the first encountered takes precedence.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;AREA COORDS="..."&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;AREA COORDS="..."
+SHAPE=rect|circle|polygon
+HREF="..."
+NOHREF
+ALT="..."&gt;</code>
+<dt><strong>Elements Allowed Within...</strong>
+<dd>AREA has no end tag and therefore has no content.
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#MAP">&lt;MAP&gt;</a>
+</code>
+<dt><strong>Variations</strong>
+<dd>The AREA element is part of a proposed enhancement to
+provide client-side image maps.
+COORDS describes the position of
+an area (in pixels) of the image in comma-separated x,y coordinates
+where the upper-left corner is &quot;0,0&quot;.
+For SHAPE=rect (the default), it is "left,top,right,bottom".
+For SHAPE=circle, it is "center_x,center_y,radius".
+For SHAPE=polygon, it is successive x,y vertices of the polygon.
+If the first and last coordinates are not the same, then a segment
+is inferred to close the polygon.  The NOHREF indicates that this
+region should generate no links.
+The ALT attribute specifies optional parsed character data to describe the area which
+could be displayed by a text-only browser as a substitute for the image.
+AREA is an extension in Netscape 2.0,
+but the only SHAPE recognized is "rect", and ALT is not defined.
+</dl>
+<hr>
+<H2><A NAME="AU">AU</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The AU element
+changes the character rendering of the
+contents of the element to logically represent
+the name of an author.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;AU&gt;characters... &lt;/AU&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;AU
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/AU&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The AU element is a Version 3 proposed element.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="B">B</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The B element changes the physical rendering of the
+contents of the element to a bold font.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;B&gt;characters...
+&lt;/B&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;B
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/B&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a></code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#font">font</a></code>
+
+<dt><strong>Variations</strong>
+<dd>Browsers who do not have bold may render in some other manner.
+RFC 1866 states that &lt;B&gt; content must be rendered as distinct
+from &lt;I&gt; content.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="BANNER">BANNER</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The BANNER element is proposed for corporate logos, navigation aids,
+disclaimers and other information which shouldn't be scrolled
+with the rest of the document.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;BANNER&gt;characters...
+&lt;/BANNER&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;BANNER
+LANG="..."
+DIR=ltr|rtl
+ID="..."
+CLASS="..."&gt;characters...
+&lt;/BANNER&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#BODY">&lt;BODY&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This is a proposed Version 3 element.
+
+</dl>
+<hr>
+<H2><A NAME="BASE">BASE</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The BASE element provides the absolute
+<a href="html_ref.html#URL">URL</a>
+base to be used for any relative URL links in this document.
+It must be a complete file name,
+and is usually the original URL of this document.
+If this file is moved, having the BASE set to the original URL
+eliminates the need to also move all the documents which are
+identified by relative URL links in this document.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;BASE HREF="..."&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;BASE HREF="..." TARGET="..."&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#HEAD">&lt;HEAD&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This is a Level 0 element.
+Netscape 2.0 defines the TARGET attribute to define a default
+named target window for every link in a document that does not
+have an explicit TARGET attribute.
+
+</dl>
+<hr>
+<H2><A NAME="BASEFONT">BASEFONT</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>Change the document base font size to one of the seven defined sizes.
+The default is 3.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;BASEFONT SIZE=1|2|3|4|5|6|7&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;BASEFONT SIZE=1|2|3|4|5|6|7&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The BASEFONT element is a Netscape extension.
+
+</dl>
+<hr>
+<H2><A NAME="BDO">BDO</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The BDO element is a directional override feature needed to deal
+with unusual pieces of text in which directionality cannot be
+resolved from context in an unambiguous fashion.
+It requires the DIR attribute.
+The meaning of DIR is different on BDO than on inline text markup elements.
+For BDO the DIR attribute
+is a bidi override, forcing the directionnality of even those
+characters that have strong directionnality.  On inline elements,
+DIR indicates a new directional embedding level, affecting mostly the
+neutrals and the overall layout.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;BDO DIR=ltr|rtl&gt;characters... &lt;/BDO&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;BDO
+DIR=ltr|rtl LANG="..."&gt;characters...
+&lt;/BDO&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#text">text</a></code>
+
+<dt><strong>Variations</strong>
+<dd>The BDO element is a proposed element as part of the enhancement
+to deal with internationalization of HTML.
+
+</dl>
+<hr>
+<H2><A NAME="BGSOUND">BGSOUND</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The BGSOUND element will cause an audio file to be presented
+as background to the document.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;BGSOUND SRC="..."&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;BGSOUND
+SRC="..."
+LOOP="..."&gt;
+</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The BGSOUND element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>
+The BGSOUND element is a MS Internet Explorer 2.0 enhancement.
+SRC specifies the URL of the audio
+file to be played.  LOOP specifies how many times the sound will
+be displayed while the HTML document is displayed, and can either
+be a number or the string "infinite".  The default for LOOP is one.
+Considerable opposition to the use of this element has been expressed
+on the Web, especially the use of LOOP=infinite, since users currently
+have no way to disable the audio.
+
+</dl>
+<hr>
+<H2><A NAME="BIG">BIG</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The BIG element changes the physical rendering of the
+contents of the element to a bigger font than normal text, if practical.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;BIG&gt;characters...
+&lt;/BIG&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;BIG
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/BIG&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The BIG element is proposed in Version 3, and is implemented as
+a Netscape 2.0 enhancement.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="BLINK">BLINK</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The BLINK element changes the physical rendering of the
+contents of the element to a blinking font.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;BLINK&gt;characters...
+&lt;/BLINK&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;BLINK&gt;characters...
+&lt;/BLINK&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This element is a Netscape 1.1 enhancement
+and many browsers ignore this element.
+Many users find the use of this element annoying.
+It should be restricted to short term use for new information.
+Netscape 1.1N permits users to disable the rendering of this element.
+
+</dl>
+<hr>
+<H2><A NAME="BLOCKQUOTE">BLOCKQUOTE</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The BLOCKQUOTE element defines a separated multi-line set of text
+to be rendered as quoted text.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;BLOCKQUOTE&gt;
+&lt;/BLOCKQUOTE&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;BLOCKQUOTE
+ LANG="..."
+ DIR=ltr|rtl
+ ALIGN=center|left|right|justify&gt;
+&lt;/BLOCKQUOTE&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#body.content">body.content</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#block.forms">block.forms</a></code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 states the contents of the BLOCKQUOTE element is typically
+rendered slightly indented both left and right, and/or italic font.
+It also states that a single-font browser rendering may 
+display the contents with a vertical line
+of &quot;&gt;&quot; characters down the left margin
+to indicate quotation in the Internet mail style.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+Version 3 proposes replacing the BLOCKQUOTE element with the
+<A HREF="#BQ">BQ</A> element.
+BLOCKQUOTE is a Level 0 element.
+
+</dl>
+<hr>
+<H2><A NAME="BODY">BODY</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The BODY element contains all the <i>content</i> of the document,
+as opposed to the
+<a href="#HEAD">HEAD</a>, which contains <i>information about</i>
+the document.  All displayable elements should be within the content
+of the BODY.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code></code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;BODY
+LANG="..."
+DIR=ltr|rtl
+ID="..."
+CLASS="..."
+BACKGROUND="..."
+BGCOLOR="..."
+BGPROPERTIES=fixed
+TEXT="#rrggbb"
+LINK="#rrggbb"
+VLINK="#rrggbb"
+ALINK="#rrggbb"&gt;
+&lt;/BODY&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group 
+<code><a href="#body.content">body.content</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#HTML">&lt;HTML&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The HTML, HEAD, and BODY elements were introduced with
+RFC 1866, and are currently optional, but are considered
+Level 0 elements.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+Version 3 proposes the attribute BACKGROUND.
+Netscape 1.1 and MS Internet Explorer 2.0
+include the BACKGROUND attribute, which is a URL to point
+to an image to be reproduced to fill the background of the document.
+Netscape 1.1 and MS Internet Explorer 2.0 both document the BGCOLOR extension.
+Netscape requires an "#rrggbb" number, while
+Internet Explorer also accepts the following color names: <code>
+Black, Maroon, Green, Olive, Navy, Purple, Teal, Gray, Silver, Red, Lime,
+Yellow, Blue, Fuchsia, Aqua, White.</code>
+The TEXT, LINK, VLINK, and ALINK attributes are Netscape 1.1 extensions,
+and also appear to work with MS Internet Explorer 2.0.
+BGPROPERTIES is an MS Internet Explorer 2.0 extension and currently
+only accepts the value of "fixed" which provides a watermark
+(non-scrolling) background image.
+
+<dt><strong>Sandia Requirements</strong>
+<dd>The HTML, HEAD and BODY elements are required.
+
+</dl>
+<hr>
+<H2><A NAME="BQ">BQ</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The BQ element defines a multi-line set of text
+to be rendered as quoted text.
+The content of the BQ element may optionally contain the
+<A HREF="#CREDIT">CREDIT</A> element.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;BQ&gt;
+&lt;/BQ&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;BQ
+LANG="..."
+DIR=ltr|rtl
+ID="..."
+CLASS="..."
+CLEAR=left|right|all|"..."
+NOWRAP&gt;
+&lt;/BQ&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#CREDIT">&lt;CREDIT&gt;</a>
+<br>-others to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#BQ">&lt;BQ&gt;</a>
+<br>-others to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The BQ element is proposed in Version 3 as a replacement
+for the BLOCKQUOTE element.
+Version 3 does not indicate the typical rendering of the contents
+of the BQ element, but does indicate that it may not imply
+text separation.
+
+</dl>
+<hr>
+<H2><A NAME="BR">BR</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The BR element breaks for a new line, but does not produce
+separation of text.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;BR&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;BR
+ CLEAR=left|right|all|"..."
+ ID="..."
+ CLASS="..."&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The BR element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The CLEAR attribute is a Netscape 1.1 extension and was added
+to force the line break to clear possible floating graphic images.
+The standard tables proposal expects the presence of this attribute
+since it expects text to flow around a table, if possible,
+but does not standardize the attribute's existence as part of the proposal.
+Version 3 includes CLEAR, and proposes the remaining attributes.
+The BR element is Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="CAPTION">CAPTION</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The CAPTION element is used to label a table or figure.
+The ALIGN attribute specifies on which outside edge to place the caption.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;CAPTION&gt;characters... &lt;/CAPTION&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;CAPTION
+ ALIGN=top|bottom|left|right
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters... &lt;/CAPTION&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#FIG">&lt;FIG&gt;</a>
+<a href="#TABLE">&lt;TABLE&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The CAPTION element was originally proposed in Version 3
+and is part of the current table proposal.
+This element is an extension in Netscape 1.1.
+
+</dl>
+<hr>
+<H2><A NAME="CENTER">CENTER</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>All contents within the CENTER element is to be 
+centered between the current left and right margin.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;CENTER&gt;characters... &lt;/CENTER&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;CENTER&gt;characters... &lt;/CENTER&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#A">&lt;A&gt;</a>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The CENTER element is a Netscape 1.1 extension.
+It was provided as an alternative to the HTML+ and Version 3
+<code>ALIGN="center"</code> proposed new attribute for all the
+text block elements such as the
+<code>&lt;P&gt;</code> paragraph and
+<code>&lt;H?&gt;</code> header elements and the new
+<code>&lt;DIV&gt;</code> element.
+Both RFC 1866 and the current Version 3 specification
+only include the ALIGN attribute, not the CENTER element,
+and Netscape 2.0 has added the <code>ALIGN="center"</code> attribute.
+
+</dl>
+<hr>
+<H2><A NAME="CITE">CITE</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The CITE element changes the character rendering of the
+contents of the element to logically represent a citation.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;CITE&gt;characters...
+&lt;/CITE&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;CITE
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/CITE&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#phrase">phrase</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This is typically rendered in italics.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="CODE">CODE</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The CODE element changes the character rendering of the
+contents of the element to logically represent computer code.
+It is intended for short words or phrases.  PRE is recommended
+for multiple-line listings.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;CODE&gt;characters...
+&lt;/CODE&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;CODE
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/CODE&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#phrase">phrase</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This is usually rendered in a fixed-width font.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="COL">COL</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The COL element specifies column based defaults for table properties.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;COL&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;COL
+LANG="..."
+DIR=ltr|rtl
+ID="..."
+CLASS="..."
+SPAN=nn
+WIDTH="..."
+ALIGN=left|center|right|justify|char
+CHAR="."
+CHAROFF="..."
+VALIGN=top|middle|bottom|baseline&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>COL has no end element, therefore it has no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#COLGROUP">COLGROUP</A>
+<a href="#TABLE">TABLE</A>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The COL element is part of the new proposed standard
+tables structure.  It is not widely implemented in existing browsers.
+The order of placement of a series of COL elements within the TABLE
+content (or within a COLGROUP) is significant, and describes the columns
+in the TABLE DIR presentation order, first to last.
+SPAN is a positive integer that specifies how many columns this element
+applies to, defaulting to one.  SPAN=0 implies all columns from the
+current column up to and including the last column.
+WIDTH is a decimal number which specifies the width
+of each column in the span.
+The default units is pixels, but may be specified by a suffix on the number.
+The standard defined units suffixes include:
+<code>pt</code>=points,
+<code>pi</code>=picas,
+<code>in</code>=inches,
+<code>cm</code>=centimeters,
+<code>mm</code>=millimeters,
+<code>em</code>=em units,
+<code>px</code>=screen pixels.
+In addition, the special suffix of an asterisk may be used
+to specify a number to be used as a multiplier of a "standard" column width.
+This is used to specify the widths of columns proportionately relative
+to each other.
+If a number does not accompany the asterisk it defaults to one.
+Specifying WIDTH="0*" forces the column to its minimum width.
+ALIGN and VALIGN define the alignment of text within a table cell.
+If ALIGN=char, CHAR specifies the alignment character which defaults
+to the decimal point for the current language.  CHAROFF is a decimal
+number that specifies the offset for the alignment character from the
+beginning of the table cell in the DIR direction.  Units may be specified
+using the standard defined units suffixes plus the special suffix of the
+percent sign indicating the percentage of offset within the cell from the
+beginning of the cell.
+
+</dl>
+<hr>
+<H2><A NAME="COLGROUP">COLGROUP</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The COLGROUP element defines a group of one or more columns
+and specifies the defaults for all the columns in this group.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;COLGROUP&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;COLGROUP
+LANG="..."
+DIR=ltr|rtl
+ALIGN=left|center|right|justify|char
+ID="..."
+CLASS="..."
+CHAR="."
+CHAROFF="..."
+VALIGN=top|middle|bottom|baseline&gt;characters...
+&lt;/COLGROUP&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#COL">COL</A>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#TABLE">TABLE</A>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The COLGROUP element is part of the new proposed standard
+tables structure.  It is not widely implemented in existing browsers.
+The end tag is optional and is inferred when a new COLGROUP is encountered
+or the THEAD or TBODY element of TABLE.
+The order of placement of a series of COLGROUP elements within the TABLE
+content is significant, and describes the columns
+in the TABLE DIR presentation order, first to last.
+ALIGN and VALIGN define the alignment of text within a table cell.
+If ALIGN=char, CHAR specifies the alignment character which defaults
+to the decimal point for the current language.  CHAROFF is a decimal
+number that specifies the offset for the alignment character from the
+beginning of the table cell in the DIR direction.
+The default units is pixels, but may be specified by a suffix on the number.
+The standard defined units suffixes include:
+<code>pt</code>=points,
+<code>pi</code>=picas,
+<code>in</code>=inches,
+<code>cm</code>=centimeters,
+<code>mm</code>=millimeters,
+<code>em</code>=em units,
+<code>px</code>=screen pixels.
+In addition, the special suffix of the percent sign may be used to
+indicate the percentage of offset within the cell from the
+beginning of the cell.
+
+</dl>
+<hr>
+<H2><A NAME="CREDIT">CREDIT</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The CREDIT element is used to name the source of a
+block quotation or figure.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;CREDIT&gt;characters... &lt;/CREDIT&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;CREDIT
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters... &lt;/CREDIT&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#BQ">&lt;BQ&gt;</a>
+<a href="#FIG">&lt;FIG&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The CREDIT element is proposed in Version 3.
+Version 3 does not indicate the typical rendering for the contents
+of the CREDIT element, nor whether that rendering should be different
+or separated from the enclosing block quotation or figure.
+
+</dl>
+<hr>
+<H2><A NAME="DD">DD</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The DD element identifies the separated multi-line
+definition item in a DL definition list.
+In a DL list a DD should always be preceded by at least one DT element.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;DD&gt;characters...
+</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;DD
+ LANG="..."
+ DIR=ltr|rtl&gt;characters...
+&lt;/DD&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of groups <code><a href="#block">block</a>
+<a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#DL">&lt;DL&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This is typically rendered as normal text, indented.
+Most browsers assume that the contents of the element
+ends when it encounters a <code>&lt;DT&gt;</code> or
+another <code>&lt;DD&gt;</code> or the <code>&lt;/DL&gt;</code>
+element to end the list, and thus do not require the
+ending tag.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All list elements are Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="DEL">DEL</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The DEL element
+changes the character rendering of the
+contents of the element to logically represent
+deleted text, for instance in modifications in legal documents.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;DEL&gt;characters... &lt;/DEL&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;DEL
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/DEL&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The DEL element is a Version 3 proposed element.
+While this will typically be rendered by strikethru characters,
+the DEL element is preferred over using the S or STRIKE elements.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="DFN">DFN</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The DFN element changes the character rendering of the
+contents of the element to logically represent a
+defining instance of a term.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;DFN&gt;characters... &lt;/DFN&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;DFN
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/DFN&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The DFN element is not widely implemented, but
+is usually rendered bold or bold italic.
+It is a Version 3 proposed element and was in an earlier
+Version 2 proposal.
+The RFC 1866 describes it and recognizes it as existing practice
+but does not include it in the standardized elements.
+
+</dl>
+<hr>
+<H2><A NAME="DIR">DIR</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The DIR element defines an unordered list consisting of a number of 
+single-line <code>&lt;LI&gt;</code> elements.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;DIR&gt;&lt;/DIR&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;DIR COMPACT
+ LANG="..."
+ DIR=ltr|rtl
+ ALIGN=center|left|right|justify&gt;
+&lt;/DIR&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>element
+<code><a href="#LI">&lt;LI&gt;</a></code>
+but not any member of group 
+<code><a href="#block">block</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#list">list</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This list type is not commonly implemented, and
+is often rendered identically to UL.
+RFC 1866 specifies that the content of the LI element of the
+DIR list is usually less than 20 characters in length.
+These may be arranged in columns across the page,
+each column typically as 24 characters wide.
+Specifying <code>&lt;UL PLAIN WRAP=HORIZ&gt;</code> is proposed
+in Version 3 as a replacement for the DIR element.
+The exclusion in RFC 1866 of group <code>block</code> within DIR implies
+(among other things) that DIR can contain no nested lists,
+nor any paragraphs even though the LI element normally would allow this.
+Some browsers do not enforce this exclusion.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+All list elements are Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="DIV">DIV</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The DIV element is proposed to be used
+with the CLASS attribute to represent different kinds of containers,
+e.g. chapter, section, abstract, or appendix.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;DIV&gt;characters...
+&lt;/DIV&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;DIV
+LANG="..."
+DIR=ltr|rtl
+ALIGN=left|center|right|justify
+ID="..."
+CLASS="..."
+NOWRAP
+CLEAR=left|right|all|"..."&gt;characters...
+&lt;/DIV&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#BODY">&lt;BODY&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This is a proposed Version 3 element.
+<code>&lt;DIV ALIGN=center&gt;</code> is the proposed replacement
+for the non-standard <a href="#CENTER"><code>CENTER</code></a> element.
+This is a Netscape 2.0 extension but it only recognizes
+ALIGN=left|right|center.
+
+</dl>
+<hr>
+<H2><A NAME="DL">DL</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The DL element defines a definition list.  Each item in the
+list is expected to have two parts, identified by the
+<code>&lt;DT&gt;</code> and <code>&lt;DD&gt;</code> elements.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;DL&gt;&lt;/DL&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;DL
+ COMPACT
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ CLEAR=left|right|all|"..."&gt;
+&lt;/DL&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#LH">&lt;LH&gt;</a>
+<a href="#DT">&lt;DT&gt;</a>
+<a href="#DD">&lt;DD&gt;</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#block">block</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The COMPACT attribute suggests rendering the list in
+a physically compact way, but is not implemented by many browsers.
+RFC 1866 suggests that the attribute be used if the list items are
+small and/or the entire list is large, and may cause the elimination
+of blank lines between DT/DD pairs.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+Version 3 proposes the CLEAR attribute.
+To obtain a specific look, it has been the practice to construct
+a DL with DD elements but empty or missing DT elements.
+Missing DT elements violates the standard.
+Version 3 proposes a new <A HREF="#NOTE">NOTE</A> element as the
+preferred alternative to achieve the effect desired.
+All list elements are Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="DT">DT</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The DT element identifies the separated term item in a DL definition list.
+Multiple DT elements may exist prior to a single DD element.
+In a DL list a DD should always be preceded by at least one DT element.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;DT&gt;characters...
+</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;DT
+ LANG="..."
+ DIR=ltr|rtl&gt;characters...
+&lt;/DT&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#DL">&lt;DL&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This is typically rendered in a bold font, but not indented.
+Most browsers assume that the contents of the element
+ends when it encounters a <code>&lt;DD&gt;</code> or
+another <code>&lt;DT&gt;</code> or the <code>&lt;/DL&gt;</code>
+element to end the list, and thus do not require the
+ending tag.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All list elements are Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="EM">EM</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The EM element changes the character rendering of the
+contents of the element to logically emphasize the text.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;EM&gt;characters...
+&lt;/EM&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;EM
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/EM&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd> members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#phrase">phrase</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>Usually rendered in italics.
+RFC 1866 states that &lt;EM&gt; content must be rendered as distinct
+from &lt;STRONG&gt; content.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="EMBED">EMBED</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The EMBED element defines a container that allows the insertion
+of arbitrary objects directly into an HTML page.  Embedded objects
+are supported by application-specific plug-ins.  EMBED is defined
+to allow arbitrary attributes.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;EMBED SRC="..."&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;EMBED
+SRC="..."
+HEIGHT="..."
+WIDTH="..."
+attribute_1="..."
+attribute_2="..."
+...&gt;characters...
+&lt;/EMBED&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#NOEMBED">&lt;NOEMBED&gt;</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The EMBED element is a Netscape 2.0 extension.
+Netscape gives as examples of plug-in applications:
+WebFX by Paper Software for viewing VRML
+(Virtual Reality Modeling Language) worlds,
+Adobe Acrobat for PDF documents, and Macromedia Director and Apple QuickTime
+for multimedia.
+Netscape's examples do not include the ending element,
+but their documentation does not specify what would imply
+the end of the EMBED content if the ending element is absent.
+The concept of arbitrary undefined attributes violates the underlying
+SGML standard of HTML.  Change is expected in this element.
+See also the <a href="#APPLET">APPLET</a> element.
+The Netscape documentation does not currently define the units for
+HEIGHT and WIDTH but examples would imply that they are pixels.
+The object's image will be scaled to fit the specified height/width.
+Embedded plug-in applications may be activated by double-clicking
+their image.
+
+</dl>
+<hr>
+<H2><A NAME="FIG">FIG</A></H2>
+<dl>
+<dt><strong>Description</strong>
+<dd>The FIG element is an advanced form of the
+<A HREF="#IMG">IMG</A> element to define an image, with optional
+overlays, text elements and &quot;hotzones&quot;, to be inserted 
+within a document.
+The structure of the contents of the FIG element expects
+a series of optional overlay images defined by OVERLAY elements,
+followed by an optional CAPTION element,
+followed by text to be presented as an alternative to the image(s)
+and which may contain normal text elements as well as
+hypertext links defined by A elements with 
+SHAPE attributes to identify &quot;hotzones&quot; on the image,
+finally completed by an optional CREDIT element.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;FIG SRC="..."&gt;&lt;/FIG&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;FIG SRC="..."
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ CLEAR=left|right|all|"..."
+ NOFLOW
+ MD="..."
+ ALIGN=left|right|center|justify|bleedleft|bleedright
+ WIDTH=value
+ HEIGHT=value
+ UNITS="..."
+ IMAGEMAP="..."&gt;&lt;/FIG&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#OVERLAY">&lt;OVERLAY&gt;</a>
+<a href="#CAPTION">&lt;CAPTION&gt;</a>
+<a href="#CREDIT">&lt;CREDIT&gt;</a>
+<br>-In progress, to be determined-</code> (<i>ed:</i> all normal markup elements?)
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The FIG element is proposed in Version 3 as a sophisticated
+alternative to the IMG element, especially to enhance the capabilities
+of the ALT text for non-graphical presentations of HTML documents,
+as well as a way to accomplish the common use of the ISMAP attribute
+of the IMG element without the need for a responding cgi-bin program.
+</dl>
+<hr>
+<H2><A NAME="FN">FN</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The FN element logically identifies text to be presented
+as a footnote.  The reference location for the footnote is expected
+to be an A element whose HREF attribute references the ID of the
+FN element.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;FN ID="..."&gt;characters... &lt;/FN&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;FN
+ LANG="..."
+ DIR=ltr|rtl
+ID="..."
+ CLASS="..."&gt;characters... &lt;/FN&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The FN element is a Version 3 proposed element.
+Version 3 specifies that when practical, the browser should
+render the FN element as pop-up notes.
+Version 3 does not specify an expected rendering when the footnote
+text is simply displayed where it occurs in the document.
+However, Version 3 does state that the FN element does not imply
+text separation.  Therefore, common practice expects that the
+contents of the FN element would begin with a markup element
+which produces separation, e.g. the P element.
+
+</dl>
+<hr>
+<H2><A NAME="FONT">FONT</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The FONT element changes the font size of the following characters
+to one of the seven defined sizes, or plus or minus from the document
+<a href="#BASEFONT">BASEFONT</a>
+size.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;FONT SIZE=[+|-]1|2|3|4|5|6|7&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;FONT
+SIZE=[+|-]1|2|3|4|5|6|7
+COLOR="..."
+FACE="..."&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The FONT element with the SIZE attribute is a Netscape 1.1
+and MS Internet 2.0 extension.
+Netscape 2.0 and MS Internet Explorer 2.0 added the COLOR attribute.
+Netscape requires an "#rrggbb" number, while
+Internet Explorer also accepts the following color names: <code>
+Black, Maroon, Green, Olive, Navy, Purple, Teal, Gray, Silver, Red, Lime,
+Yellow, Blue, Fuchsia, Aqua, White.</code>
+The FACE attribute is a MS Internet Explorer 2.0 extension to specify
+a font style, but the permitted values are not defined.
+
+</dl>
+<hr>
+<H2><A NAME="FORM">FORM</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The FORM element creates a fill-out form.
+The browser permits the user to enter information in the fields of
+the form and sends this information to a cgi-bin script on a server
+identified as a <a href="#URL">URL</a> by the ACTION attribute.
+METHOD=GET (the default) appends the input information to the
+ACTION URL which on most receiving systems becomes
+the value of the environment variable <code>QUERY_STRING</code>.
+METHOD=POST (the preferred) sends the input information in a data body
+which is available on <code>stdin</code> with the data length set
+in the environment variable <code>CONTENT_LENGTH</code>.
+Form data is a stream of <code>name=value</code> pairs
+separated by the <code>&amp;</code> character.
+Each name=value pair is URL encoded,
+i.e. spaces are changed into the plus character and some characters
+are encoded into hexadecimal.
+At least one of the following is expected inside the FORM
+contents: INPUT, SELECT, TEXTAREA.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;FORM&gt;&lt;/FORM&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;FORM ACTION="..."
+ METHOD=GET|POST
+ ENCTYPE="..."
+ LANG="..."
+ DIR=ltr|rtl
+ ACCEPT-CHARSET="..."
+ SCRIPT="..."&gt;
+&lt;/FORM&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#body.content">body.content</a>
+</code> and elements <code>
+<a href="#INPUT">&lt;INPUT&gt;</a>
+<a href="#SELECT">&lt;SELECT&gt;</a>
+<a href="#TEXTAREA">&lt;TEXTAREA&gt;</a>
+</code>
+but not element <code>
+<a href="#FORM">&lt;FORM&gt;</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#block.forms">block.forms</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The original definition of FORM only defined the default value of
+<code>application/x-www-form-urlencoded</code>
+for the ENCTYPE attribute.
+RFC 1867 adds the value of <code>multipart/form-data</code>
+for this attribute to permit a FORM to upload one or more files
+in addition to the FORM data.  METHOD=POST is required with
+this value of ENCTYPE.
+This file upload extension is implemented in Netscape 2.0.
+Most current browsers only handle ACTION for the
+<code>http:</code> access type, but proposals for handling the
+<code>mailto:</code> access type are being discussed.
+The LANG, DIR, and ACCEPT-CHARSET attributes are introduced with the
+internationalization proposal.
+The ACCEPT-CHARSET attribute is to provide a hint as to the
+character set or sets that the receiving URL is prepared to handle.
+Version 3 proposes the SCRIPT attribute to specify a URL which
+contains a limited syntax script to be downloaded to the browser
+for execution to preprocess the FORM output before sending it
+to the ACTION destination.
+This SCRIPT proposal may change as part of the new proposals
+concerning APPLET and EMBED.
+All elements concerning FORM are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="FRAME">FRAME</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The FRAME element defines a single frame in a frameset.
+The SRC attribute value is the URL of the document to be displayed
+in this frame.  A FRAME element without a SRC is displayed as
+blank space. The NAME element assigns a name to the frame to be used
+as a target of hyperlinks.  (See the <A HREF="#A">A</A> element)
+The SCROLLING attribute is used to define whether the frame should
+have a scrollbar, and defaults to the value "auto".
+Presence of the NORESIZE attribute
+prevents the frame from being resized by the user.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;FRAME&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;FRAME
+SRC="..."
+NAME="..."
+MARGINWIDTH="..." MARGINHEIGHT="..."
+SCROLLING=yes|no|auto
+NORESIZE&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The FRAME element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#FRAMESET">&lt;FRAMESET&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The FRAME element is a Netscape 2.0 enhancement for defining
+multiple windows for viewing a document.  Netscape 2.0 reserves the
+following values for the NAME attribute: <code> _blank, _self, _parent,
+_top</code>.  These values must begin with the underbar character and
+have the following respective meanings: new unnamed window, load in the
+same window, load in the parent window (if none use self), load in the
+top window (if none use self).  Netscape 2.0 defines the units for
+MARGINWIDTH and MARGINHEIGHT as pixels.
+
+</dl>
+<hr>
+<H2><A NAME="FRAMESET">FRAMESET</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The FRAMESET element is used instead of the BODY element.
+It is used in an HTML document whose sole purpose is to define the
+layout of the sub-HTML documents, or Frames, that will make up the page.
+The ROWS and COLS values are comma-separated lists describing the
+row-heights and column-widths of the Frames.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;FRAMESET&gt;characters... &lt;/FRAMESET&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;FRAMESET
+ROWS="..."
+COLS="..."&gt;characters...
+&lt;/FRAMESET&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#FRAME">&lt;FRAME&gt;</a>
+<a href="#FRAMESET">&lt;FRAMESET&gt;</a>
+<a href="#NOFRAMES">&lt;NOFRAMES&gt;</a>
+
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#HTML">&lt;HTML&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The FRAMESET element is a Netscape 2.0 enhancement.  Netscape 2.0
+restricts the ROWS and COLS values to integers with an optional suffix
+to define the units.  Default units are pixels.  A percentsign suffix
+indicates the value is a percentage between 1 and 100.
+A suffix of an asterisk may be used
+to specify a number to be used as a multiplier of a "standard" width/height.
+This is used to specify the widths/heights of Frames proportionately relative
+to each other.
+If a number does not accompany the asterisk it defaults to one.
+
+
+</dl>
+<hr>
+<H2><A NAME="H1">H1</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The H1 element identifies text to be separated and displayed
+as the most prominent header.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;H1&gt;characters...
+&lt;/H1&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;H1
+LANG="..."
+DIR=ltr|rtl
+ALIGN=left|center|right|justify
+ID="..."
+CLASS="..."
+CLEAR=left|right|all|"..."
+SEQNUM=nnn
+SKIP=nnn
+DINGBAT=entity-name
+SRC="..."
+MD="..."
+NOWRAP&gt;characters...
+&lt;/H1&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#heading">heading</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 recommends that a document use the
+header elements in order, without breaks, beginning with H1.
+(<i>ed:</i> I have not identified a browser that enforces this.)
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+Netscape 2.0 implements
+<code>ALIGN=center|left|right</code>
+The ID attribute was proposed in HTML+ and Version 3
+to replace the NAME attribute
+in the A element to establish internal hyperlink destinations.
+With the expected use of ID for style sheets, this is likely to change.
+All other attributes are proposed in Version 3.
+RFC 1866 states typical rendering is bold, very large font, centered;
+when printed causes a page break.
+Headings are Level 0 elements.
+
+</dl>
+<hr>
+<H2><A NAME="H2">H2</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The H2 element identifies text to be separated and displayed
+less prominently than H1 but more prominently than H3.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;H2&gt;characters...
+&lt;/H2&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;H2
+LANG="..."
+DIR=ltr|rtl
+ID="..."
+CLASS="..."
+ALIGN=left|center|right|justify
+CLEAR=left|right|all|"..."
+SEQNUM=nnn
+SKIP=nnn
+DINGBAT=entity-name
+SRC="..."
+MD="..."
+NOWRAP&gt;characters...
+&lt;/H2&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#heading">heading</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 recommends that a document use the
+header elements in order, without breaks, beginning with H1.
+(<i>ed:</i> I have not identified a browser that enforces this.)
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+Netscape 2.0 implements
+<code>ALIGN=center|left|right</code>
+The ID attribute was proposed in HTML+ and Version 3
+to replace the NAME attribute
+in the A element to establish internal hyperlink destinations.
+With the expected use of ID for style sheets, this is likely to change.
+All other attributes are proposed in Version 3.
+RFC 1866 states typical rendering is bold, large font, flush left.
+Headings are Level 0 elements.
+
+</dl>
+<hr>
+<H2><A NAME="H3">H3</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The H3 element identifies text to be separated and displayed
+less prominently than H2 but more prominently than H4.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;H3&gt;characters...
+&lt;/H3&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;H3
+LANG="..."
+DIR=ltr|rtl
+ALIGN=left|center|right|justify
+ID="..."
+CLASS="..."
+CLEAR=left|right|all|"..."
+SEQNUM=nnn
+SKIP=nnn
+DINGBAT=entity-name
+SRC="..."
+MD="..."
+NOWRAP&gt;characters...
+&lt;/H3&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#heading">heading</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 recommends that a document use the
+header elements in order, without breaks, beginning with H1.
+(<i>ed:</i> I have not identified a browser that enforces this.)
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+Netscape 2.0 implements
+<code>ALIGN=center|left|right</code>
+The ID attribute was proposed in HTML+ and Version 3
+to replace the NAME attribute
+in the A element to establish internal hyperlink destinations.
+With the expected use of ID for style sheets, this is likely to change.
+All other attributes are proposed in Version 3.
+RFC 1866 states typical rendering is italic, large font, slightly indented.
+Headings are Level 0 elements.
+
+</dl>
+<hr>
+<H2><A NAME="H4">H4</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The H4 element identifies text to be separated and displayed
+less prominently than H3 but more prominently than H5.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;H4&gt;characters...
+&lt;/H4&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;H4
+LANG="..."
+DIR=ltr|rtl
+ALIGN=left|center|right|justify
+ID="..."
+CLASS="..."
+CLEAR=left|right|all|"..."
+SEQNUM=nnn
+SKIP=nnn
+DINGBAT=entity-name
+SRC="..."
+MD="..."
+NOWRAP&gt;characters...
+&lt;/H4&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#heading">heading</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 recommends that a document use the
+header elements in order, without breaks, beginning with H1.
+(<i>ed:</i> I have not identified a browser that enforces this.)
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+Netscape 2.0 implements
+<code>ALIGN=center|left|right</code>
+The ID attribute was proposed in HTML+ and Version 3
+to replace the NAME attribute
+in the A element to establish internal hyperlink destinations.
+With the expected use of ID for style sheets, this is likely to change.
+All other attributes are proposed in Version 3.
+RFC 1866 states typical rendering is bold, normal font, indented more than H3.
+Headings are Level 0 elements.
+
+</dl>
+<hr>
+<H2><A NAME="H5">H5</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The H5 element identifies text to be separated and displayed
+less prominently than H4 but more prominently than H6.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;H5&gt;characters...
+&lt;/H5&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;H5
+LANG="..."
+DIR=ltr|rtl
+ALIGN=left|center|right|justify
+ID="..."
+CLASS="..."
+CLEAR=left|right|all|"..."
+SEQNUM=nnn
+SKIP=nnn
+DINGBAT=entity-name
+SRC="..."
+MD="..."
+NOWRAP&gt;characters...
+&lt;/H5&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#heading">heading</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 recommends that a document use the
+header elements in order, without breaks, beginning with H1.
+(<i>ed:</i> I have not identified a browser that enforces this.)
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+Netscape 2.0 implements
+<code>ALIGN=center|left|right</code>
+The ID attribute was proposed in HTML+ and Version 3
+to replace the NAME attribute
+in the A element to establish internal hyperlink destinations.
+With the expected use of ID for style sheets, this is likely to change.
+All other attributes are proposed in Version 3.
+By default, Netscape uses a font size for H5 that
+is smaller than default text.
+For most other browsers, the font size for all headers
+is at least as large as the default text.
+RFC 1866 states typical rendering is italic, normal font, indented as H4.
+Headings are Level 0 elements.
+
+</dl>
+<hr>
+<H2><A NAME="H6">H6</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The H6 element identifies text to be separated and displayed
+less prominently than H5 but more prominently than default text.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;H6&gt;characters...
+&lt;/H6&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;H6
+LANG="..."
+DIR=ltr|rtl
+ALIGN=left|center|right|justify
+ID="..."
+CLASS="..."
+CLEAR=left|right|all|"..."
+SEQNUM=nnn
+SKIP=nnn
+DINGBAT=entity-name
+SRC="..."
+MD="..."
+NOWRAP&gt;characters...
+&lt;/H6&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#heading">heading</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 recommends that a document use the
+header elements in order, without breaks, beginning with H1.
+(<i>ed:</i> I have not identified a browser that enforces this.)
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+Netscape 2.0 implements
+<code>ALIGN=center|left|right</code>
+The ID attribute was proposed in HTML+ and Version 3
+to replace the NAME attribute
+in the A element to establish internal hyperlink destinations.
+With the expected use of ID for style sheets, this is likely to change.
+All other attributes are proposed in Version 3.
+By default, Netscape uses a font size for H6 that
+is smaller than default text.
+For most other browsers, the font size for all headers
+is at least as large as the default text.
+RFC 1866 states typical rendering is bold, normal font, not indented.
+Headings are Level 0 elements.
+
+</dl>
+<hr>
+<H2><A NAME="HEAD">HEAD</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The HEAD contains general information about the document.
+None of the elements authorized to exist
+in the contents of the HEAD are displayed;
+the displayed material is found within the
+<a href="#BODY">BODY</a>.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code></code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;HEAD
+LANG="..."
+DIR=ltr|rtl&gt;
+&lt;/HEAD&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#TITLE">&lt;TITLE&gt;</a>
+<a href="#ISINDEX">&lt;ISINDEX&gt;</a>
+<a href="#BASE">&lt;BASE&gt;</a>
+<a href="#META">&lt;META&gt;</a>
+<a href="#LINK">&lt;LINK&gt;</a>
+<a href="#NEXTID">&lt;NEXTID&gt;</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#HTML">&lt;HTML&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The HTML, HEAD, and BODY elements were introduced with
+RFC 1866, and are currently optional, but are considered
+Level 0 elements.
+RFC 1866 recommends against permitting the NEXTID element in HEAD.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+Version 3 proposes the new elements of RANGE and STYLE
+as allowed within a HEAD.
+
+<dt><strong>Sandia Requirements</strong>
+<dd>The HTML, HEAD and BODY elements are required.
+
+</dl>
+<hr>
+<H2><A NAME="HP">HPn</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The HP set of elements, with n=1,2,... provided
+a mechanism to highlight the characters in a phrase with
+one of a set of browser defined highlight mechanisms.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;HPn&gt;characters... &lt;/HPn&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;HPn&gt;characters... &lt;/HPn&gt;</code>
+
+<dt><strong>Variations</strong>
+<dd>HPn was an early idea about highlighting but is seldom used
+or implemented.
+RFC 1866 does not include these elements, and these elements
+should be considered obsolete.
+
+</dl>
+<hr>
+<H2><A NAME="HR">HR</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The HR element produces a divider between sections of text.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;HR&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;HR
+ DIR=ltr|rtl
+ ALIGN=left|right|center|justify
+ ID="..."
+ CLASS="..."
+ CLEAR=left|right|all|"..."
+ SRC="..."
+ MD="..."
+ SIZE=number
+ WIDTH=number|percent
+ NOSHADE&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The HR element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#body.content">body.content</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 states that the HR element is typically rendered as
+a full width horizontal rule or equivalent graphic.
+The DIR attribute is introduced with the internationalization proposal
+since DIR can have meaning
+in those cases where the horizontal rule is not full width.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+The CLEAR, SRC, and MD attributes are proposed in Version 3.
+SRC is proposed to specify a custom image for the rule.
+Some browsers draw the line only within the current text margins
+(which may be indented on left and/or right due to lists, etc.)
+SIZE, WIDTH, ALIGN, and NOSHADE attributes are Netscape extensions,
+but Netscape 2.0 only implements
+<code>ALIGN=center|left|right</code>
+The HR element is Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="HTML">HTML</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The HTML element is intended to bracket the entire HTML text in
+the document.  All other HTML elements are inside the start and end
+of the HTML element.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code></code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;HTML
+VERSION="..."
+LANG="..."
+DIR=ltr|rtl&gt;
+&lt;/HTML&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#HEAD">&lt;HEAD&gt;</a>
+<a href="#BODY">&lt;BODY&gt;</a>
+<a href="#PLAINTEXT">&lt;PLAINTEXT&gt;</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>The element HTML is the outermost element and should not be
+nested inside any element.
+RFC 1866 introduced the VERSION attribute.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+
+<dt><strong>Variations</strong>
+<dd>The HTML, HEAD, and BODY elements were introduced with
+RFC 1866, and are currently optional, but are considered
+Level 0 elements.
+RFC 1866 identifies the presence of the PLAINTEXT element within
+the HTML content as deprecated.
+
+<dt><strong>Sandia Requirements</strong>
+<dd>The HTML, HEAD and BODY elements are required.
+
+</dl>
+<hr>
+<H2><A NAME="I">I</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The I element changes the physical rendering of the
+contents of the element to an italics (or slanted) font.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;I&gt;characters...
+&lt;/I&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;I
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/I&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#font">font</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>Browsers who do not have italics may render in some other manner.
+RFC 1866 states that &lt;B&gt; content must be rendered as distinct
+from &lt;I&gt; content.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="IMG">IMG</A></H2>
+
+<dl>
+<dt><strong>Description</strong>
+<dd>The IMG element allows an image file to be inserted within
+an HTML document along with the text.
+The ALT attribute defines parsed character data
+that will be displayed if the image
+is not or cannot be displayed by the browser.
+The SRC attribute identifies a <a href="#URL">URL</a> for retrieving the image.
+The ISMAP attribute is only meaningful if the IMG element is
+within the contents of an A element, and a responding cgi-bin program
+has been established at the URL identified by the HREF attribute
+of the A element.
+If a single A element spans both an image and text,
+the cgi-bin program will receive the HREF input values, if any,
+if the text is selected, or the x,y cursor pixel coordinates
+relative to 0,0 as the the upper-left corner of the image
+if the image is selected.
+For references to this advanced feature, see 
+<a href="html_ref.html#Acknowledgements">Acknowledgements</a>.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;IMG SRC="..."&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;IMG SRC="..."
+ ALT="..."
+ ISMAP
+ LANG="..."
+ DIR=lrt|rtl
+ ID="..."
+ CLASS="..."
+ MD="..."
+ ALIGN=bottom|middle|top|left|right|texttop|absmiddle|baseline|absbottom
+ HEIGHT=value
+ WIDTH=value
+ UNITS="..."
+ BORDER=value
+ LOWSRC="..."
+ HSPACE=value
+ VSPACE=value
+ USEMAP="..."
+ DYNSRC="..."
+ START=fileopen|mouseover
+ CONTROLS
+ LOOP=number|INFINITE|-1
+ LOOPDELAY=number&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The IMG element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The attributes BORDER, HEIGHT, WIDTH, HSPACE, VSPACE, and LOWSRC
+are Netscape 1.1 extensions.
+The attributes DYNSRC, START, CONTROLS, LOOP, and LOOPDELAY are
+MS Internet Explorer 2.0 extensions.
+The LANG and DIR attributes are introduced with the
+internationalization proposal and relate to the value of
+the ALT attribute.
+Version 3 proposes adding the WIDTH and HEIGHT attributes.
+RFC 1866 defines only <code>bottom|middle|top</code>
+as values for the ALIGN attribute.
+The additional values for the ALIGN attribute are Netscape extensions,
+and include the capability to define floating images.
+Version 3 proposes adding only the (<code>left|right</code>) values for ALIGN
+to identify images that imply that text can float around the image.
+Some image capable browsers will display the ALT
+text until the full image is retrieved.
+RFC 1866 states that
+Level 0 conformance must accept the element, but Level 1
+conformance is required before it displays the image.
+Version 3 proposes the UNITS attribute for use by the WIDTH and HEIGHT
+attributes to define units other than pixels.
+RFC 1866 states that an IMG element with an ISMAP element must
+only exist in the content of an A element with an HREF attribute.
+Version 3 proposes a <A HREF="#FIG">FIG</A> element
+as an advanced alternative to the IMG element,
+for more sophisticated multi-part overlay images,
+more control over text that is the equivalent of ALT,
+and with a proposed SHAPE attribute on the A element
+a method to perform the common use of the ISMAP attribute
+without the need for a responding cgi-bin program.
+The USEMAP is part of an alternate proposal for client-side
+image mapes.
+It is implemented as a Netscape 2.0 extension.
+USEMAP specifies a URL with a "#NAME" suffix
+to identify a file and MAP name, and is used with the MAP element.
+DYNSRC is defined by MS Internet Explorer 2.0 as the
+address of a video clip or VRML world to be displayed if your
+browser is capable, otherwise display SRC.
+START is defined by MS Internet Explorer 2.0 as when the
+videoclip or VRML world is to be displayed.  If <code>START=mouseover</code>,
+the SRC image is displayed until the mouse cursor is over that image.
+CONTROLS is defined by MS Internet Explorer 2.0 as displaying a set
+of controls under the animation.
+LOOP is defined by MS Internet Explorer 2.0 as how many times a
+video clip will loop when activated.
+If <code>LOOP=-1</code> or <code>LOOP=INFINITE</code>,
+it will loop indefinately.
+LOOPDELAY is defined by MS Internet Explorer 2.0 as how long,
+in milliseconds, a video clip will wait between replays.
+
+<dt><strong>Sandia Requirements</strong>
+<dd>The ALT attribute and a value describing the image is required.
+If known, the BORDER, HEIGHT, and WIDTH attributes are recommended
+as they improve download performance on some browsers.
+If used, the HEIGHT and WIDTH attributes shall specify the actual
+size of the stored image in pixels.
+
+</dl>
+<hr>
+<H2><A NAME="INPUT">INPUT</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The INPUT element is used to specify a simple input field
+as part of the contents in a FORM element.
+<code>TYPE=text</code> is default.
+<code>NAME</code> defines the symbolic name of the field
+returned to the server on submission and must be present
+for all but <code>TYPE=submit|reset</code>.
+For <code>TYPE=checkbox|radio</code>, multiple INPUT elements may have the same NAME value.
+<code>TYPE=radio</code> insures that exactly one choice amongst
+INPUT elements with the same NAME value is selected at all times.
+<code>VALUE</code> is used to specify a default.
+For <code>TYPE=text|password</code> VALUE defines default text to be returned,
+which normally is null.
+For <code>TYPE=password</code> the value should be obscured as it is entered.
+For <code>TYPE=checkbox|radio</code> VALUE defines the value returned when the
+checkbox or radio is selected, which defaults to &quot;on&quot;
+For <code>TYPE=submit|reset</code> VALUE defines the label for the pushbutton.
+Multiple <code>TYPE=submit</code> should have different NAME values to
+identify which submission button was selected.
+<code>CHECKED</code> defaults the specific checkbox or radio INPUT to selected.
+For <code>TYPE=radio</code> the default element checked is the first among
+those with the same NAME value.
+<code>TYPE=image</code> defines
+an image, whose <a href="#URL">URL</a>is identified by the SRC attribute,
+which, when clicked, performs the form submission and sends
+the X,Y coordinates of the click, similar to ISMAP in the IMG element.
+<code>SIZE</code> and <code>MAXLENGTH</code> are only
+used with <code>TYPE=text|password</code>.
+<code>SIZE</code> is the physical size of the
+displayed input field expressed in characters
+or characters,rows.
+<code>MAXLENGTH</code> is the maximum number of characters that are
+accepted as input.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;INPUT&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;INPUT
+ TYPE="text | password | checkbox | radio | submit | reset | hidden | image | file | range | scribble | jot"
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ NAME="..."
+ VALUE="..."
+ SRC="..."
+ CHECKED
+ SIZE="..."
+ MAXLENGTH=number
+ ALIGN=top|middle|bottom|left|right
+ ACCEPT="..."
+ DISABLED
+ ERROR="..."
+ MIN=number
+ MAX=number
+ MD="..."&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The INPUT element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#FORM">&lt;FORM&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 defines the TYPE attribute values of
+<code>text|password|checkbox|radio|submit|reset|hidden|image</code>
+The <a href="#TEXTAREA">&lt;TEXTAREA&gt;</a> element
+should be used instead of this INPUT element for multiline input areas.
+<code>TYPE=hidden VALUE="..."</code> is recognized by some browsers, and is
+used to submit fixed information not entered by the user. 
+Note that RFC 1866 sets a max limit of 1024 characters on VALUE.
+RFC 1866 only defines <code>ALIGN=top|middle|bottom</code>
+<p>
+RFC 1867 defines a mechanism for FORM-based file upload.
+It defines the value <code>file</code> for the TYPE attribute
+and defines a new ACCEPT attribute.
+Specifying <code>TYPE=file</code>
+permits attaching one or more local files to the submitted output.
+The browser may permit the user to specify multiple file names in
+response to a single INPUT element with <code>TYPE=file</code>
+ACCEPT is a list of media types or type patterns allowed for input.
+The valid ACCEPT values and meaning of those values is platform dependent.
+The value for the VALUE attribute specifies a default file name.
+The browser must ask for confirmation before sending any file based
+on the default file name.
+A value for the SIZE attribute of &quot;<code>width,height</code>&quot;
+would specify a default filename width for the input display and height
+sufficient to show some number of files.
+A value for the MAXLENGTH attribute specifies a maximum Content-Length
+(in bytes) which the responding server is likely to accept
+for transferred files.
+Including an INPUT element with <code>TYPE=file</code> requires also specifying
+<code>ENCTYPE=&quot;multipart/form-data&quot; METHOD=post</code>
+on the enclosing FORM element.
+If the FORM does not specify this ENCTYPE, the behavior is unspecified
+and the file transfer is likely to be rejected by the responding server.
+Netscape 2.0 implements FORM-based file upload.
+<p>
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+Version 3 proposes the additional TYPE attribute values of
+<code>range|scribble</code>.
+A beta version of Netscape includes a TYPE attribute value of <code>jot</code>
+which is similar to <code>scribble</code>.
+Version 3 proposes the additional DISABLED, ERROR,
+MIN, MAX, and MD attributes.
+The Version 3 proposed <code>TYPE=range</code>
+uses the proposed MIN and MAX attributes to specify limits to
+numeric (real or integer) input.
+The proposed default value is halfway between MIN and MAX.
+The Version 3 proposed <code>TYPE=scribble</code>
+is to allow the user to scribble with a pointing device on top of
+the image specified with the SRC attribute.
+The Version 3 proposed DISABLED attribute would display this INPUT,
+but prohibit user entry/modification.
+The Version 3 proposed ERROR attribute defines text to be displayed
+in the event that the entered value for this INPUT is invalid.
+All elements concerning FORM are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="INS">INS</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The INS element
+changes the character rendering of the
+contents of the element to logically represent
+inserted text, for instance in modifications in legal documents.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;INS&gt;characters... &lt;/INS&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;INS
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/INS&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The INS element is a Version 3 proposed element.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="ISINDEX">ISINDEX</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>This element appears to be a precursor to the
+<code>&lt;FORM&gt;</code> element which has more features.
+When placed in the BODY of the document,
+it requires the ACTION attribute to point to a cgi-bin
+program which can handle the query, and
+produces a simple INPUT field with a prompt
+of: &quot;<code>This is a searchable index. Enter search keywords:</code>&quot;
+When placed in the HEAD of the document, it
+informs the browser that the document is an index
+document and can be examined using a keyword search.
+The ISINDEX element is usually generated 
+automatically by a server-side script.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;ISINDEX&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;ISINDEX
+LANG="..."
+DIR=ltr|rtl
+ACTION="..."
+PROMPT="..."&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The ISINDEX element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>the element 
+<code><a href="#HEAD">&lt;HEAD&gt;</a></code>
+and any element that permits members of the group
+<code><a href="#block.forms">block.forms</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>ISINDEX is a Level 0 element.
+The new, more sophisticated
+<a href="#FORM">FORM</a>
+element is now used more widely.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+Version 3 proposes the PROMPT attribute.
+The PROMPT attribute is a Netscape extension.
+
+</dl>
+<hr>
+<H2><A NAME="KBD">KBD</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The KBD element changes the character rendering of the
+contents of the element to logically represent
+text entered as keyboard input.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;KBD&gt;characters...
+&lt;/KBD&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;KBD
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/KBD&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of the group
+<code><a href="#phrase">phrase</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>While intended to be distinguishable from CODE, so that
+input and output would be different, most browsers render
+this the same as CODE, simply as a fixed-width font.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="LANG">LANG</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The LANG element is used to change the default LANG context
+for subsequent elements from the current default.
+A LANG attribute on an element overrides this default LANG context
+for the content of that particular element.
+
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;LANG&gt;characters... &lt;/LANG&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;LANG
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/LANG&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The LANG element is a Version 3 proposed element.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="LH">LH</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The LH element defines a list header used as a title for a list.
+Browsers can use this in place of the full list when a mechanism
+is provided to fold and unfold nested lists.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;LH&gt;characters...
+&lt;/LH&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;LH
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/LH&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#DL">&lt;DL&gt;</a>
+<a href="#OL">&lt;OL&gt;</a>
+<a href="#UL">&lt;UL&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The LH element is proposed in Version 3 as an optional element
+at the beginning of some lists.  It is expected that browsers may
+render this element in a different style/font than the list itself.
+
+</dl>
+<hr>
+<H2><A NAME="LI">LI</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The LI element defines a list item.
+It is rendered differently depending upon the list within which
+it appears.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;LI&gt;characters...
+</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;LI
+ LANG="..."
+ DIR=ltr|rtl
+ ALIGN=center|left|right|justify
+</code><i>within UL</i><code> TYPE=disk|circle|square
+</code><i>within OL</i><code> TYPE=A|a|I|i|i
+</code><i>within OL</i><code> VALUE=n&gt;characters...&lt;/LI&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of groups
+<code><a href="#text">text</a>
+<a href="#block">block</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#DIR">&lt;DIR&gt;</a>
+<a href="#MENU">&lt;MENU&gt;</a>
+<a href="#OL">&lt;OL&gt;</a>
+<a href="#UL">&lt;UL&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+The TYPE and VALUE attributes are Netscape extensions.
+The validity of their presence and possible values depends on
+the particular list entity of which this is a list item.
+Most browsers assume the list item ends with the beginning
+of the next list item or the end of the list and
+do not require the closing tag <code>&lt;/LI&gt;</code>
+All list elements are Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="LINK">LINK</A></H2>
+<dl>
+<dt><strong>Description</strong>
+<dd>The LINK element is used to indicate a relationship between
+this document and other documents or objects.
+Multiple LINK elements may exist in a document.
+A LINK in document A with an HREF to document/object B with
+<code>REL=</code><em>relation</em>
+identifies a relationship that B has to A that A recognizes/authorizes/verifies.
+A LINK in document B with an HREF to document/object A with
+<code>REV=</code><em>relation</em> that is the identical <em>relation</em>
+identifies a desired/expected/claimed relationship of B to document/object A,
+but must be verified by checking with A.
+For further description of the LINK attributes, see the
+<A HREF="#A">A</A> element.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;LINK HREF="..."
+&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;LINK HREF="..."
+ REL="..."
+ REV="..."
+ LANG="..."
+ DIR=ltr|rtl
+ CHARSET="..."
+ URN="..."
+ TITLE="..."
+ METHODS="..."
+&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The LINK element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#HEAD">&lt;HEAD&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The LANG, DIR and CHARSET attributes are introduced with the
+internationalization proposal.
+The CHARSET attribute is a hint as to the expected
+character set used by the hyperlink.
+Some browsers will expect a LINK REV relationship of &quot;made&quot;
+to be a &quot;mailto:name@e-mail_address&quot; to facilitate
+sending comments to the person that made the document.
+Contrary to the specification of the standard, this seems to only
+work if &quot;made&quot; is the only relationship in that LINK element.
+In addition to those mentioned with the <A HREF="#A">A</A> element,
+Version 3 reserves some relations for REL that are expected to
+be used for document specific toolbars.  Currently these include
+<code>Home, ToC, Index, Glossary, Copyright, Up, Next,
+Previous, Help, Bookmark</code>.
+Version 3 also discusses relations for a document banner
+and style sheets.
+LINK is a Level 0 element.
+
+<dt><strong>Sandia Requirements</strong>
+<dd>A LINK element in the HEAD to identify the owner of
+the document responsible for its accuracy is
+required by Sandia's automated Web tools:<br>
+<code>&lt;LINK REV=&quot;owns&quot; TITLE=&quot;Full Name&quot; HREF=&quot;mailto:owner-e-mail@sandia.gov&quot;&gt;</code>
+<p>
+LINK elements are also recommended to identify
+other individuals and their relationships to this document.
+The REV value of <code>made</code> should be used to identify the
+author of the document.
+Suggested values for REV in additional LINK elements are:
+<code>approves, editor, publisher.</code>
+<p>
+Large documents which are separated into smaller HTML subdocuments
+should use the LINK element with the REL attribute to identify these
+relationships. 
+The parent document should identify all subdocuments by:<br>
+<code>&lt;LINK REL=&quot;Subdocument&quot; TITLE=&quot;Subdoc Name&quot; HREF=&quot;link-url&quot;&gt;</code><br>
+The subdocument may identify its parent by:<br>
+<code>&lt;LINK REV=&quot;Subdocument&quot; TITLE=&quot;Maindoc Name&quot; HREF=&quot;link-url&quot;&gt;</code><br>
+Any Sandia document which is part of
+a set of HTML subdocuments which form a sequence or hierarchy should
+include two specific LINK elements identifying the REL values of
+<code>next</code> and <code>previous</code>.
+Only one <code>next</code> and one <code>previous</code> relationship
+may be specified in a document.
+<p>
+Any of the other document relationships mentioned in this Reference Manual
+may also be used.
+</dl>
+<hr>
+<H2><A NAME="LISTING">LISTING</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The LISTING element defined a separated multi-line set of text
+to be rendered as it exists in the source document with
+the same line breaks.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;LISTING&gt;characters...
+&lt;/LISTING&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;LISTING WIDTH="..."
+&gt;characters...
+&lt;/LISTING&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The only markup recognized is the LISTING ending element.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#block">block</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>Most browsers use fixed-width characters for LISTING text.
+This element existed in Version 0 and has been replaced by the
+<code>&lt;PRE&gt;</code> element.
+RFC 1866 states that the content of the LISTING element should be
+rendered so that at least 132 characters fit on a line.
+RFC 1866 has declared LISTING as deprecated
+and some current browsers no longer recognize it.
+
+</dl>
+<hr>
+<H2><A NAME="MAP">MAP</A></H2>
+<dl>
+<dt><strong>Description</strong>
+<dd>The MAP element is used to name and describe a client-side
+image map.  This is a set of areas defined on an image which
+can be selected for hyperlinks.  NAME defines the map name to
+be used with the USEMAP attribute on an IMG element.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;MAP NAME="..."&gt;&lt;/MAP&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;MAP NAME="..."&gt;&lt;/MAP&gt;</code>
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#AREA">&lt;AREA&gt;</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+<dt><strong>Variations</strong>
+<dd>The MAP element is part of a proposed enhancement to
+provide client-side image maps.  It is implemented in Netscape 2.0.
+
+</dl>
+<hr>
+<H2><A NAME="MARQUEE">MARQUEE</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The MARQUEE element defines an area in which visual scrolling will
+be used to display the content of the element.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;MARQUEE&gt;characters... &lt;/MARQUEE&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;MARQUEE
+ALIGN=top|middle|bottom
+BEHAVIOR=scroll|slide|alternate
+BGCOLOR=#rrggbb|colorname
+DIRECTION=left|right
+HEIGHT=number|number%
+HSPACE=number
+LOOP=number|INFINITE|-1
+SCROLLAMOUNT=number
+SCROLLDELAY=number
+VSPACE=number&gt;characters...
+&lt;/MARQUEE&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The MARQUEE element is a MS Internet Explorer 2.0 enhancement.
+Based on the description it might be assumed that only parsed
+character data may be in the content of the MARQUEE element.
+The ALIGN attribute defines the location of the text within the marquee.
+The BEHAVIOR attribute determines whether the text will
+<code>scroll</code> completely in and completely off (the default),
+<code>slide</code> in and stay,
+or bounce between <code>alternate</code> sides of the marquee.
+The BGCOLOR attribute defines the background color for the marquee,
+which is specified as an "#rrggbb" number, or
+the following color names: <code>
+Black, Maroon, Green, Olive, Navy, Purple, Teal, Gray, Silver, Red, Lime,
+Yellow, Blue, Fuchsia, Aqua, White.</code>
+The DIRECTION attribute specifies the direction towards which the
+text should flow.
+The HEIGHT attribute specifies the height of the marquee, either
+in pixels or with a percentsign character suffix to define a
+percentage of the entire screen height.
+The HSPACE and VSPACE attributes are specified in pixels
+and define the amount to separate the marquee from surrounding text.
+The LOOP attribute specifies how many times the text will loop.
+If <code>LOOP=-1</code> or <code>LOOP=INFINITE</code>,
+the text will loop indefinately.
+The SCROLLAMOUNT specifies the number of pixels and
+the SCROLLDELAY specifies the number of milliseconds
+between each successive draw of the marquee text.
+
+</dl>
+<hr>
+<H2><A NAME="MENU">MENU</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The MENU element defines an unordered list consisting of a number of 
+separated multi-line <code>&lt;LI&gt;</code> elements which
+may or may not be marked by a bullet or similar symbol.
+<dd>
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;MENU&gt;&lt;/MENU&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;MENU COMPACT
+ LANG="..."
+ DIR=ltr|rtl
+ ALIGN=center|left|right|justify&gt;
+&lt;/MENU&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>element
+<code><a href="#LI">&lt;LI&gt;</a></code>
+but not any member of group 
+<code><a href="#block">block</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#list">list</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This list type is often rendered identically to UL.
+RFC 1866 states that while similar to the UL element,
+MENU is typically rendered in a more compact manner.
+The COMPACT attribute of the UL element is more often used than
+this MENU element.
+The exclusion in RFC 1866 of group <code>block</code> within MENU implies
+(among other things) that MENU can contain no nested lists,
+nor any paragraphs even though the LI element normally would allow this.
+Some browsers do not enforce this exclusion.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+By adding the PLAIN attribute to eliminate the bullets to the
+<A HREF="#UL">UL</A> element, Version 3 proposes to remove the MENU element.
+All list elements are Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="META">META</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The META element is used within the HEAD element
+to embed document meta-information not defined
+by other HTML elements.
+Such information may be extracted by servers/browsers.
+The HTTP-EQUIV attribute binds the element to an HTTP response header.
+If not present, the NAME attribute should be used to identify this
+meta-information and it should not be used within an HTTP response header. 
+If the NAME attribute is not present, the name can be assumed equal to
+the value of HTTP-EQUIV. 
+The CONTENT attribute defines
+the meta-information content to be associated with the given name
+and/or HTTP response header. 
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;META CONTENT="..."
+&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;META HTTP-EQUIV="..."
+ NAME="..."
+ CONTENT="..."
+ URL="..."
+&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The META element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#HEAD">&lt;HEAD&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The META element was introduced in RFC 1866 and is a
+Level 1 element.
+RFC 1866 specifies that a series of META elements with the same name
+is equivalent to a single element with the combined contents concatenated
+as a comma-separated list.
+One proposal for specific information in the META element involves
+including a
+<A HREF="http://www.w3.org/hypertext/WWW/PICS/labels.html">PICS label</A>.
+The URL attribute is a Netscape extension.
+Netscape 1.1 has added a automatic refresh capability using the META element
+by setting the HTTP-EQUIV attribute to <code>&quot;REFRESH&quot;</code>,
+the CONTENT attribute to a number of seconds, and the URL attribute
+to the file to load which defaults to reloading the same file.
+Netscape 1.1 also recognizes placing the URL inside the quotes
+which define the CONTENT value
+by using a semicolon following the number of seconds, then the
+URL=http://... text.
+
+<dt><strong>Sandia Requirements</strong>
+<dd>Two META elements are required to identify specific
+information for Sandia's automated Web tools.<br>
+<code>&lt;META NAME=&quot;REVIEW&quot; CONTENT=&quot;DD MMM YYYY&quot;&gt;</code><br>
+<code>&lt;META HTTP-EQUIV=&quot;KEYWORDS&quot; CONTENT=&quot;key1, key2, key3&quot;&gt;</code><br>
+For large documents split into multiple HTML subdocuments, these META
+elements should only be included in the HTML document that is the parent
+of all the subdocuments, usually the Introduction or Table of Contents document.
+</dl>
+<hr>
+<H2><A NAME="NEXTID">NEXTID</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The single attribute <code>N=</code>
+provides the next available identifier
+for use by automatic hypertext editors.
+If the NEXTID element is manually entered, it should be
+alphabetical to avoid conflict with such editors.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;NEXTID N="..."
+&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;NEXTID N="..."
+&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The NEXTID element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#HEAD">&lt;HEAD&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 recommends that NEXTID not be used.
+NEXTID is a Level 0 element.
+
+</dl>
+<hr>
+<H2><A NAME="NOBR">NOBR</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>All text between the start and end of the <code>NOBR</code> elements
+cannot have line breaks inserted between them.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;NOBR&gt;characters... &lt;/NOBR&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;NOBR&gt;characters... &lt;/NOBR&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The NOBR element is a Netscape 1.1 extension.
+
+</dl>
+<hr>
+<H2><A NAME="NOEMBED">NOEMBED</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The NOEMBED element defines content within EMBED content that is
+to be ignored by browsers that can activiate the EMBED plug-in
+application.  Browsers that can't/won't activate the EMBED plug-in
+but that understand the EMBED/NOEMBED elements
+or browsers that do not understand the EMBED/NOEMBED elements
+will display the NOEMBED content.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;NOEMBED&gt;characters... &lt;/NOEMBED&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;NOEMBED&gt;characters... &lt;/NOEMBED&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#EMBED">&lt;EMBED&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The NOEMBED element is a Netscape 2.0 enhancement to support
+application specific plug-ins.
+
+</dl>
+<hr>
+<H2><A NAME="NOFRAMES">NOFRAMES</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The NOFRAMES element defines content within FRAMESET content that is
+to be ignored by browsers that can define Frames.
+Browsers that can't/won't define Frames
+but that understand the FRAMESET/NOFRAMES elements
+or browsers that do not understand the FRAMESET/NOFRAMES elements
+will display the NOFRAMES content.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;NOFRAMES&gt;characters... &lt;/NOFRAMES&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;NOFRAMES&gt;characters... &lt;/NOFRAMES&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#FRAMESET">&lt;FRAMESET&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The NOFRAMES element is a part of the Netscape 2.0 enhancement to
+define multiple Frames for viewing documents.  It appears that Netscape 2.0
+permits any element of group
+<a href="#body.content"><code>body.content</code></a>
+in the content
+of the NOFRAMES element.
+
+</dl>
+<hr>
+<H2><A NAME="NOTE">NOTE</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The NOTE element changes the rendering of the
+contents of the element to logically represent
+separated notational text.
+The SRC attribute specifies an image to appear preceding the note.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;NOTE&gt;characters... &lt;/NOTE&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;NOTE
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ CLEAR=left|right|all|"..."
+ SRC="..."
+ MD="..."&lt;/NOTE&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The NOTE element is a Version 3 proposed element.
+It is expected to typically be rendered indented, without a preceding
+bullet, symbol, or other graphic.  Accompanying style guides are
+expected to define renderings associated with specific CLASS values.
+NOTE, CAUTION, and WARNING are expected values for the CLASS attribute.
+
+</dl>
+<hr>
+<H2><A NAME="OL">OL</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The OL element defines an ordered list consisting of a number of 
+separated multi-line <code>&lt;LI&gt;</code> elements, and
+ordered numerically in some way.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;OL&gt;&lt;/OL&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;OL
+ COMPACT
+ LANG="..."
+ DIR=ltr|rtl
+ ALIGN=center|left|right|justify
+ ID="..."
+ CLASS="..."
+ CLEAR=left|right|all|"..."
+ CONTINUE
+ SEQNUM=value
+ START=value
+ TYPE=A|a|I|i|1&gt;&lt;/OL&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#LH">&lt;LH&gt;</a>
+<a href="#LI">&lt;LI&gt;</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of the group
+<code><a href="#list">list</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+Version 3 proposes the CLEAR attribute.
+The CONTINUE attribute is proposed by Version 3 to continue the
+numbering from where the previous OL list left off.
+The SEQNUM attribute is proposed by Version 3 to 
+define a starting number for the list.
+START is a Netscape extension to do the same thing as SEQNUM.
+The TYPE attribute is a Netscape extension.
+Version 3 proposes using associated style sheets and the CLASS attribute
+to handle these, and other, options to numbering style.
+All list elements are Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="OPTION">OPTION</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The OPTION element identifies a choice in a SELECT element,
+which in turn is part of the contents of a FORM element.
+SELECTED specifies that this option is selected by default.
+If SELECT allows MULTIPLE, then multiple options may be SELECTED.
+If the VALUE attribute it not present and the OPTION is selected,
+the OPTION contents is returned upon submission of the FORM.
+If the VALUE attribute is present and the OPTION is selected,
+the value of the VALUE attribute is returned instead of the contents.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;OPTION&gt;characters...
+</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;OPTION SELECTED VALUE="..."
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ DISABLED
+ ERROR="..."
+ SHAPE="..."
+&gt;characters...
+&lt;/OPTION&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The OPTION element may only contain parsed character data.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#SELECT">&lt;SELECT&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The DISABLED attribute was part of an early Version 2 proposal,
+but is not defined in RFC 1866.
+It is defined in Version 3, and
+would display this OPTION, but prohibit user selection/deselection.
+RFC 1866 sets a max limit of 1024 characters on VALUE.
+Version 3 proposes the ERROR and SHAPE attributes.
+The Version 3 proposed ERROR attribute defines text to be displayed
+in the event that selectiing this OPTION is invalid.
+The Version 3 proposed SHAPE attribute defines the shape of the
+&quot;hotspot&quot; on the imgage defined by the SRC attribute
+of the surrounding SELECT element.
+The proposed values of SHAPE are:
+<code>&quot;default&quot;</code>, <code>&quot;circle x,y,r&quot;</code>,
+<code>&quot;rect x,y,w,h&quot;</code>, and
+<code>&quot;polygon x1,y1,x2,y2,...&quot;</code>.
+All elements concerning FORM are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="OVERLAY">OVERLAY</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The OVERLAY element is used to overlay one or more images
+on top of a FIG image.
+The X and Y attributes identify the offsets from the top left
+of the FIG where the top left of the overlay will be placed.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;OVERLAY SRC="..."&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;OVERLAY SRC="..."
+ MD="..."
+ UNITS=pixels|en
+ X=value
+ Y=value
+ WIDTH=value
+ HEIGHT=value
+ IMAGEMAP="..."&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The OVERLAY element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#FIG">&lt;FIG&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The OVERLAY element is proposed in Version 3 as part of
+the <A HREF="#FIG">FIG</A> construct.
+It is designed to take advantage of the caching system of most browsers
+for a series of similar images which may only differ by an overlay
+and the rest is already in cache.
+
+</dl>
+<hr>
+<H2><A NAME="P">P</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The P element is used to denote a paragraph break,
+and separates two blocks of text.
+Many other elements automatically imply a text separation,
+such as headings, list elements, blockquotes, etc.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;P&gt;characters...
+</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;P
+ ALIGN=center|left|right|justify|indent
+ WRAP=on|off
+ NOWRAP
+ CLEAR=left|right|all|"..."
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/P&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#block">block</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>In Version 1, the <code>&lt;P&gt;</code> element was a separator
+and the <code>&lt;/P&gt;</code> element was not defined.
+RFC 1866 changed the concept to a container and introduced the
+optional <code>&lt;/P&gt;</code> element.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+HTML+ introduced the <code>ALIGN</code> attribute
+and is the only proposal to mention the <code>indent</code> value.
+The internationalization proposal includes
+<code>ALIGN=center|left|right|justify</code>
+Netscape 2.0 implements <code>ALIGN=center|left|right</code> and
+MS Internet Explorer 2.0 implements <code>ALIGN=center|left|right|justify</code>
+Version 3 does not currently include <code>indent</code> as an option
+for ALIGN.
+The CLEAR attribute is proposed in Version 3 to deal with text
+able to float around an image defined with the IMG element.
+HTML+ introduced the <code>ID</code> attribute
+to replace the NAME attribute
+in the A element to establish internal hyperlink destinations.
+With the expected use of ID for style sheets, this is likely to change.
+HTML+ proposed WRAP to turn off automatic word wrap, making it possible
+to leave text as it appears in the source.
+Version 3 replaces the WRAP attribute and values with the NOWRAP attribute.
+The P element is Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="PARAM">PARAM</A></H2>
+<dl>
+<dt><strong>Description</strong>
+<dd>The PARAM element is a mechanism to define general purpose parameters
+to be passed to APPLET applications.  NAME is the name of the parameter
+and VALUE will be obtained by the applet with the <code>getParameter()</code>
+method.
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;PARAM NAME="..." VALUE="..."&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;PARAM NAME="..." VALUE="..."&gt;</code>
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The PARAM element is defined as having no content.
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#APPLET">&lt;APPLET&gt;</a>
+</code>
+<dt><strong>Variations</strong>
+<dd>The PARAM element is a proposed extension for JAVA(tm) applications.
+</dl>
+<hr>
+<H2><A NAME="PERSON">PERSON</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The PERSON element
+changes the character rendering of the
+contents of the element to logically represent
+the name of people
+to allow these to be extracted automatically by indexing programs.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;PERSON&gt;characters... &lt;/PERSON&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;PERSON
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/PERSON&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The PERSON element is a Version 3 proposed element.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="PLAINTEXT">PLAINTEXT</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The PLAINTEXT element defined a separated multi-line set of text
+to be rendered as it exists in the source document with
+the same line breaks.  It was designed to ignore all subsequent
+HTML tags.  Therefore, it was always last in a document, allowing
+the remainder of the document to be presented as text.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;PLAINTEXT&gt;characters...
+&lt;/PLAINTEXT&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;PLAINTEXT WIDTH="..."
+LANG="..."
+DIR=ltr|rtl&gt;characters...
+&lt;/PLAINTEXT&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>Only the PLAINTEXT ending element is recognized as an element
+inside of PLAINTEXT content, all else is treated as character data.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#HTML">&lt;HTML&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>Most browsers use fixed-width characters for PLAINTEXT text.
+A few browsers accepted the ending element, which meant that
+the ending element could not exist in the text.
+The RFC 1866 DTD specifies that the ending element can exist and
+implies that a browser should recognize the ending
+element but accept everything else as just text.
+It also prohibits it from being nested inside any element but the
+outer HTML element itself.
+Comments in RFC 1866 state that PLAINTEXT has no ending element and
+all characters after the start element are data.
+This element existed in Version 0 and has been replaced by the
+<code>&lt;PRE&gt;</code> element.
+RFC 1866 has declared PLAINTEXT as deprecated
+and some current browsers no longer recognize it.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+
+</dl>
+<hr>
+<H2><A NAME="PRE">PRE</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The PRE element defines a separated multi-line set of text
+to be rendered as it exists in the source document with
+the same line breaks and spaces.
+Normal text removes multiple spaces and line breaks in the source.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;PRE&gt;characters...
+&lt;/PRE&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;PRE WIDTH=number
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ CLEAR=left|right|all|"..."
+&gt;characters...
+&lt;/PRE&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>elements <code>
+<a href="#A">&lt;A&gt;</a>
+<a href="#HR">&lt;HR&gt;</a>
+<a href="#BR">&lt;BR&gt;</a>
+</code>
+and parsed character data
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any entity that permits members of group
+<code><a href="#block">block</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 states that the content of PRE is intended to be
+formatted with a monospaced font.
+For backwards compatibility with some existing documents,
+RFC 1866 encourages browsers to accept the &lt;P&gt; element
+in the PRE content and treat it as if it were the &lt;BR&gt; element.
+While RFC 1866 states that within PRE content the tab character should
+position to the next 8 character boundary, it recommends
+that HTML documents not contain the tab character.
+Version 3 encourages using the proposed <A HREF="TAB">TAB</A> element instead.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+One typical use of PRE has been for tables, but the Version 3
+<A HREF="TABLE">TABLE</A> element is proposed to fulfill that requirement.
+The CLEAR attribute is proposed in Version 3.
+RFC 1866 states that the attribute WIDTH specifies the
+maximum number of characters for a line.
+Some browsers have interpreted this as specifying
+the minimum number of characters that the browser should 
+try to insure are displayed on a single line, possibly by selecting
+a smaller font size.
+Many browsers ignore the WIDTH attribute, and Version 3 is discussing
+the possibility of removing it.
+The PRE element is Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="Q">Q</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The Q element changes the character rendering of the
+contents of the element to logically represent a short quotation.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;Q&gt;characters... &lt;/Q&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;Q
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/Q&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The Q element was a Version 3 proposed element and is part
+of the internationalization proposal.
+It is intended to be shown enclosed in the kind of quotations marks
+appropriate to the LANG language context.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="S">S</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The S element changes the physical rendering of the
+contents of the element to a font
+with a strikeout line through the letters.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;S&gt;characters...
+&lt;/S&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;S
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/S&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The S element is proposed in Version 3.
+This replaces the STRIKE element which was in a early Version 2 proposal
+but is not in RFC 1866.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="SAMP">SAMP</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The SAMP element changes the character rendering of the
+contents of the element to logically represent a sequence of literal characters.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;SAMP&gt;characters...
+&lt;/SAMP&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;SAMP
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/SAMP&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group <code>
+<a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of the group
+<code><a href="#phrase">phrase</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This is usually rendered with a fixed-width font.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="SELECT">SELECT</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The SELECT element defines a menu of a series of selectable
+input in a FORM, each identified with the OPTION element.
+At least one OPTION element is expected within the SELECT contents.
+NAME is the symbolic name of the field
+returned to the server on submission.
+SIZE determines the number of OPTIONS physically visible
+when the browser displays the FORM.
+The default selection will be the first OPTION in the SELECT contents.
+The MULTIPLE attribute, if present, allows multiple selections, and
+causes no OPTION to be the default.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;SELECT NAME="..."&gt;characters...
+&lt;/SELECT&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;SELECT NAME="..."
+ SIZE=value
+ MULTIPLE
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ ALIGN=top|middle|bottom|left|right
+ DISABLED
+ ERROR="..."
+ SRC="..."
+ MD="..."
+ WIDTH=value
+ HEIGHT=value
+ UNITS=pixels|em&gt;characters...
+&lt;/SELECT&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>element <code>
+<a href="#OPTION">&lt;OPTION&gt;</a>
+</code>
+Note that the elements <code>
+<a href="#INPUT">&lt;INPUT&gt;</a>
+<a href="#SELECT">&lt;SELECT&gt;</a>
+<a href="#TEXTAREA">&lt;TEXTAREA&gt;</a>
+</code> are expressly prohibited by RFC 1866 from being nested
+within the SELECT element content
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#FORM">&lt;FORM&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The ERROR attribute without a value was first introduced
+in an early Version 2 proposal but is not in RFC 1866.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+Version 3 proposes the ALIGN, DISABLED,
+ERROR (with a value), SRC, MD, WIDTH, HEIGHT, and UNITS attributes.
+The Version 3 proposed DISABLED attribute would display this menu,
+but prohibit user entry/modification.
+The Version 3 proposed ERROR attribute defines text to be displayed
+in the event that the current selections for this menu are invalid.
+Version 3 proposes a SRC attribute to identify a URL for an image
+to be displayed instead of the OPTION texts for this menu,
+with each OPTION element identifying its &quot;hotspot&quot; on this image.
+If SRC is present, the texts would only be used for non-graphical browsers.
+All elements concerning FORM are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="SMALL">SMALL</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The SMALL element changes the physical rendering of the
+contents of the element to a smaller font than normal text, if practical.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;SMALL&gt;characters...
+&lt;/SMALL&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;SMALL
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/SMALL&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The SMALL element is proposed in Version 3.
+This element is a Netscape 2.0 extension.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="SPAN">SPAN</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The SPAN element is a generic container to set language
+characteristics for its content.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;SPAN&gt;characters... &lt;/SPAN&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;SPAN
+LANG="..."
+DIR=ltr|rtl&gt;characters...
+&lt;/SPAN&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The SPAN element is a part of the internationalization proposal.
+
+</dl>
+<hr>
+<H2><A NAME="STRIKE">STRIKE</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The STRIKE element changes the physical rendering of the
+contents of the element to a font
+with a strikeout line through the letters.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;STRIKE&gt;characters...
+&lt;/STRIKE&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;STRIKE&gt;characters...
+&lt;/STRIKE&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This was an early Version 2 proposed element but is not in RFC 1866.
+(<i>ed:</i> This appears to be an undocumented extension which
+works in Netscape 1.1.  Anyone try this with other browsers?)
+This is replaced in Version 3 with the <a href="#S">&lt;S&gt;</a> element.
+
+</dl>
+<hr>
+<H2><A NAME="STRONG">STRONG</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The STRONG element changes the character rendering of the
+contents of the element to logically strengthen the text.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;STRONG&gt;characters...
+&lt;/STRONG&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;STRONG
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/STRONG&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group <code>
+<a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#phrase">phrase</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This is usually rendered as bold.
+RFC 1866 states that &lt;EM&gt; content must be rendered as distinct
+from &lt;STRONG&gt; content.
+&lt;STRONG&gt; is intended to be stronger than &lt;EM&gt;.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="SUB">SUB</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The SUB element changes the physical rendering of the
+contents of the element to a subscripted position.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;SUB&gt;characters...
+&lt;/SUB&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;SUB
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/SUB&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>parsed character data
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The SUB element was in an early Version 2 proposal and is part
+of the internationalization proposal, but is not in RFC 1866.
+No font size change was implied in Version 2 nor is any specified
+as part of the internationalization proposal since it may not
+make sense in non-English languages.
+The internationalization proposal explicitly restricts the content
+to parsed character data to prevent nesting of SUB and SUP.
+This element is a Netscape 2.0 extension which renders the text
+in a slightly smaller font.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="SUP">SUP</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The SUP element changes the physical rendering of the
+contents of the element to a superscripted position.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;SUP&gt;characters...
+&lt;/SUP&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;SUP
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/SUP&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>parsed character data
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The SUP element was in an early Version 2 proposal and is part
+of the internationalization proposal, but is not in RFC 1866.
+No font size change was implied in Version 2 nor is any specified
+as part of the internationalization proposal since it may not
+make sense in non-English languages.
+The internationalization proposal explicitly restricts the content
+to parsed character data to prevent nesting of SUB and SUP.
+This element is a Netscape 2.0 extension which renders the text
+in a slightly smaller font.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="TAB">TAB</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The TAB element aligns the following text according to
+a defined horizontal position.
+A TAB position can be defined by the ID attribute.
+Text is positioned using the TO and/or ALIGN attributes, or
+the INDENT attribute.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;TAB&gt;characters...</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;TAB
+ ID="..."
+ INDENT=ens
+ TO="..."
+ ALIGN=left|center|right|decimal
+ DP="..."&gt;characters...</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The TAB element is proposed in Version 3.
+
+</dl>
+<hr>
+<H2><A NAME="TABLE">TABLE</A></H2>
+<dl>
+<dt><strong>Description</strong>
+<dd>The TABLE element defines a series of rows of table cell elements.
+The contents of the TABLE element
+contains a sequence of elements which describe various parts of the table.
+The order in the sequence is important and consists of:
+at most one <A HREF="#CAPTION">CAPTION</A> element,
+possibly some <A HREF="#COL">COL</A> or
+possibly some <A HREF="#COLGROUP">COLGROUP</A> elements,
+at most one <A HREF="#THEAD">THEAD</A> element,
+at most one <A HREF="#TFOOT">TFOOT</A> element,
+and finally at least one <A HREF="#TBODY">TBODY</A> element 
+or at least one <A HREF="#TR">TR</A> element.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;TABLE&gt;&lt;/TABLE&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;TABLE
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ ALIGN=left|right|center|justify|bleedleft|bleedright
+ WIDTH="..."
+ COLS=number
+ BORDER="..."
+ FRAME=void|above|below|hsides|lhs|rhs|vsides|box|border
+ RULES=none|basic|rows|cols|all
+ CELLSPACING="..."
+ CELLPADDING="..."
+ CLEAR=left|right|all|"..."
+ NOFLOW
+ UNITS=en|relative|pixels
+ COLSPEC="..."
+ DP="..."
+ NOWRAP&gt;&lt;/TABLE&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#CAPTION">&lt;CAPTION&gt;</a>
+<a href="#COL">&lt;COL&gt;</a>
+<a href="#COLGROUP">&lt;COLGROUP&gt;</a>
+<a href="#THEAD">&lt;THEAD&gt;</a>
+<a href="#TFOOT">&lt;TFOOT&gt;</a>
+<a href="#TBODY">&lt;TBODY&gt;</a>
+<a href="#TR">&lt;TR&gt;</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#block">block</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The TABLE element is part of a comprehensive new proposed standard
+tables structure. It is partially implemented in some browsers.
+The proposal has undergone numerous changes.
+Some broswers implemented features in early versions of the proposal
+which did not survive in the final proposal.
+Consistent with the nature of HTML, the proposal defines the logical contents
+of cells and their row/column location, rather than a physical layout
+which is left as a function of the browser.
+Details of the appearence of the table,
+along with the size of margins around cells, even perhaps ruling and shading,
+might be controlled by associated style sheets, proposed in Version 3.
+The current proposal expects text to flow around a table, if possible.
+It suggests using the BR element with a CLEAR attribute after
+the table element if the author wishes to avoid text flowing along side
+the table.  Although the CLEAR attribute is not currently a standardized
+part of HTML, the tables proposal does not include text
+to standardize the attribute's existence.
+<p>
+The ALIGN attribute specifies the table position relative to the window.
+The WIDTH attribute specifies the entire table width, and defaults
+to 100%.
+The default units is pixels, but may be specified by a suffix on the number.
+The standard defined units suffixes include:
+<code>pt</code>=points,
+<code>pi</code>=picas,
+<code>in</code>=inches,
+<code>cm</code>=centimeters,
+<code>mm</code>=millimeters,
+<code>em</code>=em units,
+<code>px</code>=screen pixels.
+In addition the suffix of a percentsign may be used to specify the
+percentage width of the space between the current left and right margins.
+The COLS attribute specifies the total number of columns in the table and
+aids the browser in determining the initial display and layout of the table.
+The BORDER attribute controls frame width around the table and FRAME defines
+which parts of the frame to include.
+For BORDER, the default units is pixels,
+but may be specified by one of the standard defined units suffixes.
+BORDER=0 implies FRAME=none, and BORDER without a value implies FRAME=border.
+The RULES attribute defines the presence or absence of rulings
+between all rows and columns in this table.
+The CELLSPACING attribute defines spacing between cells and CELLPADDING
+defines spacing within cells.
+<p>
+The TABLE element has been partially implemented in Netscape 1.1 and
+MS Internet Explorer 2.0.
+The COL, COLGROUP, THEAD, and TFOOT elements are new and not yet implemented.
+The FRAME and RULES attributes are new and not yet implemented.
+The values <code>justify|bleedleft|bleedright</code> for the ALIGN attribute
+are Netscape 1.1 extensions.
+The attribute COLSPEC was from an earlier version of the proposal
+and is replaced by the COL and COLGROUP elements.
+The attribute DP is from an earlier version of the proposal and
+was used with a value of <code>decimal</code> on the ALIGN attribute.
+It has been replaced with the CHAR and CHAROFF attributes
+used when <code>ALIGN=char</code> which are
+defined for all table grouping elements except TABLE.
+The attributes CLEAR, NOFLOW, UNITS, and NOWRAP are Netscape 1.1 extensions.
+Netscape 1.1 defines WIDTH as having a value of either a number of pixels
+or a number followed by a percentsign to define a desired width of the table
+which may be overridden by the browser.
+It defines percentsign to specify the percentage of the entire window,
+instead of the current margins.
+</dl>
+<hr>
+<H2><A NAME="TBODY">TBODY</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The TBODY element encloses a series of table row definitions and
+specifies the defaults for all the rows in this group.
+Table rows are grouped inside the <A HREF="#TABLE">TABLE</A>
+content into at most one <A HREF="#THEAD">THEAD</A>,
+at most one <A HREF="#TFOOT">TFOOT</A>,
+and at least one TBODY sections, in that order.
+Depending on the capabilities of the browser, this sectioning can be used to
+repeat table head and foot rows when breaking tables across page
+boundaries, or to provide fixed headers above and footers below
+a scrollable body panel, or other similar rendering schemes.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;TBODY&gt;
+</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;TBODY
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ ALIGN=left|right|center|justify|char
+ CHAR="..."
+ CHAROFF="..."
+ VALIGN=top|middle|bottom|baseline&gt;characters...&lt;/TBODY&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code><a href="#TR">TR</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#TABLE">TABLE</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The TBODY element is a part of the latest table proposal.
+This TBODY element is new and not widely implemented.
+Both the starting and ending elements are optional for this element.
+This implies that a TABLE with only one TBODY does not require
+the TBODY element since the first TR element not inside a THEAD
+or TFOOT but inside a TABLE will imply the TBODY content.
+This also allows this proposal to be backwards compatible with
+existing documents which have a simple TABLE element whose content
+consists of only a series of row and data elements.
+<p>
+The table proposal states that a browser may display
+<code>ALIGN=justify</code> the same as the default
+<code>ALIGN=left</code> if it lacks support for text justification.
+The CHAR and CHAROFF attributes are used when <code>ALIGN=char</code>.
+CHAR specifies a single character to be used for alignment, and
+defaults to the decimal point in the current language.
+CHAROFF specifies the offset, in the DIR direction, to the first
+occurrence of the CHAR character on each line.  If a line doesn't
+include the CHAR character, it is to end at the CHAROFF position.
+The default value for CHAROFF is either 50% or whatever will cause
+the CHAR characters in all cells with a declared CHAR in a column to align.
+The default units is pixels, but may be specified by a suffix on the number.
+The standard defined units suffixes include:
+<code>pt</code>=points,
+<code>pi</code>=picas,
+<code>in</code>=inches,
+<code>cm</code>=centimeters,
+<code>mm</code>=millimeters,
+<code>em</code>=em units,
+<code>px</code>=screen pixels.
+In addition the suffix of a percentsign may be used to specify the
+percentage offset within the cell.
+The VALIGN attribute defines the vertical alignment of the cell contents.
+The ALIGN, CHAR and CHAROFF attribute values may be inherited from
+other table elements in the following order:
+cells &lt; columns &lt; column groups &lt; rows &lt; row groups &lt; default.
+The VALIGN, LANG and DIR attribute values may be inherited from
+other table elements in the following order:
+cells &lt; rows &lt; row groups &lt; columns &lt; column groups &lt; table &lt; default.
+
+</dl>
+<hr>
+<H2><A NAME="TD">TD</A></H2>
+<dl>
+<dt><strong>Description</strong>
+<dd>The TD element defines a data cell as part of the TABLE construct.
+Both TH and TD elements can exist in any
+one of the three table sections: THEAD, TFOOT, or TBODY.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;TD&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;TD
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ AXIS="..."
+ AXES="..."
+ NOWRAP
+ ROWSPAN=value
+ COLSPAN=value
+ ALIGN=left|right|center|justify|char|decimal
+ CHAR="..."
+ CHAROFF="..."
+ DP="..."
+ VALIGN=top|middle|bottom|baseline
+ WIDTH=value
+ BGCOLOR="..."&gt;characters...&lt;/TD&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group <code>
+<a href="#body.content">body.content</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#TR">TR</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The TD element is part of the proposed TABLE construct.
+A browser is to assume the table cell ends with the beginning
+of the next table cell or the beginning of another table row
+or the end of the enclosing TABLE, THEAD, TFOOT, or TBODY element
+and thus a closing tag is not required.
+This element is an extension in Netscape 1.1 and MS Internet Explorer 2.0.
+<p>
+The values <code>justify|char</code> for the ALIGN attribute
+are new and are not widely implemented.
+The table proposal states that a browser may display
+<code>ALIGN=justify</code> the same as the default
+<code>ALIGN=left</code> if it lacks support for text justification.
+The AXIS and AXES attributes for cells provide a means for defining
+concise labels for cells, either for speech rendering, or for
+database field names.
+The attribute AXIS defaults to the cell contents.
+The AXES is a comma separated list of axis names which together
+identify the row and column headers that pertain to this cell.
+The NOWRAP attribute will suppress word wrap in the cell.
+The ROWSPAN and COLSPAN attributes define the integer number of rows and
+columns spanned by the cell.  A value of zero for either implies the
+cell spans from this cell to the end of the table.
+The attribute DP is from an earlier version of the proposal and
+was used with a value of <code>decimal</code> on the ALIGN attribute.
+It has been replaced with the CHAR and CHAROFF attributes
+used when <code>ALIGN=char</code>.
+CHAR specifies a single character to be used for alignment, and
+defaults to the decimal point in the current language.
+CHAROFF specifies the offset, in the DIR direction, to the first
+occurrence of the CHAR character on each line.  If a line doesn't
+include the CHAR character, it is to end at the CHAROFF position.
+The default value for CHAROFF is either 50% or whatever will cause
+the CHAR characters in all cells with a declared CHAR in a column to align.
+The default units is pixels, but may be specified by a suffix on the number.
+The standard defined units suffixes include:
+<code>pt</code>=points,
+<code>pi</code>=picas,
+<code>in</code>=inches,
+<code>cm</code>=centimeters,
+<code>mm</code>=millimeters,
+<code>em</code>=em units,
+<code>px</code>=screen pixels.
+In addition the suffix of a percentsign may be used to specify the
+percentage offset within the cell.
+The VALIGN attribute defines the vertical alignment of the cell contents.
+The ALIGN, CHAR and CHAROFF attribute values may be inherited from
+other table elements in the following order:
+cells &lt; columns &lt; column groups &lt; rows &lt; row groups &lt; default.
+The VALIGN, LANG and DIR attribute values may be inherited from
+other table elements in the following order:
+cells &lt; rows &lt; row groups &lt; columns &lt; column groups &lt; table &lt; default.
+<p>
+The WIDTH attribute is a Netscape extension.
+The BGCOLOR attribute is a MS Internet Explorer 2.0 extension.
+Internet Explorer accepts either an "#rrggbb" number or
+the following color names: <code>
+Black, Maroon, Green, Olive, Navy, Purple, Teal, Gray, Silver, Red, Lime,
+Yellow, Blue, Fuchsia, Aqua, White.</code>
+</dl>
+<hr>
+<H2><A NAME="TEXTAREA">TEXTAREA</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The TEXTAREA element is used to specify a multiline input field
+as part of the contents in a FORM element.
+<code>NAME</code> defines the symbolic name of the field
+returned to the server on submission.
+The characters between the opening and closing tags
+define the text to be initially displayed in the textarea,
+and the default text to be returned, normally null.
+Only ASCII text is allowed as characters, and newlines are respected.
+<code>ROWS</code> and <code>COLS</code>
+define the physical size of the
+displayed input field in numbers of characters.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;TEXTAREA NAME="..."
+ ROWS="..."
+ COLS="..."&gt;
+&lt;/TEXTAREA&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;TEXTAREA NAME="..."
+ ROWS="..."
+ COLS="..."
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ WRAP=off|virtual|physical
+ ALIGN=top|middle|bottom|left|right
+ DISABLED
+ ERROR="..."&gt;characters...
+&lt;/TEXTAREA&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>Only parsed character data is expected in the content of the
+TEXTAREA element.  Note that the elements
+<code><a href="#INPUT">&lt;INPUT&gt;</a>
+<a href="#SELECT">&lt;SELECT&gt;</a>
+<a href="#TEXTAREA">&lt;TEXTAREA&gt;</a>
+</code> are expressly prohibited by RFC 1866 from being nested
+within the TEXTAREA element content
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#FORM">&lt;FORM&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The WRAP attribute is a Netscape 2.0 extension and controls
+word wrapping inside the TEXTAREA.
+The value <code>off</code> is default and lines are sent exactly as typed.
+The value <code>virtual</code> wraps in the display but are sent
+exactly as typed.
+The value <code>physical</code> wraps in the display and sends new-lines
+at the wrap points as if new-lines had been entered.
+The early Version 3 proposal added the
+ALIGN, DISABLED, and ERROR attributes.
+The Version 3 proposed DISABLED attribute would display this TEXTAREA,
+but prohibit user entry/modification.
+The Version 3 proposed ERROR attribute defines text to be displayed
+in the event that the entered value for this TEXTAREA is invalid.
+All elements concerning FORM are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="TFOOT">TFOOT</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The TFOOT element encloses a series of table row definitions
+and specifies the defaults for all the rows in this group.
+Table rows are grouped inside the <A HREF="#TABLE">TABLE</A>
+content into at most one <A HREF="#THEAD">THEAD</A>,
+at most one TFOOT,
+and at least one <A HREF="#TBODY">TBODY</A> sections, in that order.
+Depending on the capabilities of the browser, this sectioning can be used to
+repeat table head and foot rows when breaking tables across page
+boundaries, or to provide fixed headers above and footers below
+a scrollable body panel, or other similar rendering schemes.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;TFOOT&gt;
+</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;TFOOT
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ ALIGN=left|right|center|justify|char
+ CHAR="..."
+ CHAROFF="..."
+ VALIGN=top|middle|bottom|baseline&gt;characters...&lt;/TFOOT&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code><a href="#TR">TR</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#TABLE">TABLE</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The TFOOT element is a part of the latest table proposal.
+This TFOOT element is new and not widely implemented.
+The ending element is optional for this element and may be implied
+when the TBODY element is encountered.
+<p>
+The table proposal states that a browser may display
+<code>ALIGN=justify</code> the same as the default
+<code>ALIGN=left</code> if it lacks support for text justification.
+The CHAR and CHAROFF attributes are used when <code>ALIGN=char</code>.
+CHAR specifies a single character to be used for alignment, and
+defaults to the decimal point in the current language.
+CHAROFF specifies the offset, in the DIR direction, to the first
+occurrence of the CHAR character on each line.  If a line doesn't
+include the CHAR character, it is to end at the CHAROFF position.
+The default value for CHAROFF is either 50% or whatever will cause
+the CHAR characters in all cells with a declared CHAR in a column to align.
+The default units is pixels, but may be specified by a suffix on the number.
+The standard defined units suffixes include:
+<code>pt</code>=points,
+<code>pi</code>=picas,
+<code>in</code>=inches,
+<code>cm</code>=centimeters,
+<code>mm</code>=millimeters,
+<code>em</code>=em units,
+<code>px</code>=screen pixels.
+In addition the suffix of a percentsign may be used to specify the
+percentage offset within the cell.
+The VALIGN attribute defines the vertical alignment of the cell contents.
+The ALIGN, CHAR and CHAROFF attribute values may be inherited from
+other table elements in the following order:
+cells &lt; columns &lt; column groups &lt; rows &lt; row groups &lt; default.
+The VALIGN, LANG and DIR attribute values may be inherited from
+other table elements in the following order:
+cells &lt; rows &lt; row groups &lt; columns &lt; column groups &lt; table &lt; default.
+
+</dl>
+<hr>
+<H2><A NAME="TH">TH</A></H2>
+<dl>
+<dt><strong>Description</strong>
+<dd>The TH element defines a header cell as part of the TABLE construct.
+The browser should render the table to cause some difference between
+TH elements and TD elements.
+Both TH and TD elements can exist in any
+one of the three table sections: THEAD, TFOOT, or TBODY.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;TH&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;TH
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ AXIS="..."
+ AXES="..."
+ NOWRAP
+ ROWSPAN=value
+ COLSPAN=value
+ ALIGN=left|right|center|justify|char|decimal
+ CHAR="..."
+ CHAROFF="..."
+ DP="..."
+ VALIGN=top|middle|bottom|baseline
+ WIDTH=value
+ BGCOLOR="..."&gt;characters...&lt;/TH&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group <code>
+<a href="#body.content">body.content</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#TR">TR</a></code>
+
+<dt><strong>Variations</strong>
+<dd>The TH element is part of the proposed TABLE construct.
+A browser is to assume the table cell ends with the beginning
+of the next table cell or the beginning of another table row
+or the end of the enclosing TABLE, THEAD, TFOOT, or TBODY element
+and thus a closing tag is not required.
+This element is an extension in Netscape 1.1 and MS Internet Explorer 2.0.
+Most browsers typically render the TH element in bold font,
+but otherwise identical to TD elements.
+<p>
+The values <code>justify|char</code> for the ALIGN attribute
+are new and are not widely implemented.
+The table proposal states that a browser may display
+<code>ALIGN=justify</code> the same as the default
+<code>ALIGN=left</code> if it lacks support for text justification.
+The AXIS and AXES attributes for cells provide a means for defining
+concise labels for cells, either for speech rendering, or for
+database field names.
+The attribute AXIS defaults to the cell contents.
+The AXES is a comma separated list of axis names which together
+identify the row and column headers that pertain to this cell.
+The NOWRAP attribute will suppress word wrap in the cell.
+The ROWSPAN and COLSPAN attributes define the integer number of rows and
+columns spanned by the cell.  A value of zero for either implies the
+cell spans from this cell to the end of the table.
+The attribute DP is from an earlier version of the proposal and
+was used with a value of <code>decimal</code> on the ALIGN attribute.
+It has been replaced with the CHAR and CHAROFF attributes
+used when <code>ALIGN=char</code>.
+CHAR specifies a single character to be used for alignment, and
+defaults to the decimal point in the current language.
+CHAROFF specifies the offset, in the DIR direction, to the first
+occurrence of the CHAR character on each line.  If a line doesn't
+include the CHAR character, it is to end at the CHAROFF position.
+The default value for CHAROFF is either 50% or whatever will cause
+the CHAR characters in all cells with a declared CHAR in a column to align.
+The default units is pixels, but may be specified by a suffix on the number.
+The standard defined units suffixes include:
+<code>pt</code>=points,
+<code>pi</code>=picas,
+<code>in</code>=inches,
+<code>cm</code>=centimeters,
+<code>mm</code>=millimeters,
+<code>em</code>=em units,
+<code>px</code>=screen pixels.
+In addition the suffix of a percentsign may be used to specify the
+percentage offset within the cell.
+The VALIGN attribute defines the vertical alignment of the cell contents.
+The ALIGN, CHAR and CHAROFF attribute values may be inherited from
+other table elements in the following order:
+cells &lt; columns &lt; column groups &lt; rows &lt; row groups &lt; default.
+The VALIGN, LANG and DIR attribute values may be inherited from
+other table elements in the following order:
+cells &lt; rows &lt; row groups &lt; columns &lt; column groups &lt; table &lt; default.
+<p>
+The WIDTH attribute is a Netscape extension.
+The BGCOLOR attribute is a MS Internet Explorer 2.0 extension.
+Internet Explorer accepts either an "#rrggbb" number or
+the following color names: <code>
+Black, Maroon, Green, Olive, Navy, Purple, Teal, Gray, Silver, Red, Lime,
+Yellow, Blue, Fuchsia, Aqua, White.</code>
+</dl>
+<hr>
+<H2><A NAME="THEAD">THEAD</A></H2>
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The THEAD element encloses a series of table row definitions
+and specifies the defaults for all the rows in this group.
+Table rows are grouped inside the <A HREF="#TABLE">TABLE</A>
+content into at most one THEAD,
+at most one <A HREF="#TFOOT">TFOOT</A>,
+and at least one <A HREF="#TBODY">TBODY</A> sections, in that order.
+Depending on the capabilities of the browser, this sectioning can be used to
+repeat table head and foot rows when breaking tables across page
+boundaries, or to provide fixed headers above and footers below
+a scrollable body panel, or other similar rendering schemes.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;THEAD&gt;
+</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;THEAD
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ ALIGN=left|right|center|justify|char
+ CHAR="..."
+ CHAROFF="..."
+ VALIGN=top|middle|bottom|baseline&gt;characters...&lt;/THEAD&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code><a href="#TR">TR</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#TABLE">TABLE</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The THEAD element is a part of the latest table proposal.
+This THEAD element is new and not widely implemented.
+The ending element is optional for this element and may be implied
+when a TFOOT or the TBODY element is encountered.
+<p>
+The table proposal states that a browser may display
+<code>ALIGN=justify</code> the same as the default
+<code>ALIGN=left</code> if it lacks support for text justification.
+The CHAR and CHAROFF attributes are used when <code>ALIGN=char</code>.
+CHAR specifies a single character to be used for alignment, and
+defaults to the decimal point in the current language.
+CHAROFF specifies the offset, in the DIR direction, to the first
+occurrence of the CHAR character on each line.  If a line doesn't
+include the CHAR character, it is to end at the CHAROFF position.
+The default value for CHAROFF is either 50% or whatever will cause
+the CHAR characters in all cells with a declared CHAR in a column to align.
+The default units is pixels, but may be specified by a suffix on the number.
+The standard defined units suffixes include:
+<code>pt</code>=points,
+<code>pi</code>=picas,
+<code>in</code>=inches,
+<code>cm</code>=centimeters,
+<code>mm</code>=millimeters,
+<code>em</code>=em units,
+<code>px</code>=screen pixels.
+In addition the suffix of a percentsign may be used to specify the
+percentage offset within the cell.
+The VALIGN attribute defines the vertical alignment of the cell contents.
+The ALIGN, CHAR and CHAROFF attribute values may be inherited from
+other table elements in the following order:
+cells &lt; columns &lt; column groups &lt; rows &lt; row groups &lt; default.
+The VALIGN, LANG and DIR attribute values may be inherited from
+other table elements in the following order:
+cells &lt; rows &lt; row groups &lt; columns &lt; column groups &lt; table &lt; default.
+
+</dl>
+<hr>
+<H2><A NAME="TITLE">TITLE</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The TITLE is <em>not</em> part of the document text.
+Often the title is used by a browser to label the display window.
+Some Web search engines only search the title of Web pages.
+Therefore the text of the TITLE should be kept short
+but sufficient to identify the document.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;TITLE&gt;characters...
+&lt;/TITLE&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;TITLE
+LANG="..."
+DIR=ltr|rtl&gt;characters...
+&lt;/TITLE&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>Only parsed character data is expected in the content of the
+TITLE element.  Note that the elements
+<code><a href="#META">&lt;META&gt;</a>
+<a href="#LINK">&lt;LINK&gt;</a>
+</code> are expressly prohibited by RFC 1866 from being nested
+within the TITLE element content
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code><a href="#HEAD">&lt;HEAD&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>RFC 1866 specifies that all HTML documents must contain a TITLE element.
+Some browsers will truncate titles to a length they can handle.
+RFC 1866 recommends that titles be fewer than 64 characters.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+TITLE is a Level 0 element.
+
+<dt><strong>Sandia Requirements</strong>
+<dd>The TITLE element is required to include a short, uniquely
+descriptive document title.
+
+</dl>
+<hr>
+<H2><A NAME="TR">TR</A></H2>
+<dl>
+<dt><strong>Description</strong>
+<dd>The TR element defines a table row in one of the three sections
+of the TABLE construct: THEAD, TFOOT, or TBODY.
+The contents of the TR element is required to contain at least one
+of either the TH element or the TD element.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;TR&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;TR
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."
+ ALIGN=left|right|center|justify|char|decimal
+ CHAR="..."
+ CHAROFF="..."
+ VALIGN=top|middle|bottom|baseline
+ DP="..."&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#TD">&lt;TD&gt;</a>
+<a href="#TH">&lt;TH&gt;</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#TBODY">&lt;TBODY&gt;</a>
+<a href="#TFOOT">&lt;TFOOT&gt;</a>
+<a href="#THEAD">&lt;THEAD&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The TR element is part of the proposed TABLE construct.
+A browser is to assume the table row ends with the beginning
+of the next table row, the next table row group, or
+the end of the table and thus a closing tag is not required.
+An early Version 3 proposal recommended that browsers should
+tolerate the absence of the first TR in a table,
+but this option was not included in the formal table proposal.
+This element is an extension in Netscape 1.1 and MS Internet Explorer 2.0.
+<p>
+The values <code>justify|char</code> for the ALIGN attribute
+are new and are not widely implemented.
+The table proposal states that a browser may display
+<code>ALIGN=justify</code> the same as the default
+<code>ALIGN=left</code> if it lacks support for text justification.
+The attribute DP is from an earlier version of the proposal and
+was used with a value of <code>decimal</code> on the ALIGN attribute.
+It has been replaced with the CHAR and CHAROFF attributes
+used when <code>ALIGN=char</code>.
+CHAR specifies a single character to be used for alignment, and
+defaults to the decimal point in the current language.
+CHAROFF specifies the offset, in the DIR direction, to the first
+occurrence of the CHAR character on each line.  If a line doesn't
+include the CHAR character, it is to end at the CHAROFF position.
+The default value for CHAROFF is either 50% or whatever will cause
+the CHAR characters in all cells with a declared CHAR in a column to align.
+The default units is pixels, but may be specified by a suffix on the number.
+The standard defined units suffixes include:
+<code>pt</code>=points,
+<code>pi</code>=picas,
+<code>in</code>=inches,
+<code>cm</code>=centimeters,
+<code>mm</code>=millimeters,
+<code>em</code>=em units,
+<code>px</code>=screen pixels.
+In addition the suffix of a percentsign may be used to specify the
+percentage offset within the cell.
+The VALIGN attribute defines the vertical alignment of the cell contents.
+The ALIGN, CHAR and CHAROFF attribute values may be inherited from
+other table elements in the following order:
+cells &lt; columns &lt; column groups &lt; rows &lt; row groups &lt; default.
+The VALIGN, LANG and DIR attribute values may be inherited from
+other table elements in the following order:
+cells &lt; rows &lt; row groups &lt; columns &lt; column groups &lt; table &lt; default.
+</dl>
+<hr>
+<H2><A NAME="TT">TT</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The TT element changes the physical rendering of the
+contents of the element to a fixed width teletype font.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;TT&gt;characters...
+&lt;/TT&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;TT
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/TT&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of group
+<code><a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#font">font</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>Browsers who do not have teletype font may render in some other manner.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="U">U</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The U element changes the physical rendering of the
+contents of the element to an underlined font.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;U&gt;characters... &lt;/U&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;U
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/U&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+-In progress, to be determined-
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The U element was in an early Version 2 proposal
+but is not part of RFC 1866.
+It is often rendered in italic or slanted rather than underlined.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="UL">UL</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The UL element defines an unordered list consisting of a number of 
+separated multi-line <code>&lt;LI&gt;</code> elements, and usually
+marked by a bullet or similar symbol.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;UL&gt;&lt;/UL&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;UL
+ COMPACT
+ LANG="..."
+ DIR=ltr|rtl
+ ALIGN=center|left|right|justify
+ ID="..."
+ CLASS="..."
+ CLEAR=left|right|all|"..."
+ PLAIN
+ SRC="..."
+ MD="..."
+ DINGBAT="..."
+ WRAP=vert|horiz
+ TYPE=disk|circle|square&gt;
+&lt;/UL&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd><code>
+<a href="#LH">&lt;LH&gt;</a>
+<a href="#LI">&lt;LI&gt;</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of the group
+<code><a href="#list">list</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>Nested UL lists are usually rendered more indented with
+differing bullets or symbols.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+The internationalization proposal also includes
+<code>ALIGN=center|left|right|justify</code>
+Version 3 proposes the CLEAR, PLAIN,
+SRC, MD, DINGBAT, and WRAP attributes.
+The TYPE attribute is a current Netscape extension.
+Version 3 proposes to replace it with the SRC and DINGBAT attributes
+to point to general server and browser images respectively.
+Specifying <code>&lt;UL PLAIN&gt;</code> to eliminate the bullets
+is proposed by Version 3 as a replacement for the
+<A HREF="#MENU">MENU</A> element.
+Specifying <code>&lt;UL PLAIN WRAP=HORIZ&gt;</code> is proposed
+by Version 3 as a replacement for the <A HREF="#DIR">DIR</A> list element.
+The browser may dynamically determine the appropriate number of columns.
+All list elements are Level 0.
+
+</dl>
+<hr>
+<H2><A NAME="VAR">VAR</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The VAR element changes the character rendering of the
+contents of the element to logically represent a variable name.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;VAR&gt;characters...
+&lt;/VAR&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;VAR
+ LANG="..."
+ DIR=ltr|rtl
+ ID="..."
+ CLASS="..."&gt;characters...
+&lt;/VAR&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>members of the group<code>
+<a href="#text">text</a>
+</code>
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of the group
+<code><a href="#phrase">phrase</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>This is usually rendered in italics.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+All character definition elements are Level 2.
+
+</dl>
+<hr>
+<H2><A NAME="WBR">WBR</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The WBR element exists to force the possibility of a word break
+in a no-break section.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;WBR&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;WBR&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The WBR element is defined as having no content.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd><code>
+<a href="#NOBR">&lt;NOBR&gt;</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>The WBR element is a Netscape extension.
+
+</dl>
+<hr>
+<H2><A NAME="XMP">XMP</A></H2>
+
+<dl>
+
+<dt><strong>Description</strong>
+<dd>The XMP element defined a separated multi-line set of text
+to be rendered as it exists in the source document with
+the same line breaks.
+
+<dt><strong>Minimum Attributes</strong>
+<dd><code>&lt;XMP&gt;characters...
+&lt;/XMP&gt;</code>
+
+<dt><strong>All Possible Attributes</strong>
+<dd><code>&lt;XMP WIDTH="..."
+LANG="..."
+DIR=ltr|rtl&gt;characters...
+&lt;/XMP&gt;</code>
+
+<dt><strong>Elements Allowed Within...</strong>
+<dd>The only markup recognized is the XMP ending element.
+
+<dt><strong>Allowed In Content Of...</strong>
+<dd>Any element that permits members of group
+<code><a href="#block">block</a>
+</code>
+
+<dt><strong>Variations</strong>
+<dd>Most browsers use fixed-width characters for XMP text.
+This element existed in Version 0 and has been replaced by the
+<code>&lt;PRE&gt;</code> element.
+RFC 1866 states that the content of the XMP element should be
+rendered so that at least 80 characters fit on a line.
+RFC 1866 has declared XMP as deprecated
+and some current browsers no longer recognize it.
+The LANG and DIR attributes are introduced with the
+internationalization proposal.
+
+</dl>
+<hr>
+<address>
+<A HREF="http://www.webtechs.com/html-val-svc/"><IMG SRC="http://www.webtechs.com/html-val-svc/images/valid_html.gif" ALT="HTML 2.0 Checked!"></A>
+Last Modified: 7 December 1995
+<p>
+Michael J. Hannah<br>
+Sandia National Laboratories<br>
+<A HREF="mailto:mjhanna@sandia.gov">mjhanna@sandia.gov</A>
+</address>
+<hr>
+<!-- Begin Sandia toolbar -->
+<a href="http://www.sandia.gov/">Welcome to Sandia National Labs</a>
+||
+<a href="http://www.doe.gov">DOE Home Page</a>
+||
+<a href="http://www.sandia.gov/doing_bus.html">Doing Business with Sandia</a>
+||
+<a href="http://www.sandia.gov/search.html">Search Sandia Information</a>
+||
+<a href="mailto:webmaster@www.sandia.gov">Send questions about Sandia</a>
+||<a href="http://www.sandia.gov/disclaimer.html">Sandia disclaimer of liability</a>
+<!-- End Sandia toolbar -->
+<hr>
+</BODY>
+</HTML>

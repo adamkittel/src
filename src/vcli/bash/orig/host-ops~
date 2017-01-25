@@ -1,0 +1,68 @@
+#!/bin/bash
+#
+source easybashgui
+#
+
+function hostop_menu {
+	menu	"ESX Host Info" \
+		"Evacuate VM's to another ESX host" \
+		"Enter maintenance mode" \
+		"Exit maintenance mode" \
+		"Reboot" \
+		"Disconnect" \
+		"Reconnect" \
+		"Shutdown" \
+		"Datastore capacity" \
+		"Datastore Free space" \
+		"Back to Main Menu" \
+		"Quit"
+
+	task="$( 0< "${dir_tmp}/${file_tmp}" )" ; if_arg_is_an_empty_variable_then_exit "task"
+
+        case ${task} in
+		"ESX Host Info")
+			host_info
+			hostop_menu;;
+		"Evacuate all VM's to another ESX host")
+			ok_message "coming soon....."
+			hostop_menu;;
+		"Enter maintenance mode")
+			ok_message "coming soon....."
+			hostop_menu;;
+		"Exit maintenance mode")
+			ok_message "coming soon....."
+			hostop_menu;;
+		"Reboot")
+			ok_message "coming soon....."
+			hostop_menu;;
+		"Disconnect")
+			ok_message "coming soon....."
+			hostop_menu;;
+		"Reconnect")
+			ok_message "coming soon....."
+			hostop_menu;;
+		"Shutdown")
+			ok_message "coming soon....."
+			hostop_menu;;
+		"Datastore capacity")
+			ok_message "coming soon....."
+			hostop_menu;;
+		"Datastore Free space")
+			ok_message "coming soon....."
+			hostop_menu;;
+		"Back to Main Menu")
+			menu1;;
+		"Quit")
+			clean_tmp
+			exit;;
+		*)
+			hostop_menu;; 
+	esac
+}
+
+function host_info {
+	wait_for
+	/usr/lib/vmware-vcli/apps/host/hostinfo.pl --server ${VI_SERVER} --username ${VI_USERNAME} --password ${VI_PASSWORD} | text
+	terminate_wait_for
+}
+

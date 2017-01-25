@@ -1,0 +1,36 @@
+#
+#  AGENTSTOP module for RASSNAP Function
+#
+#  CREATED:             11/2004
+#  LAST UPDATE:         11/2004
+#
+#
+#-------------------------------------------------------------------------
+
+stopagent()
+{
+#set -x
+print "\n      Stopping the agent to prevent interference \n" ;
+MASTER=`$RAS_ADMIN host_list | awk '{print $1,$4}'|grep M|grep -v AM|awk '{print $1}'`
+THISHOST=`uname -n`
+
+if [[ ${MASTER} = ${THISHOST}* ]] 
+        then
+                $RAS_ADMIN agent -p >> $LOG #2>&1 ;
+        else
+		print "\tShutting down slave agent from Master \n" ;
+                /usr/bin/rsh ${MASTER} "$RAS_ADMIN agent -p -h ${THISHOST}" >> $LOG 2>&1 ;
+		if (($? == 1))
+		then
+			print "\tFailure! Make sure master has proper /.rhost file\n";
+		fi
+fi
+#$RAS_ADMIN agent -p >> $LOG #2>&1 ;
+} #-----------------------------  AGENTSTOP  --------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#
+

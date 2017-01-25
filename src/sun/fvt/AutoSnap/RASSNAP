@@ -1,0 +1,108 @@
+#
+#  RASSNAP for FVTTOOL Function
+#
+#  AUTHOR:              ADAM KITTEL / ART LARKIN
+#                       adam.kittel@sun.com / art.larkin@sun.com
+#                       303 272 6561 -- x76561 / 303-464-4879 -- x50879
+#
+#  CREATED:             08/2004
+#  LAST UPDATE:         12/2004
+#
+#-------------------------------------------------------------------------
+
+RASSNAP()
+{
+#set -x
+
+trap FVTtype EXIT
+
+FPATH=$PWD/Snap	#--------  RASSNAP FUNCTIONS  ----------------------------
+
+autoload \
+	Faudit Fdisco Ffault Fplay agentA agentC agentS clean Sinfo stopagent \
+	Splay SplayQ Fquit repair start Sdump input FVTtype confMv motdMv \
+	dataMv stop introF IntroD introA success debugL clearA
+
+##-------------  RAS_SNAP $VARIABLES and File Preparation  ---------------
+
+SLOCAL=/net/zila/export/dsqa/RAS_SNAP/DSQA_SNAPS
+INDEX=$SLOCAL/SNAPINDEX.txt
+CPLOCAL=/net/zila/export/dsqa/DATA_dirs
+CPINDEX=$CPLOCAL/DATAINDEX.txt
+
+## -- Testing locations::
+#SLOCAL=/var/tmp/DSQA_SNAPS	# ALTERNATE LOCAL for Ras snap location
+#INDEX=$SLOCAL/INDEX.txt
+#CPLOCAL=/var/tmp/DATA_dirs
+#CPINDEX=$CPLOCAL/DATAINDEX.txt
+## -- Testing locations::
+
+RBIN=/opt/SUNWstade/bin		# 
+RASAGENT=$RBIN/rasagent		#
+RAS_ADMIN=$RBIN/ras_admin		#
+RSBIN=/opt/SUNWstade/sbin		#
+RAS_SNAP=$RSBIN/ras_snap		#
+RCONF=/var/opt/SUNWstade/DATA/rasagent.conf	#
+STADE=/var/opt/SUNWstade		#Storade base /var/directory
+D_DIR=$STADE/DATA		# Compressed DATA directory location
+FVT_MAIL=fvtSnap			# RAS_SNAP alias
+BACKDN=''			# DATA Directory has been backed up
+P_ON=''				# Config file has been moved
+MOTDDN=''			# motd file has been moved
+NSLOCAL=''			# Ras snap local has been changed
+INDEXDN=''			# Index info has been set
+NSLOCALDN=''			# Play dir local has been changed
+KEEP=''				#
+
+## START of RASSNAP function calls
+
+
+#---------------------------  ROOT ----------------------------------- 
+
+root()
+{
+#set -x
+
+while [ "$LOGNAME" != "root" ]
+  do
+     print "\n      **  NOTE:  You must be root on this system in order
+      **  to run rasagent and ras_admin commands.  You also
+      **  must have write permission in the destination 
+      **  directories where you choose to save these files.
+
+      ===>: Checking for Root privileges.................."; 
+    sleep 3  
+      
+      print "\n             !! You are not root on this system !!\n.   
+	--> please su - to root and restart this script.\n\n" ;
+      sleep 10 ;
+      fvt_menu ;
+      
+  done
+#clear ;
+
+#set -x
+
+#if [ "$LOGNAME" != "root" ]
+#    then   
+#       print "             !! You are not root on this system !!\n.   
+#	--> please su - to root and restart this script.\n\n" ;
+#   sleep 10 ;
+#   fvt_menu ;
+#fi
+
+} #-----------------------------  ROOT ---------------------------------
+root
+motdMv				#> Add Warning Message to /etc/motd
+clean				#> Delete RASSNAP tmp files
+#root				#> Verify User is Root
+stopagent			#> Deactivate Agent
+FVTtype				#> Main RASSNAP Menu
+
+} #---------------------------- RASSNAP  ----------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

@@ -1,0 +1,188 @@
+#!/bin/bash
+#
+#
+# set the prompt
+PS3='Select or Enter to continue> '
+
+# fun color stuff. default is white fg and black bg
+bold='\033[1m'
+unbold='\033[0m'
+black='\E[30;40m'
+red='\E[31;40m'
+green='\E[32;40m'
+yellow='\E[33;40m'
+blue='\E[34;40m'
+magenta='\E[35;40m'
+cyan='\E[36;40m'
+white='\E[37;40m'
+
+alias reset_txt="tput sgr0"
+
+function cls {
+	echo -e $unbold$white
+	clear
+	VMA=0
+}
+
+function usage {
+	cls
+	printf "CTRL-C to exit and use $0 [server] [username] [password]\nOr proceed interactivly\n\n"
+}
+
+function vma {
+	if [ -e /etc/vma-release ]; then
+	VMA=1
+	else
+	VMA=0
+	fi
+}
+
+function list_vma_servers {
+	cls
+	printf "${bold}vMA ESX Server List${unbold}${white}\n\n"
+	/usr/bin/vifp listservers
+}
+
+function addserver {
+	vma
+	if [ $VMA -eq 1 ]; then
+		printf "Current ESX target server list\n\n"
+		/usr/bin/vifp listservers
+		DONE=0
+		while [ $DONE -eq 0 ]
+		do
+			printf "${bold}\nvifp addserver wizard. Options with defaults can be left blank\n${unbold}${white}\nEnter server name as it appears in DNS or enter IP: "
+			read SERVER
+			printf "Auth policy. Sets the authentication policy to fastpass authentication\nor the Active Directory (fpauth or adauth): "
+			read AUTH
+			printf "Connection protocol, http or https. HTTPS by default: "
+			read PROTO; if [ ! $PROTO ]; then PROTO='https'; fi
+			printf "Connection port number of the target server. The default is 443: "
+			read PORT; if [ ! $PORT ]; then PORT='443'; fi
+			printf "Service path URL of the target server. The default is /sdk: "
+			read SPATH; if [ ! $SPATH ]; then SPATH='/sdk'; fi
+			printf "Username, If the target server points to an ESX/ESXi system,\n the default is root: "
+			read USR; if [ ! $USR ]; then USR='root'; fi
+			printf "Password. Password for username: "
+			stty -echo
+			read PW
+			stty echo
+			printf "\n\n"
+			printf "Server = $SERVER\nAuth policy = $AUTH\nProtocol = $PROTO\nService path = $SPATH\nUsername = $USR\nPASSWORD WILL NOT BE SHOWN\n\n"
+			printf "Are these vaules correct?(y/n): "
+			read YESNO
+			if [[ $YESNO = 'y' || $YESNO = 'Y' ]]; then
+				printf "Executing....\n/usr/bin/vifp addserver $SERVER \ \n--authpolicy $AUTH \ \n--protocol $PROTO \ \n--portnumber $PORT \ \n--servicepath $SPATH \ \n--username $USR \ \n--password ********\n\n"
+				echo -e $bold$red
+				/usr/bin/vifp addserver $SERVER --authpolicy $AUTH --protocol $PROTO --portnumber $PORT --servicepath $SPATH --username $USR --password $PW
+				if [ $? -eq 0 ]; then 
+					printf "${green}Command succeded${white}\n"
+				fi
+				echo -e $unbold$white
+			fi
+			printf "Add another server?(y/n): "
+			read YESNO
+			if [[ $YESNO = 'n' || $YESNO = 'N' ]]; then
+				DONE=1
+			fi
+		done
+	else
+		printf "This is not a vMA appliance. For vMA information, go to\nhttp://communities.vmware.com/community/vmtn/vsphere/automationtools/vima\n\n"
+	fi
+}
+
+function test_server_user_pw {
+	printf "Testing server $VI_SERVER, username $VI_USERNAME and password\n"
+	OK=1
+	while [ $OK -eq 1 ] 
+	do
+		/usr/bin/vicfg-hostops --server $VI_SERVER --username $VI_USERNAME --password $VI_PASSWORD --operation info 2>&1
+
+		if [ $? -eq 0 ]; then
+			OK=0
+			echo -e $green
+			printf "Test succeeded\n"
+			echo -e $white
+		else
+			echo -e $bold$red
+			printf "Test command failed.\n "
+			printf -e $unbold$white
+			exit 1
+		fi
+	done
+}
+
+function set_server {
+	if [ $VMA -eq 1 ]; then
+		printf "Available ESX servers\n"
+		SERVER_LIST=(`/usr/bin/vifp listservers | awk '{print $1}'`)
+		COUNT=${#SERVER_LIST[@]}
+		INDEX=0
+		while [ "$INDEX" -lt "$COUNT" ]
+		do
+			printf "${SERVER_LIST[$INDEX]}\n"
+			let "INDEX = $INDEX+1"
+		done
+
+		printf "Enter the ESX host to perform operations on from this list or enter IP: "
+		read VI_SERVER
+	else
+		printf "Enter the ESX host name or IP to perform operations on: "
+		read VI_SERVER
+	fi
+}
+
+function set_user_passwd {
+	printf "Enter the userid for issuing commands: "
+	read VI_USERNAME
+	stty -echo
+	printf "Enter password: "
+	read VI_PASSWORD
+	stty echo
+	printf "\n\n"
+}
+
+## MAIN
+function main {
+cls
+if [ ! $1 ]; then
+	if [ -e $HOME/.esxadmrc ]; then
+		printf "Using $HOME/.esxadmrc to set variables"
+		source $HOME/.esxadmrc
+		test_server_user_pw
+	else
+		select CASE in "List vMA ESX target servers" "Add target ESX servers to vMA" "Set ESX server and username for this session" "Test connectivity to ESX server" "Next menu" "Quit"
+		do
+			case $CASE in
+				"List vMA ESX target servers")
+					list_vma_servers;;
+				"Add target ESX servers to vMA") 
+					usage
+		   			addserver;;
+				"Set ESX server and username for this session") 
+					usage
+		   			set_server
+		   			set_user_passwd
+					printf "\nServer is set to $VI_SERVER\nUser is set to $VI_USERNAME\n";;
+				"Test connectivity to ESX server") 
+					usage
+		   			test_server_user_pw;;
+				"Next menu") 
+					usage;;
+				"Quit") 
+					exit;;
+	        		*) 
+					usage;; 
+			esac
+		done
+	fi
+else 
+	VI_SERVER=$1
+	VI_USERNAME=$2
+	VI_PASSWORD=$3
+	test_server_user_pw
+fi
+}
+
+main
+

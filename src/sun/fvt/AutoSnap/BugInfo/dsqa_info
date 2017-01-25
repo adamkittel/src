@@ -1,0 +1,68 @@
+#
+#  FUNCT_NAME module for RASSNAP Function
+#
+#  AUTHOR:              ADAM KITTEL / ART LARKIN
+#                       adam.kittel@sun.com / art.larkin@sun.com
+#                       303 272 6561 -- x76561 / 303-464-4879 -- x50879
+#
+#  CREATED:             MM/YYYY
+#  LAST UPDATE:         MM/YYYY
+#
+#-------------------------------------------------------------------------
+# THIS CODE (FROM HERE ON REFERED ONLY TO AS CRAP) IS LICENSED UNDER THE
+# STRICT AND TYRANICAL BAITSHOP LICENSE.  PERPETUAL RIGHTS AND
+# OWNERSHIP ARE CONVEYED TO USER BY AN UNCONDITIONAL BEER CLAUSE
+# (U BUY ADAM OR TO A LESSER EXTENT MIKE A BEER AND U BOUGHT THE CODE)
+#
+# ALWAYS FEEL FREE TO:
+# DISRTIBUTE FREELY
+# CHANGE, DELETE AND/OR LAUGH OUT LOUD AT THIS CODE
+# CALL IT YOUR OWN (IF YOU CAN STAND THE EMBARASSMENT)
+# DON'T CRY ABOUT MISSING COMMENTS. (COMMENTS ARE FOR SISSIES)
+#
+# NEVER EVER UNDER ANY CIRCUMSTANCE DO THE FOLLOWING;
+#	ADD USFULL COMMENTS
+#        MAKE MONEY FROM THIS CODE
+#        INCLUDE IT IN YOUR 1 ON 1 REVIEW (THIS MEANS U WAGNER)
+#        BRAG ABOUT IT OVER A SUSHI LUNCH (mcdonald's is ok)
+#        AND MOST OF ALL - EXPECT IT TO WORK!
+
+
+dsqa_info()
+{
+set -x
+
+##-----  Gathers base storade information to paste into bugs
+clear
+print "Please enter the path to the ras snap (enter if none)"
+read RASSNAPDIR
+print "Please enter the UE test case number (enter if none)"
+read UECASE
+
+	print "Retrieving info........\n\n"
+	STADEVER=`pkginfo -l SUNWstade | grep PSTAMP`
+	SAPTCH=`patchadd -p | grep 11765|cut -c1-18`
+	STADEHOSTS=`/opt/SUNWstade/bin/ras_admin host_list`
+	STADEDEVS=`/opt/SUNWstade/bin/ras_admin device_list | cut -c1-65`
+	#STADEDEVS=`/opt/SUNWstade/bin/ras_admin device_list | cut -c21-65`
+	SOLVER=`uname -a`	
+	PERLVER=`/opt/SUNWstade/bin/perl -v|grep "This is perl"|cut -c8-60`
+
+	print "********** TEST CONFIG INFO **********"  
+	print "$SOLVER"
+	print "$SAPTCH"
+	print "$PERLVER"
+	print "$STADEVER"
+	print "\n$STADEHOSTS"
+	print "\n$STADEDEVS"
+	print "\nras_snap: $RASSNAPDIR"
+	print "UE test case:  $UECASE"
+	print "********* END CONFIG INFO ************"
+
+} #----------------------------  FUNCT_NAME  -----------------------------
+
+#
+#  $.Log.$
+# 
+#  Copyright 2005 Sun Microsystems, Inc. 
+#

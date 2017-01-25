@@ -1,0 +1,121 @@
+#
+#   SDUMP module for RASSNAP Function 
+#
+#  CREATED:		04/2004
+#  LAST UPDATE:		11/2004
+#
+#-------------------------------------------------------------------------
+
+Sdump()
+{
+#set -x
+##  Append ras snap info to index file
+
+print "	\n\n	--Did the rassnap work?
+	--If not It won't be added to the DATA Base.
+
+	Verify that you achieved the desired results i.e: 
+	The correct Events, Alarms, Notifications... were received."
+print "\n	Do you want to keep this ras_snap? (Y/N) \c";
+      
+input ; KEEP=$INPUT
+
+if [[ "$KEEP" = [Yy] ]]
+   then
+      SUCCESS=Successful
+
+print "$S_ID | $DTYPE | $TYPE | $PROJ | $TCASE | $BID | $SVER | $SYNOP |$SDATE | $SLOCAL | $EADDR | $SUCCESS" >> $INDEX ;
+      
+print "\n	Rasagent complete. Please wait while the DATA is processed...\c"
+
+SCONF=$SLOCAL/$S_ID/snapshot.conf ;
+SRCONF=$SLOCAL/$S_ID/rasagent.conf ;
+SDATE=`grep date_start $SCONF | awk -F"'" '{print $4}` >> $LOG
+
+####  Dump System / Storade information into a FVT Dir in $SLOCAL
+##clear
+
+FVTDUMP=$SLOCAL/$S_ID/FVT
+DFILE=$FVTDUMP/SNAPINFO.txt		# VFT Summary Dumpfile to be emailed
+
+/bin/mkdir -p $FVTDUMP
+
+$RAS_ADMIN report -a > $FVTDUMP/Reports.rpt.txt
+$RAS_ADMIN alert_list > $FVTDUMP/Alerts.rpt.txt
+$RAS_ADMIN show_alarms > $FVTDUMP/Alarms.rpt.txt
+/usr/platform/sun4u/sbin/prtdiag -v > $FVTDUMP/Prtdiag.txt
+
+print " --=-=-=-=-=-=-=-=-=-=-=-== FVT SUMMARY ==-=-=-=-=-=-=-=-=-=-=-=--" >> $DFILE ;
+print " FVT Test         :  "  $EADDR " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " Status           :  "  $SUCCESS " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " Snap ID          :  "  $S_ID " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " Snap Type        :  "  $TYPE " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " Synopsis         :  "  $SYNOP " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " Ras_Snap Dir     :  "  $SLOCAL " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " UE Test Case     :  "  $TCASE " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " Bug ID           :  "  $BID " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " Device Type      :  "  $DTYPE " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " Site Info        :  "  `$RAS_ADMIN site_info` " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " Storade Version  :  "  $SVER " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " Storade Patch    :  "  `/usr/bin/showrev -p | grep 11765 | cut -c 8-17` " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " Operating System :  " `uname -a | cut -c 1-5,14-48` " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " PERL Version     :  "  `$RBIN/perl -v | grep "This is perl" | cut -c 8-60` " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " \n Hosts List    :\n"  `$RAS_ADMIN host_list` " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " \n Hosts Detail  :\n"  `$RAS_ADMIN host_detail` " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " \n Devices       :\n"  `$RAS_ADMIN device_list` " \n -=-=-=-=-=-=-=-=-=" >> $DFILE ;
+print " \n FVT FILES     :\n"  `ls $FVTDUMP` >> $DFILE ;
+
+print "\n --=-=-=-=-=-=-=-=-=-=-=-== FVT SUMMARY ==-=-=-=-=-=-=-=-=-=-=-=--\n" >> $DFILE ;
+
+#set -x
+
+/bin/cp -rf $D_DIR $FVTDUMP
+(cd $FVTDUMP ; `tar -cf DATA.tar DATA ; compress DATA.tar` ; /bin/rm -rf DATA)
+
+cd $HDIR ;
+
+chmod 775 $SLOCAL/$S_ID
+
+`grep "notification1" $SRCONF >> $LOG` # 2>&1`
+
+if [[ $? = "1" ]]
+   then
+   ##-----  Append rasagent.conf
+
+      print "\n[notification1]" >> $SRCONF ;
+      print "active=Y" >> $SRCONF ;
+      print "apply_filters=N" >> $SRCONF ;
+      print "device=*" >> $SRCONF ;
+      print "email=" >> $SRCONF ;
+      print "event=*" >> $SRCONF ;
+      print "no_grid=N" >> $SRCONF ;
+      print "priority=*" >> $SRCONF ;
+      print "script=" >> $SRCONF ;
+      print "skip_agg=1" >> $SRCONF ;
+      print "type=Email" >> $SRCONF ;
+fi
+
+/bin/cp -rf $LOG $FVTDUMP
+
+/usr/bin/mailx -r RAS_SNAP -s " $SUCCESS -- Synopsis: $SYNOP" $FVT_MAIL$EMAILEXT < $DFILE
+
+#/usr/bin/mailx -r RAS_SNAP -s " $SUCCESS -- Synopsis: $SYNOP" art.larkin@sun.com < $DFILE
+
+  else
+      print "\n\n	Failed ras_snap information PURGED. \n" ;
+      /bin/rm -rf  $SLOCAL/$S_ID ; 
+
+      SUCCESS=FAILED ;
+      
+      /usr/bin/mailx -r RAS_SNAP -s "$SUCCESS: Ras Snap: $SYNOP" $FVT_MAIL$EMAILEXT < /dev/null
+      
+      #/usr/bin/mailx -r RAS_SNAP -s "$SUCCESS: Ras Snap: $SYNOP" art.larkin@sun.com < /dev/null
+  
+fi
+} #--------------------------- SDUMP ----------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

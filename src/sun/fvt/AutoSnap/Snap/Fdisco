@@ -1,0 +1,85 @@
+#
+#  FDISCO module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+Fdisco()
+{
+#set -x
+
+discoQ()  ##  END RECORDING AND PROCESS FILES
+{
+#set -x
+##-----  Stop recording and copying files
+
+if [[ "$KEEP" = [Yy] ]]
+   then
+
+#print "        This concludes the ras_snap discovery process
+#	Please wait while the ras_snap directory is processed.....\n"
+
+$RAS_SNAP stop -s $S_ID -b $SLOCAL >> $LOG #2>&1 ;
+
+##-----   Moving $SLOCAL/$S_ID/BASE/OLD_REPORTS/*
+##-----   To: $SLOCAL/$S_ID/FAIL/OLD_REPORTS.
+##-----   This way, when the ras_snap is played back, the devices
+##-----   will be new to Storade.
+
+`/bin/mv $SLOCAL/$S_ID/BASE/OLD_REPORTS/* $SLOCAL/$S_ID/FAIL/OLD_REPORTS/` >> $LOG ; # #2>&1 ;
+
+print "\n\n	Files have been placed in: 
+ ---->  $SLOCAL/$S_ID\n\n" ;
+
+fi
+
+
+clean ;
+##----- SUB MENU: auto_ras_snap
+
+   PS3="
+        What would you like to do next? "
+
+        select NEXT in "Discovery" "Go to Ras Snap Menu" "Go to Main Menu"
+
+do
+   case $NEXT in
+   
+     "Discovery")
+     	#clear ; 
+	Fdisco ;;
+
+      "Go to Ras Snap Menu")
+         #clear ; 
+	 FVTtype ;;
+
+      "Go to Main Menu")
+         #clear ; 
+	 Fquit ;;
+
+      *)
+         print " !! You Didn't enter a correct choice.  Please retry" ;;
+   
+   esac
+done	
+
+} #----------------------------  DISCOQ  ------------------------------
+
+
+Sinfo			#> GATHER INFO
+introD			#> EXPLAIN HOW
+clean			#> CLEAR TMP FILES/VARS
+start			#> DISCOVER DEVICE(S)
+agentA			#> AGENT RUN
+Sdump			#> COPY FVT DATA/REPORTS to $FVTDUMP
+discoQ			#> STOP DISCOVER
+
+} #--------------------------  FDISCO  --------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

@@ -1,0 +1,99 @@
+#
+#  LIST_PATCH module for snapshot.ksh
+#
+#  AUTHOR:              Adam Kittel 
+#                       adam.kittel@sun.com
+#                       303 272 6561 -- x76561
+#
+#  CREATED:             11/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+# THIS CODE (FROM HERE ON REFERED ONLY TO AS CRAP) IS LICENSED UNDER THE
+# STRICT AND TYRANICAL BAITSHOP LICENSE.  PERPETUAL RIGHTS AND
+# OWNERSHIP ARE CONVEYED TO USER BY AN UNCONDITIONAL BEER CLAUSE
+# (U BUY ADAM OR TO A LESSER EXTENT MIKE A BEER AND U BOUGHT THE CODE)
+# 
+# ALWAYS FEEL FREE TO:
+# DISRTIBUTE FREELY
+# CHANGE, DELETE AND/OR LAUGH OUT LOUD AT THIS CODE
+# CALL IT YOUR OWN (IF YOU CAN STAND THE EMBARASSMENT)
+# DON'T CRY ABOUT MISSING COMMENTS. (COMMENTS ARE FOR SISSIES)
+# 
+# NEVER EVER UNDER ANY CIRCUMSTANCE DO THE FOLLOWING;
+# 	ADD USFULL COMMENTS
+#   MAKE MONEY FROM THIS CODE
+#   INCLUDE IT IN YOUR 1 ON 1 REVIEW (THIS MEANS U WAGNER)
+#   BRAG ABOUT IT OVER A SUSHI LUNCH (mcdonald's is ok)
+#   AND MOST OF ALL - EXPECT IT TO WORK!
+
+MATRIX="/tmp/config-matrix"
+LYNX="/net/zila/export/dsqa/tools/bin/lynx -dump"
+SUNSOLVE="http://sunsolve.central/search/advsearch.do?collection=PATCH&collection=PATCHPRTS&type=collections&max=10&queryKey1=" 
+TSTAMP=`date '+%m-%d-%y.%H.%M.%S'`
+
+#----------------------------  LIST_PATCH  -----------------------------
+list_patch()
+{
+	grep $LINE /tmp/revcheck.tmp > /dev/null 2>&1 
+	if [[ $? == 1 ]]
+	then
+		print $LINE >> /tmp/revcheck.tmp
+	fi
+} 
+
+#----------------------------  SHOW_PATCH  -------------------------------
+show_patch()
+{
+	for PATCH in `cat /tmp/revcheck.tmp`
+	do
+		print "Processing $PATCH " 
+		print "config-matrix shows $PATCH \nSunsolve shows" >> /tmp/dsqa.revreport
+		ROOTPATCH=`print $PATCH | grep -v xxxxxx-xx|cut -c 1-6`
+		$LYNX "$SUNSOLVE"$ROOTPATCH | grep Document >> /tmp/dsqa.revreport 
+		print >> /tmp/dsqa.revreport
+	done
+	mv /tmp/dsqa.revreport /tmp/dsqa.revreport.$TSTAMP
+	print "\n\n\tThe patch revision report is done"
+	print "\tResults are in file /tmp/dsqa.revreport.$TSTAMP\n"	
+	print "\tPress Return to continue"
+	read
+}
+
+clear
+print "\tThis utility will retrieve the config-matrix file from"
+print "\tthe specified host and scan the file for patch rev's."
+print "\tThe patches are then compared with available patches"
+print "\ton the sunsolve web site"
+print "\tMake sure you have the hostname entry in your .rhosts file\n"
+print "\tEnter a Storade hostname to get the config-matrix from:"
+read STADEHOST
+
+touch /tmp/revcheck.tmp
+touch /tmp/revreport
+
+rcp $STADEHOST:/opt/SUNWstade/System/Matrix/config-matrix /tmp 2>/dev/null
+if (($? == 1))
+	then
+		print "\n\n\tRecieved permission denied. Please check your .rhosts file\n"
+		exit 1
+fi
+
+for LINE in `cat $MATRIX`
+do
+if [[ $LINE == 1?????-?? ]] 
+	then 
+		list_patch
+fi
+done
+
+show_patch 
+
+/usr/bin/rm -f /tmp/config-matrix /tmp/revcheck.tmp
+
+
+#
+#  $.Log.$
+#
+# Copyright 2005 Sun Microsystems, Inc.
+#

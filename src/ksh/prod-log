@@ -1,0 +1,34 @@
+#!/bin/ksh
+#view production backups in xterms
+#
+
+#DATE=`date |awk '{print $1" "$2" "$3" "$4} ' `
+#DAY=`date |awk '{print $3}'`
+#### #DAY=$((DAY - 1))
+#if [ $1 = '-y' ]
+#  then
+#    DAY=$((DAY - 1))
+#fi
+#
+#if [ "$DAY" -lt 10 ];then
+#   DAY="0$DAY"
+#fi
+print "enter the day of the month"
+read DAY
+LIST='adr1 aruc1 bill1 cst1 dds1 dds2 disp1 eq1 naru2 ndb2 oars1 xref1 help1 mon1'
+  
+for SYS in `echo $LIST`
+do
+  rsh den-$SYS -l oper tail /var/log/backup/ufsbackup."$DAY" > $HOME/logs/prod_backup.log.$SYS.$DAY
+  print $SYS
+  print Done
+  sleep 2
+done
+#xterm -T den-mon1 -geometry 80x5 -e rsh den-ops1 -l oper tail -f /var/log/backup/den-mon1."$DAY" &
+#sleep 2
+#xterm -T den-help1 -geometry 80x5 -e rsh den-ops1 -l oper tail -f /var/log/backup/den-help1."$DAY" &
+
+
+
+
+

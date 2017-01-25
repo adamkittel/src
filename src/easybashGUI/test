@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#
+source easybashgui
+#
+###############
+#
+menu "enter in Server1" "enter in Server2" "enter in Server3" "enter in Server4"
+choice="$(0< "${dir_tmp}/${file_tmp}" )"

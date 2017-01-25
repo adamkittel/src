@@ -1,0 +1,99 @@
+#
+#  SETCONF module for RASSNAP Function
+#
+#  CREATED:             11/2004
+#  LAST UPDATE:         11/2004
+#
+#------------------------------------------------------------------------
+
+# append /opt/SUNWstade/System/config file to set playback options
+# get email address, NSCC=Y/N, NetConnect=Y/N, SSRR=Y/N, NSCC=Y/N,
+# set hostname
+confMv()
+{
+#set -x
+
+CONF=/opt/SUNWstade/System/config
+CONFMV=$CONF.snap
+
+if [ ! $P_ON ]
+   then
+      print "\n	Do you want to turn on providers? (Y/N) \c";
+      input
+      if [[ "$INPUT" = [Yy] ]]
+         then
+   
+   print "\n	Provide the following information to activate providers:";
+   
+   print "\n	Enter email address (first.last): \c"
+      input ; EMAIL=$INPUT$EMAILEXT
+          
+   print "\n	Activate NSCC? (Y/N) \c";
+      input ; NSCC=$INPUT
+	
+   print "\n	Activate NetConnect? (Y/N) \c";
+      input ; NETCONN=$INPUT
+	   
+   print "\n	Activate SSRR? (Y/N) \c";
+      input ; SSRR=$INPUT
+	   
+   print "\n	Set Hostname to localhost? (Y/N) \c";
+      input ; SETHOST=$INPUT
+
+   if [[ "$NSCC" = [Yy] ]]
+      then
+         NSCC=Y
+   fi
+
+   if [[ "$NETCONN" = [Yy] ]]
+      then
+         NETCONN=Y
+   fi
+
+   if [[ "$SSRR" = [Yy] ]]
+      then
+         SSRR=Y
+   fi
+
+   if [[ "$SETHOST" = [Yy] ]]
+      then
+         SETHOST=1
+      else
+         SETHOST=0
+   fi
+
+   if [ ! -f $CONFMV ]
+       then
+         /bin/cp -rf $CONF $CONFMV
+   fi
+
+   print test_email=$EMAIL >> $CONF
+   print pro.nscc_email.active=$NSCC >> $CONF
+   print pro.netconnect.active=$NETCONN >> $CONF
+   print pro.ssrr.active=$SSRR >> $CONF
+   print dont_fix_hostname=$SETHOST >> $CONF
+
+   P_ON=Y
+
+   fi
+fi
+} #------------------------------  SETCONF  ----------------------------
+
+#-------------------------------  CONFBk  -----------------------------
+confBk()
+{
+#set -x
+
+if [ $P_ON ]
+   then
+      /bin/mv $CONFMV $CONF >> $LOG #2>&1 ;
+fi
+
+} #-----------------------------  CONFBk  ----------------------------
+
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

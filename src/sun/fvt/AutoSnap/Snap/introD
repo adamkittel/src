@@ -1,0 +1,30 @@
+#
+#   INTROD module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+introD()
+{
+#set -x
+
+print "	Before the agent is run for the first time, all the 
+	device(s) should be in the Storade configuration.  
+	Note:  Every device in the configuration will be 
+	considered a discovered device.  If you	only want 
+	one device, have only that device in the configuration.
+
+        For best results, let this script control the agent.  
+	Stop the agent in the Administration > Agents tab. 
+	Select the Agent, then select Deactivate in the 
+	drop-down box.\n" ;
+
+} #---------------------------  INTROD  -------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

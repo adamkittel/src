@@ -1,0 +1,291 @@
+#!/bin/bash
+#
+#
+# set the prompt
+PS3='Select or Enter to continue> '
+
+# fun color stuff. default is white fg and black bg
+bold='\033[1m'
+unbold='\033[0m'
+black='\E[30;40m'	##
+red='\E[31;40m'		## error
+green='\E[32;40m'	## question / w/bold succesful return
+yellow='\E[33;40m'	## infomation 
+blue='\E[34;40m'	## sub header
+magenta='\E[35;40m'	##
+cyan='\E[36;40m'	## header
+white='\E[37;40m' 	## normal text
+
+alias reset_txt="tput sgr0"
+
+function cls {
+	echo -e $unbold$white
+	clear
+	printf "${bold}${cyan}VMware vMA/RCLI ESX Administration Helper${unbold}${white}\n\n"
+}
+
+function usage {
+	cls
+	printf "${yellow}CTRL-C to exit and use $0 [server] [username] [password]\nOr proceed interactivly${white}\n\n"
+}
+
+function cleanup {
+	vma
+	if [ $VMA -eq 1 ]; then
+		printf "${bold}Exiting.....\nDisabling logging\nLogs are in /var/log/vmware ${unbold}${white}\n\n"
+		/usr/bin/vilogger disable
+	else
+		printf "${bold}${blue}Exiting.....${unbold}${white}\n"
+	fi
+}
+
+function vma {
+	if [ -e /etc/vma-release ]; then
+	VMA=1
+	else
+	VMA=0
+	fi
+}
+
+function not_vma {
+	printf "${bold}${yellow}This is not a vMA appliance. For vMA information, go to\nhttp://communities.vmware.com/community/vmtn/vsphere/automationtools/vima${unbold}${white}\n\n"
+}
+
+function list_vma_servers {
+	cls
+	vma
+	if [ $VMA -eq 1 ]; then
+		printf "\n${bold}${blue}vMA ESX Server List${unbold}${white}\n\n"
+		/usr/bin/vifp listservers
+	else
+		not_vma
+	fi
+}
+
+function addserver {
+	cls
+	vma
+	if [ $VMA -eq 1 ]; then
+		DONE=0
+		while [ $DONE -eq 0 ]
+		do
+			printf "${bold}${blue}\nAddserver wizard. Options with defaults can be left blank${unbold}${white}\n\n"
+			printf "${yellow}Enter server name as it appears in DNS or enter IP:${white} "
+			read SERVER
+			printf "${yellow}Auth policy. Sets the authentication policy to fastpass authentication\nor the Active Directory (fpauth or adauth):${white} "
+			read AUTH
+			printf "${yellow}Connection protocol, http or https. HTTPS by default:${white} "
+			read PROTO; if [ ! $PROTO ]; then PROTO='https'; fi
+			printf "${yellow}Connection port number of the target server. The default is 443:${white} "
+			read PORT; if [ ! $PORT ]; then PORT='443'; fi
+			printf "${yellow}Service path URL of the target server. The default is /sdk:${white} "
+			read SPATH; if [ ! $SPATH ]; then SPATH='/sdk'; fi
+			printf "${yellow}Username, If the target server points to an ESX/ESXi system,\n the default is root:${white} "
+			read USR; if [ ! $USR ]; then USR='root'; fi
+			printf "${yellow}Password. Password for username:${white} "
+			stty -echo
+			read PW
+			stty echo
+			printf "\n\n"
+			printf "${yellow}Server = $SERVER\nAuth policy = $AUTH\nProtocol = $PROTO\nService path = $SPATH\nUsername = $USR\nPASSWORD WILL NOT BE SHOWN${white}\n\n"
+			printf "${green}Are these vaules correct?(y/n):${white} "
+			read YESNO
+			if [[ $YESNO = 'y' || $YESNO = 'Y' ]]; then
+				printf "${yellow}Executing....\n/usr/bin/vifp addserver $SERVER \ \n--authpolicy $AUTH \ \n--protocol $PROTO \ \n--portnumber $PORT \ \n--servicepath $SPATH \ \n--username $USR \ \n--password ********${white}\n\n"
+				echo -e $bold$red
+				/usr/bin/vifp addserver $SERVER --authpolicy $AUTH --protocol $PROTO --portnumber $PORT --servicepath $SPATH --username $USR --password $PW
+				if [ $? -eq 0 ]; then 
+					printf "${bold}${green}Command succeded${unbold}${white}\n"
+				fi
+				echo -e $unbold$white
+			fi
+			printf "${green}Add another server?(y/n):${white} "
+			read YESNO
+			if [[ $YESNO = 'n' || $YESNO = 'N' ]]; then
+				DONE=1
+			fi
+		done
+	else
+		not_vma	
+	fi
+}
+
+function remove_server {
+	cls
+	vma
+	if [ $VMA -eq 1 ]; then
+		printf "${bold}${blue}Removeserver wizard${unbold}${white}\n\n"
+		printf "${yellow}Current server list${white}\n"
+		LIST=( `/usr/bin/vifp listservers | awk '{print $1}'` )
+		X=0;Z=1
+		Y=${#LIST[@]}
+		while [ $X -lt $Y ]
+		do
+			printf "${Z}) ${LIST[$X]}\n"
+			let X=($X+1)
+			let Z=($Z+1)
+		done
+		printf "\n${green}Which server would you like to remove?${white} "
+		read ESX
+		let ESX=($ESX-1)
+		printf "${green}Are you sure?(y/n)${white} "
+		read YESNO
+		if [[ $YESNO = 'y' || $YESNO = 'Y' ]]; then
+			printf "${yellow}Removing ${LIST[${ESX}]} ${white}\n"
+			/usr/bin/vifp removeserver ${LIST[${ESX}]}
+			if [ $? -eq 0 ]; then
+				printf "${bold}${green}Command succeded${unbold}${white}\n\n"
+			else
+				printf "${bold}${red}Command failed${unbold}${white}"
+			fi
+		fi
+	else
+		not_vma
+	fi
+}
+
+function test_server_user_pw {
+	cls
+	printf "${yellow}Testing server $VI_SERVER, username $VI_USERNAME and password${white}\n"
+	/usr/bin/vicfg-hostops --server $VI_SERVER --username $VI_USERNAME --password $VI_PASSWORD --operation info 2>&1
+	if [ $? -eq 0 ]; then
+		printf "${bold}${green}Test succeeded${unbold}${white}\n"
+	else
+		printf "${bold}${red}Test command failed.${unbold}${white}\n "
+	fi
+}
+
+function set_server {
+	cls
+	if [ $VMA -eq 1 ]; then
+		printf "${yellow}Available ESX servers${white}\n"
+		SERVER_LIST=(`/usr/bin/vifp listservers | awk '{print $1}'`)
+		COUNT=${#SERVER_LIST[@]}
+		INDEX=0
+		while [ "$INDEX" -lt "$COUNT" ]
+		do
+			printf "${yellow}${SERVER_LIST[$INDEX]}${white}\n"
+			let "INDEX = $INDEX+1"
+		done
+
+		printf "${yellow}Enter the ESX host to perform operations on from this list or enter IP:${white} "
+		read VI_SERVER
+	else
+		printf "${yellow}Enter the ESX host name or IP to perform operations on:${white} "
+		read VI_SERVER
+	fi
+}
+
+function set_user_passwd {
+	printf "${yellow}Enter the userid for issuing commands:${white} "
+	read VI_USERNAME
+	stty -echo
+	printf "${yellow}Enter password:${white} "
+	read VI_PASSWORD
+	stty echo
+	printf "\n\n"
+	printf "${yellow}Server is set to ${white}$VI_SERVER\n${yellow}User is set to ${white}$VI_USERNAME\n"
+}
+
+function vilog {
+	cls
+	vma
+	if [ $VMA -eq 1 ]; then
+		printf "\n${bold}${blue}Logger Wizard\nAll logging will be turned off upon exit${unbold}${white}\n\n"
+		printf "${yellow}Current server list${white}\n"
+		LIST=( `/usr/bin/vifp listservers | awk '{print $1}'` )
+		X=0;Z=1;Y=${#LIST[@]}
+		while [ $X -lt $Y ]
+		do
+			printf "${Z}) ${LIST[$X]}\n"
+			let X=($X+1)
+			let Z=($Z+1)
+		done
+		printf "${Z}) All servers\n"
+		printf "\n${green}Which server would you like to enable logging?${white} "
+		read ESX
+		let ESX=($ESX-1)
+		let Z=($Z-1)
+		printf "${green}Are you sure?(y/n)${white} "
+		read YESNO
+		if [[ $YESNO = 'y' || $YESNO = 'Y' ]]; then
+			if [ $ESX = $Z ]; then
+				printf "${yellow}Enabling loging on all servers${white}\n"
+				/usr/bin/vilogger enable
+			else
+				printf "${yellow}Enabling logging for ${LIST[${ESX}]} ${yellow}\n"
+				/usr/bin/vilogger enable --server ${LIST[${ESX}]}
+				if [ $? -eq 0 ]; then
+					printf "${bold}${green}Command succeded${unbold}${white}\n\n"
+				fi
+			fi
+		fi
+	else
+		not_vma
+	fi
+}
+
+function menu2 {
+	cls
+		select CASE in "Storage Operations" "Network Operations" "VM Power/Snapshot Operations"	"Back to Main" "Quit"
+		do
+			case $CASE in
+				"Storage Operations")
+					printf "${red}NOT IMPLIMENTED YET${white}\n\n";;
+				"Network Operations")
+					printf "${red}NOT IMPLIMENTED YET${white}\n\n";;
+				"VM Power/Snapshot Operations")
+					printf "${red}NOT IMPLIMENTED YET${white}\n\n";;
+				"Back to Main")
+					main;;
+				"Quit")
+					exit 0;;
+			esac
+		done
+}
+
+## MAIN
+function main {
+cls
+if [ ! $1 ]; then
+	if [ -e $HOME/.esxadmrc ]; then
+		printf "Using $HOME/.esxadmrc to set variables"
+		source $HOME/.esxadmrc
+		test_server_user_pw
+	else
+		select CASE in "List vMA ESX target servers" "Add target ESX servers to vMA" "Remove ESX target server from vMA" "Set ESX server and username for this session" "Test connectivity to ESX server" "Enable vMA Logging" "Next menu" "Quit"
+		do
+			case $CASE in
+				"List vMA ESX target servers")
+					list_vma_servers;;
+				"Add target ESX servers to vMA") 
+		   			addserver;;
+				"Remove ESX target server from vMA")
+					remove_server;;
+				"Set ESX server and username for this session") 
+		   			set_server
+		   			set_user_passwd
+				"Test connectivity to ESX server") 
+		   			test_server_user_pw;;
+				"Enable vMA Logging")
+					vilog;;
+				"Next menu") 
+					menu2;;
+				"Quit") 
+					cleanup
+					exit;;
+	        		*) 
+					usage;; 
+			esac
+		done
+	fi
+else 
+	VI_SERVER=$1
+	VI_USERNAME=$2
+	VI_PASSWORD=$3
+	test_server_user_pw
+fi
+}
+
+main
+

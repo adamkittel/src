@@ -1,0 +1,47 @@
+
+// this will sort out the annoying rsm and cron mail
+
+#include <iostream.h>
+#include <fstream.h>
+#include <string.h>
+
+main()
+{
+  int A = 0;
+  int B = 0;
+  int C = 0;
+  int D = 0;
+  char LINE[501];
+  char TEMPLINE[501];
+  
+  fstream MAILFILE("/home/akittel/nsmail/Inbox",ios::in|ios::out|ios::beg);
+
+  while(MAILFILE.getline(LINE,500))
+	{
+	  if(strstr(LINE,"From ") != NULL)
+	    {
+	      cout<<"New Message"<<" Line "<<A<<" Message Number "<<C<<endl;
+	      C++;
+	      D = MAILFILE.tellg();
+	    }
+	  if(strstr(LINE,"Subject: Prod RSM Mail") || strstr(LINE,"Subject: Output from ")) != NULL)
+	    {
+	      fstream RSMMAIL("RSM-Mail",ios::in|ios::out|ios::end|ios::app);
+	      while(MAILFILE.getline(TEMPLINE,500))
+		    {
+		      if(strstr(TEMPLINE,"From ") == NULL)
+			{
+			  RSMMAIL<<TEMPLINE<<endl;
+			} else {
+			  break;
+			}
+		    }
+	      RSMMAIL.close();
+	    }
+	  A++;
+	}
+MAILFILE.close();
+return 0;
+}
+
+

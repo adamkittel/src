@@ -1,0 +1,10 @@
+new-vm -vmhost 192.168.129.120 -name rel3 -template rel5_2 -datastore ak-ds2
+new-vm -vmhost 192.168.129.120 -name rel4 -template rel5_2 -datastore ak-ds2
+new-vm -vmhost 192.168.129.120 -name rel5 -template rel5_2 -datastore ak-ds2
+new-vm -vmhost 192.168.129.120 -name rel6 -template rel5_2 -datastore ak-ds2
+new-vm -vmhost 192.168.129.120 -name rel7 -template rel5_2 -datastore ak-ds2
+new-vm -vmhost 192.168.129.120 -name rel8 -template rel5_2 -datastore ak-ds2
+new-vm -vmhost 192.168.129.120 -name rel9 -template rel5_2 -datastore ak-ds2
+new-vm -vmhost 192.168.129.120 -name rel10 -template rel5_2 -datastore ak-ds2
+new-vm -vmhost 192.168.129.120 -name rel11 -template rel5_2 -datastore ak-ds2
+new-vm -vmhost 192.168.129.120 -name rel12 -template rel5_2 -datastore ak-ds2

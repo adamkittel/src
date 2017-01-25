@@ -1,0 +1,23 @@
+#
+#  START module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#--------------------------------------------------------------------------
+
+start()
+{
+#set -x
+##-----  Create baseline entry
+
+$RAS_SNAP start -s $S_ID -b $SLOCAL >> $LOG #2>&1;
+$RAS_SNAP fail -s $S_ID -b $SLOCAL >>  $LOG #2>&1;
+
+} #----------------------------  START  -------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

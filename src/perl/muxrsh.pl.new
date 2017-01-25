@@ -1,0 +1,258 @@
+Article 8914 of comp.lang.perl:
+Xref: feenix.metronet.com comp.lang.perl:8914
+Newsgroups: comp.lang.perl
+Path: feenix.metronet.com!news.utdallas.edu!hermes.chpc.utexas.edu!cs.utexas.edu!howland.reston.ans.net!europa.eng.gtefsd.com!emory!news-feed-2.peachnet.edu!concert!theo!mcnc!sps
+From: sps@mcnc.org (Stephen P. Schaefer)
+Subject: Re: Remote perl scripts
+In-Reply-To: friedric@rsoc.rockwell.com's message of 10 Dec 1993 18: 43:22 GMT
+Message-ID: <SPS.93Dec14225521@robin.mcnc.org>
+Sender: daemon@mcnc.org (David Daemon)
+Nntp-Posting-Host: robin.mcnc.org
+Organization: Microelectronics Center of North Carolina
+References: <2eag0a$l91@popeye.jsc.nasa.gov>
+Date: Wed, 15 Dec 1993 03:55:21 GMT
+Lines: 241
+
+I found code to do this for shell scripts in this group, signed by
+Bruce Barnett <barnett@crdgw1.ge.com> who in turn credits Randal
+(could it be anyone other than Mr. Schwartz?).  There should be a way
+to invoke perl from the rsh.
+
+I modified the code for our situation: normally my rsh's are
+authenticated transparently by kerberos, but if that fails, we've
+modified rsh to prompt for a password for authentication.  If I'm
+going to multiple machines, I can't tell who I'm typing at, so I
+wanted that to just fail -- thus the importance of detaching the
+subprocesses from the tty.  I try to report failures.
+
+I tweaked the man page and a couple other things, so assume that all
+bugs were introduced by me.
+
+With a root ticket, this is great for some administrative tasks like
+
+muxrsh chmod u-s /usr/bin/X11/xterm < my_unix_hosts
+
+I've also reworked this as a couple packages for use in perl scripts
+that do multiple host updates; I'll post once I'm happier with the
+documentation.
+
+	Stephen P. Schaefer, Sys. Admin.	MCNC
+	sps@mcnc.org				P.O. Box 12889
+	(919) 248-1417				RTP, NC 27709
+
+DISCLAIMER: The opinions expressed above are those of the author and
+are unrelated to the positions or policies of MCNC.
+
+WARNING: In response to a suit by members of the print media, MCNC has
+signed a consent decree which places in the public record any
+correspondence to or from its employees which does not relate to
+scientific or technological research, and which has not been
+designated as confidential by an industrial participant.  Please bear
+this in mind when you correspond with me.
+public(x) :- not(research(x)),not(industryparticipant(y),private(x,y)).
+
+#! /usr/local/std/bin/perl
+'di';
+'ig00';
+# -*-Perl-*-
+# This is a mux version of rsh 
+# it will do several rsh commands in parallel
+# just the thing for doing "df -t 4.2" on 400 machines
+#
+# Bruce Barnett <barnett@crdgw1.ge.com>
+# (Thanks to Randal for hard part)
+#
+# default number of processes is 8, 
+# but is resettable using the -m argument
+#
+# usage:
+# muxrsh [-m max] [-v] [-l username] command [args ...] <list_of_machines
+#
+# example:
+#      muxrsh /bin/arch <machines
+#      muxrsh -m 10 /bin/arch <machines
+#      muxrsh -v -l staff df -t 4.2 <machines
+#
+# ------------------------------
+# subroutine definitions   ....
+sub getswitches {
+    # parse arguments
+    while ($ARGV[0] =~ /^-/) {
+	$ARGV[0] =~ /^-v/ && ($verbose++,shift(@ARGV),next);
+	$ARGV[0] =~ /^-m/ && (shift(@ARGV),$maxpids = shift(@ARGV), next);
+	$ARGV[0] =~ /^-l/ && (shift(@ARGV),$remoteuser = "-l " . shift(@ARGV), next);
+	last;
+    }
+}
+
+
+sub wait {
+    $verbose &&	printf "process %d called wait with %d alive:%s\n",
+	$$, &alive, join(' ',values(%pids));
+	local($somepid);
+	while ($somepid = wait) {
+		if (defined $pids{$somepid}) {
+		    $verbose && print "wait saw $pids{$somepid}\n";
+		    return delete $pids{$somepid};
+		} else {
+		    $verbose && print "wait saw $somepid?\n";
+		}
+	}
+	warn "wait: nobody to wait on: $!";
+}
+
+sub alive {
+    local(@pids) = keys %pids;
+    return scalar(@pids);
+}
+
+# Main routine
+
+sub doit {
+    while ($machine = <STDIN>) {
+	chop $machine;
+	$verbose && printf "forking for %s with %d alive\n", $machine, &alive;
+	&wait() if &alive >= $maxpids;
+	$pid = fork;
+	die "fork: $!" unless defined $pid;
+	if ($pid) { # parent
+	    $pids{$pid} = $machine;
+	} else {
+	    # this is to cause failure when prompting for a password
+	    close(STDIN);
+	    if (open(TTY,"/dev/tty")) {
+# excerpted from /usr/include/sys/ioctl.h:
+# /* #define	IOC_VOID	0x20000000	/* no parameters */
+# /* #define	_IO(x,y)	(IOC_VOID|('x'<<8)|y) */
+# /* #define	TIOCNOTTY	_IO(t, 113)	/* void tty association */
+		$TIOCNOTTY = 536900721;
+	    	ioctl(TTY, $TIOCNOTTY, 0);
+		close(TTY);
+	    }
+	    $results=`exec rsh $machine $remoteuser -n \'@ARGV\' 2>&1 `;
+	    # this makes sure "machine: " is before each line returned.
+	    @mresults = (split(/\n/, $results));
+	    for $mresult (@mresults) {
+		print "$machine: $mresult\n";
+	    }
+	    exit 0;
+	}
+    }
+    &wait() while &alive > 0;
+}
+
+#--------------
+# main routine
+#
+
+$|++;				# flush buffers on a line-by-line basis
+$verbose = 0;			# assume verbose is off
+$maxpids = 8;			# default maximum number of processes
+$remoteuser=""; 
+%pids = ();			# zero out the pids
+&getswitches();			# get any switches/changes to defaults
+@ARGV || die "Must specify a command to be executed!\n";
+$verbose && $remoteuser && print "remote user is $remoteuser\n";
+$verbose && print "Max number of processes is $maxpids\n";
+&doit();			# tuit
+0;
+###############################################################
+
+    # These next few lines are legal in both Perl and nroff.
+
+.00;                       # finish .ig
+ 
+'di           \" finish diversion--previous line must be blank
+.nr nl 0-1    \" fake up transition to first page again
+.nr % 0         \" start at page 1
+'; __END__ ##### From here on it's a standard manual page #####
+.\"	MCNC $Header: muxrsh.pl,v 1.1 92/06/30 12:11:36 bin Exp $
+.\" Copyright 1988 by the Microelectronics Center of North Carolina
+.TH MUXRSH 1 "June 29, 1992"
+.AT 3
+.SH NAME
+muxrsh \- run a command on a number of different machines
+.SH SYNOPSIS
+.B
+muxrsh [-m max] [-v] [-l username] command [args ...] <list_of_machines
+.SH DESCRIPTION
+.I muxrsh
+runs a command on a list of machines.  The machine names are taken one
+per line on the standard input.  Several commands are run
+simultaneously in a nondeterministic order.  Each line of output is
+labeled by the hostname, followed by a :, followed by a space.
+Because there's no way to direct input to one or another instance,
+standard in is closed to each remote command, and rsh can not prompt
+you for a password.  Kerberos is the best way to obtain the required
+password\-less entryto the remote host.
+.SH FLAGS
+.TP
+.B \-m \fInumber\fP
+The following number limits how many simultaneous sesssions there are.
+.TP
+.B \-v
+Horribly verbose details on the progress of the command.
+.TP
+.B \-l \fIusername\fP
+Each
+.I rsh(1)
+invocation gets this flag and its argument, setting the login name for
+the remote command.
+.SH DIAGNOSTICS
+.TP
+Must specify a command to be executed!
+.I muxrsh
+doesn't recognize anything as a command to give to rsh.
+.TP
+fork: No more processes at muxrsh line 62, <STDIN> line \fInumber\fP.
+You've run out of processes.  The default limit is 8 simultaneous
+invocations, requiring 1+2*8 processes \(em a coordinating perl
+process; one perl process per host; and an rsh process per host.  Use
+.B \-m
+to reduce the parallelism.
+.TP
+hostname: rsh: Remote protocol failure.
+Some unspecified error.	
+.TP
+hostname: rsh: Cannot disable echo.
+The rsh attempted to prompt you for a password: you need pasword-less
+entry to the remote host; I recommend Kerberos.
+.TP
+hostname: rsh: Connection timed out.
+The host's rsh service didn't respond in a timely manner.
+.SH BUGS
+The quoting necessary to get shell metacharacters to the remote
+machines is revolting.  An example:
+.sp
+muxrsh echo foo \e\e \e| tr o O \e\e \e; hostname
+.sp
+The above is equvalent to
+.sp
+echo foo | tr o O; hostname
+.sp
+on each host.  The ``double backslash space backslash'' idiom is an
+implementation artifact.
+.PP
+I don't know how to fix ``Remote protocol failure.''
+.SH SEE ALSO
+kinit(1), rsh(1)
+--
+	Stephen P. Schaefer, Sys. Admin.	MCNC
+	sps@mcnc.org				P.O. Box 12889
+	(919) 248-1417				RTP, NC 27709
+
+NCSC has been reorganized as the Information Technologies division of MCNC;
+no decision has been made on revision of the domain name.
+
+DISCLAIMER: The opinions expressed above are those of the author and
+are unrelated to the positions or policies of MCNC.
+
+WARNING: In response to a suit by members of the print media, MCNC has
+signed a consent decree which places in the public record any
+correspondence to or from its employees which does not relate to
+scientific or technological research, and which has not been
+designated as confidential by an industrial participant.  Please bear
+this in mind when you correspond with me.
+public(x) :- not(research(x)),not(industryparticipant(y),private(x,y)).
+
+

@@ -1,0 +1,30 @@
+#
+#   INTROF module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#-----------------------------------------------------------------------
+
+introF()
+{
+#set -x
+
+print " Before the agent is run for the first time, You should
+        have the device you are going to inject the faults on
+        in a clean state in order for the agent to detect that
+        the status of the device has gone to a fault condition.
+        It will not detect a new fault on a device that has
+        already been notified.
+
+        For best results, let the script control the running of the
+        Agent.  Stop the agent in the Administration > Agents tab.
+        Select the Agent, then select Deactivate in the dropdown box.\n" ;
+
+} #-----------------------------  INTROF  -----------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

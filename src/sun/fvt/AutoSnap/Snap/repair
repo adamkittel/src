@@ -1,0 +1,26 @@
+#
+#  REPAIR module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+repair()
+{
+#set -x
+#-----  save more info at the end of the next normal run of storade
+
+print "        Repair Your Fault and Press Enter" ; read ENT ;
+print "        Repairing Devices.....";
+
+`$RAS_SNAP repair -s $S_ID -b $SLOCAL >> $LOG 2>&1`;
+
+print "        Done Repairing Devices \n \n ";
+} #------------------------------  REPAIR  ----------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

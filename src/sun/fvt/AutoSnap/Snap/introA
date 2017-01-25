@@ -1,0 +1,32 @@
+#
+#   INTROA module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+introA()
+{
+#set -x
+
+print " 	Before the agent is run for the first time, you should
+        have all the device you want for this AUDIT device(s)
+        ras_snap in your Storade configuration.  NOTE:  Every
+        device in your configuration will be audited.  If you
+        only want one, only have that device in the configuration.
+        The agent will force an audit and will not run the ras_snap
+        repair function.
+
+        For best results, let the script control the running of the
+        Agent.  Stop the agent in the Administration > Agents tab.
+        Select the Agent, then select Deactivate in the drop-down box.\n" ;
+
+} #---------------------------  INTROA  -------------------------------
+
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

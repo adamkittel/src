@@ -1,0 +1,8 @@
+guestinfo.cis.deployment.node.type = "embedded"
+guestinfo.cis.vmdir.domain-name = "solidfire.eng"
+guestinfo.cis.vmdir.site-name = "solidfire"
+guestinfo.cis.vmdir.password = "solidF!r3"
+guestinfo.cis.appliance.net.addr.family = "ipv4"
+guestinfo.cis.appliance.net.mode = "dhcp"
+guestinfo.cis.appliance.root.passwd = "solidF!r3"
+guestinfo.cis.appliance.ssh.enabled = "true"

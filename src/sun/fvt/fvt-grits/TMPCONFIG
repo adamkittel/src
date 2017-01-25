@@ -1,0 +1,5 @@
+/GRITS/MOUNT_POINTS/1 write/verify 64k 33G FF
+/GRITS/MOUNT_POINTS/2 write/verify 64k 33G FF
+/GRITS/MOUNT_POINTS/3 write/verify 64k 33G FF
+/GRITS/MOUNT_POINTS/5 write/verify 64k 68G FF
+/GRITS/MOUNT_POINTS/6 write/verify 64k 266G FF

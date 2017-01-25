@@ -1,0 +1,96 @@
+#!/bin/bash
+#
+#
+# VMware vMA/RCLI ESX Administration Helper
+# managing hosts
+
+function host_shutdown {
+	if [ $DATACENTER ]; then
+		printf "Do you wish to shutdown all hosts in datacenter $DATACENTER? [y/n] "
+		read YN
+		if [ $YN = 'y' ]
+			printf "Executing.......\n/usr/bin/vicfg-hostops --operation shutdown --datacenter $DATACENTER"
+			/usr/bin/vicfg-hostops --operation shutdown --datacenter $DATACENTER
+		fi
+
+	elif [ $CLUSTER ]; then
+		printf "Do you wish to shutdown all hosts in cluster $CLUSTER? [y/n] "
+		read YN
+		if [ $YN = 'y' ]
+			printf "Executing.......\n/usr/bin/vicfg-hostops --operation shutdown --cluster $CLUSTER"
+			/usr/bin/vicfg-hostops --operation shutdown --cluster $CLUSTER
+		fi
+	else
+		printf "Are you sure you want to shutdown host $VI_SERVER? [y/n] "
+		read YN
+		if [ $YN = 'y' ]; then
+			printf "Executing.......\n/usr/bin/vicfg-hostops --operation shutdown"
+			/usr/bin/vicfg-hostops --operation shutdown
+		fi
+	fi
+}
+
+function host_reboot {
+	if [ $DATACENTER ]; then
+		printf "Do you wish to reboot all hosts in datacenter $DATACENTER? [y/n] "
+		read YN
+		if [ $YN = 'y' ]
+			printf "Executing.......\n/usr/bin/vicfg-hostops --operation reboot --datacenter $DATACENTER"
+			/usr/bin/vicfg-hostops --operation reboot --datacenter $DATACENTER
+		fi
+
+	elif [ $CLUSTER ]; then
+		printf "Do you wish to reboot all hosts in cluster $CLUSTER? [y/n] "
+		read YN
+		if [ $YN = 'y' ]
+			printf "Executing.......\n/usr/bin/vicfg-hostops --operation reboot --cluster $CLUSTER"
+			/usr/bin/vicfg-hostops --operation reboot --cluster $CLUSTER
+		fi
+	else
+		printf "Are you sure you want to reboot host $VI_SERVER? [y/n] "
+		read YN
+		if [ $YN = 'y' ]; then
+			printf "Executing.......\n/usr/bin/vicfg-hostops --operation reboot"
+			/usr/bin/vicfg-hostops --operation reboot
+		fi
+	fi
+}
+
+function host_info {
+	printf "Executing.......\n/usr/bin/vicfg-hostops --operation info"
+	/usr/bin/vicfg-hostops --operation info
+}
+
+function host_mode {
+	printf "Enter or exit maintenance mode? [en/ex] "
+	read YN
+	if [ $YN = 'en' ]; then
+		printf "Executing.......\n/usr/bin/vicfg-hostops --operation enter"
+		/usr/bin/vicfg-hostops --operation enter
+	else
+		if [ $YN = 'ex' ]; then
+			printf "Executing.......\n/usr/bin/vicfg-hostops --operation exit"
+			/usr/bin/vicfg-hostops --operation exit
+		fi
+	fi
+}
+
+function esxi_bu_re {
+	printf "Backup or Restore ESXi system? [bu/re] "
+	read YN
+	if [ $YN = 'bu' ]; then
+		printf "Enter backup filename including full path to create "
+		read BUPATH
+		printf "Executing.......\n/usr/bin/vicfg-cfgbackup -s $BUPATH"
+		/usr/bin/vicfg-cfgbackup -s $BUPATH
+	else
+		printf "Enter backup filename including full path to restore "
+		read BUPATH
+		printf "Executing.......\n/usr/bin/vicfg-cfgbackup -l $BUPATH"
+		/usr/bin/vicfg-cfgbackup -l $BUPATH
+	fi
+}
+
+
+
+

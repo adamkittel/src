@@ -1,0 +1,675 @@
+#!/bin/bash
+# Copyright 2012 SolidFire, Inc. All rights reserved.
+
+MIRROR_BASE_PATH="/solidfire-ubuntu-mirror"
+
+CONFIGURATION='Release'
+DIRTY=''
+IMAGE_DATE='2015-08-07 22:10'
+LIGHTTPD_VERSION='1.4.32-p1'
+PACKAGE='solidfire-fdva-tools'
+PACKAGE_NAME='solidfire-fdva-tools-nitrogen-7.4.0.43'
+RELEASE='nitrogen'
+REVISION=''
+TAG_INFO=''
+VERSION='7.4.0.43'
+UBUNTU_RELEASE='precise'
+
+
+REPO_HOST="${REPO_HOST:-pubrepo.solidfire.com}"
+REPO_ACCESS=1
+
+APT_MIRROR_CONF="$(mktemp /tmp/apt-mirror-XXXX.list)"
+APT_STDERR_OUTPUT="$(mktemp /tmp/apt-mirror-stderr-XXXX)"
+PKGLIST="$(mktemp /tmp/update-fdva-pkglist-XXXX)"
+
+CMD_NAME="$(basename $0)"
+CMD_FULL_PATH="$(readlink -f $0)"
+
+declare -a MIRROR_LIST
+MIRROR_LIST=( 'deb,amd64,,solidfire,precise main|' 'deb,amd64,nitrogen-updates,/ubuntu,precise main restricted multiverse universe|deb,amd64,nitrogen-updates,/ubuntu,precise-updates main restricted multiverse universe|deb,amd64,nitrogen-updates,/security-ubuntu,precise-security main restricted multiverse universe|' 'deb,amd64,,omsa/repo,/|' )
+declare -a MIRROR_NAMES
+MIRROR_NAMES=( solidfire nitrogen-updates omsa )
+
+DEBUG=0
+
+# Clear proxy settings in user environment, and
+# pull the settings from /etc/profile.d/sf_proxy_settings.sh
+unset http_proxy
+unset https_proxy
+unset ftp_proxy
+unset rsync_proxy
+PROXY_CFG_FILE="/etc/profile.d/sf_proxy_settings.sh"
+[[ -f "${PROXY_CFG_FILE}" ]] && source "${PROXY_CFG_FILE}"
+
+log()
+{
+	logger -t "${CMD_NAME}" -p local0.info $*
+}
+
+print_and_log()
+{
+	log $*
+	echo $*
+}
+
+cleanup()
+{
+	rm -f "${APT_MIRROR_CONF}" "${APT_STDERR_OUTPUT}" "${PKGLIST}"
+}
+
+trap 'cleanup' HUP INT QUIT BUS PIPE TERM EXIT
+
+die()
+{
+	log "ERROR: $*"
+	echo $* 1>&2
+	exit 1
+}
+
+print_version()
+{
+	echo "$CMD_NAME ${CONFIGURATION}${DIRTY:+,${DIRTY}} Version: ${VERSION} Revision: ${REVISION} Build date: ${IMAGE_DATE}${TAG_INFO:+ ${TAG_INFO}}"
+}
+
+# Call to install SolidFire's public APT key
+install_solidfire_apt_pubkey()
+{
+	apt-key add - &>/dev/null <<-"EOF"
+		-----BEGIN PGP PUBLIC KEY BLOCK-----
+		Version: GnuPG v1.4.10 (GNU/Linux)
+		Comment: SolidFire Engineering (Release Team) <support@solidfire.com>
+
+		mQENBEzUYx4BCACwMtKNOtG0d+Ub0saReZnSdRTURr9pS++ar8oXrZf5w8RTrUvG
+		GuThv7JmO9cut6dD1NQT91pmJ4esh610imFOyP+kxyAacENEqcAnbNWdg6UljGqx
+		fj62vqlcKdyUgIj2RBGHsdPNyMIELBCj1ZsoDbXyiaFGhNp+ZilrpjICoyTz806R
+		MHQ7+ADpo/aYPc7BvNV0WmIPOcr2Gp3aICbjdP35Ay8ejxvtlRzuLHL73pWzFkx0
+		k05bL2kEcAhcT89EpxhSNxXg9zYKbaFYHfc6Ivha7MC9ErxKXURB6vn7vtD0wxhh
+		/WjjmT63jlls0n7IQnv8Wa582vvRWCWKGYIzABEBAAG0PFNvbGlkRmlyZSBFbmdp
+		bmVlcmluZyAoUmVsZWFzZSBUZWFtKSA8c3VwcG9ydEBzb2xpZGZpcmUuY29tPokB
+		PgQTAQIAKAUCTNRjHgIbAwUJGG+dgAYLCQgHAwIGFQgCCQoLBBYCAwECHgECF4AA
+		CgkQ5w+aqbJeTtrW/wf/UAmyJ0xeh2miBLbS7LSU6v07MB4IdlUlNqnt8b2dI2io
+		qrK//RCTrEo+Yz5pc/oDcHd5ctXXdQxyi5WradHpUtrpZOeb+JmX94Zd4SKQl4x8
+		ls6vLpTpBEFNqViVhxqk1o60Or3mxr0fK3OEsquvdClv+G5/ftcB36V5g7qbjL7K
+		6nMTbMoL7J2I6OCLE+SNvMe0zPrxyCtiknozWWWU0tgLJibyk4XxIZDJerhyJYZu
+		tu75CmHXIudHVUk9c7GSywiVjpx1pElU16ieD7HVvfZeU65GgxIG5Qy4pQjMSdjO
+		6CTJrr0lyTyro7m+K0btg8mWZaKsMZrntDZZsCy0c7kBDQRM1GMeAQgArJooHsYZ
+		ZbnT2hxkpy2RjEEJF8DDeBGMTfV6axMlZEMZaiBPl8SQTaee+15HLRSAsbdrVtrQ
+		A72K8Rr7uFn25M6eulb/+NB33L5Ep00nlM1rdCObLEKCnKvVzIpi37wZ2qKqkywR
+		vZVuG5rRLZsZH0tIoEwjpSZBeT18aLba3NCy+1PUOcrCzTDqqX9J4CAx6E0cFuOG
+		8qF5eqmcFUnjo3s9G/NYID8WwdwqGOMPF8Gf21zYHcUzEaNszLK+rHyU+m4grDdy
+		37LP5ttADVfReBxbhOP81fdWDJG8l3ZmC7nEvYNNZbCYgukBW2sExrR2mSoQJv5D
+		lvjHXSKTAGhuKQARAQABiQElBBgBAgAPBQJM1GMeAhsMBQkYb52AAAoJEOcPmqmy
+		Xk7aEIkH/330KZEdMDPKZO5kOj3PFbC8nx1O20nwCBnwf6cn0A/TmViowzludX9o
+		32AwUU8N0Z0DkgV21YGxuBRCIVqyBtBHoUwk5B0EcwrESDI7Bf94rthUsOU6V+6I
+		U/Xs2Xx3Pug5U9vx/NXtCigMQbvnYHboXnyxyP03Rx4KZl7ZQo3+KL3ZZ6XMIdu5
+		gIH3Tkp90DSnSU/9pUWM/egXiaawk2Baea3ZiLjggmhjXxO0COqTUZT9WCzSujiS
+		or9A/cWEH8WxakJdx6g2Tgm3GSroTB/C6j7j1RD5Dpe24jI4jTtIBJyEakvgTLS3
+		u3zfoW4rxr02Swkyk80VEFGIbA98R9M=
+		=zFZU
+		-----END PGP PUBLIC KEY BLOCK-----
+	EOF
+}
+
+# Create the header for apt-mirror config file
+make_mirror_head()
+{
+	cat > ${1} <<-EOF
+		############# config ##################
+		#
+		set base_path    ${MIRROR_BASE_PATH}
+		#
+		set mirror_path  \$base_path/mirror
+		set skel_path    \$base_path/skel
+		set var_path     \$base_path/var
+		# set cleanscript \$var_path/clean.sh
+		# set defaultarch  <running host architecture>
+		# set postmirror_script \$var_path/postmirror.sh
+		# set run_postmirror 0
+		set nthreads     20
+		set _tilde 0
+		# Translate + into %2B in URLs. Needed for downloading from S3.
+		set _plus 1
+		#
+		############# end config ##############
+
+	EOF
+}
+
+repo_access_failed()
+{
+	REPO_ACCESS=0
+	echo "ERROR accessing $1"
+}
+
+# Called with the name of an APT mirror.list file
+# This validates that we have access to the URLs that apt-mirror
+# will use to mirror the repositories.
+#
+# We do this since apt-mirror's error checking and reporting
+# is not user friendly.
+validate_access_to_mirrored_repo()
+{
+	# Grab the URLs from the mirror file passed in as $1
+	# Try to grab the Release file associated with each
+	# mirror line.
+	URLS="$(grep '^deb-amd64 ' "${1}" | grep -o 'http://[^ ]* [^ ]*' |\
+	sed -e 's|/ \(.*\)|/dists/\1|' -e 's| \(.*\)|/dists/\1|' -e 's|/$||' |\
+	sort -u)"
+	for url in ${URLS} ; do
+		# Trimming of /dists/ works around how the OMSA repo is configured
+		url="$(echo $url | sed -e 's|/dists/$||')"
+		wget -O /dev/null -q --no-check-certificate "${url}"
+		rv=$?
+		if [[ $rv -ne 0 ]] ; then
+			repo_access_failed ${url}
+		fi
+	done
+}
+
+# validate_package_file 
+validate_package_file()
+{
+	print_and_log ">>>> ${fn}"
+	rval=0
+	# The second sed expression 's|Packages.*||' is a kludge to work around
+	# an OMSA repository format issue. Case 9368 opened to address the issue.
+	REPOPATH="$(echo ${1} | sed -e 's|/dists/.*||' -e 's|/Packages.*||')"
+	gawk -v REPOPATH="${REPOPATH}" -v DEBUG="${DEBUG}" -v CMD_NAME="${CMD_NAME}" -v RM="${2}" '
+	function dbgprint(level, message)
+	{
+		if (level <= DEBUG) {
+			print message > "/dev/stderr"
+			system("logger -t " CMD_NAME " -p local0.info " message)
+		}
+	}
+
+	function validate_checksum(hash, expected_value, file, record)
+	{
+		if (expected_value == "") {
+			return 0
+		}
+
+		cmd = hash "sum \"" file "\" | cut -d \" \" -f 1"
+		cmd | getline
+		csum = $0
+		close(cmd)
+
+		if (csum != expected_value) {
+			dbgprint(0, "Record " record " file " file " " hash " mismatch: expected " expected_value " calculated " csum)
+			return 1
+		}
+		return 0
+	}
+
+	BEGIN {
+		RS = ""
+		FS = "\n"
+		badcount=0
+		checksums["md5"] = 1
+		checksums["sha1"] = 1
+		checksums["sha256"] = 1
+		lastfile=""
+	}
+
+	{
+		debfile=""
+		size=""
+		md5=""
+		sha1=""
+		sha256=""
+
+		for (fnum = 1 ; fnum <= NF ; fnum++) {
+			nf = split($fnum, space_arr, " ")
+			if ($fnum ~ /^Architecture: /) {
+				if (nf != 2) {
+					dbgprint(1, "Record " NR " Architecture field contains too many spaces")
+					next
+				}
+				# Case 9366 - hack to get around OMSA repository issue.
+				if (space_arr[2] == "i386") {
+					next
+				}
+			}
+			if ($fnum ~ /^Filename: /) {
+				if (nf != 2) {
+					dbgprint(0, "Record " NR " filename field contains too many spaces")
+					exit 2
+				}
+				debfile = REPOPATH "/" space_arr[2]
+				# Case 9365 - hack to get around reduce-repo creating duplicate entries
+				if (debfile == lastfile) {
+					dbgprint(3, "Skipping duplicate deb file " debfile)
+					next
+				}
+				lastfile = debfile
+			}
+			else if ($fnum ~ /^Size: /) {
+				if (nf != 2) {
+					dbpprint(0, "Record " NR " size field contains too many spaces")
+					exit 2
+				}
+				size = space_arr[2]
+			}
+			else if ($fnum ~ /^MD5sum: /) {
+				if (nf != 2) {
+					dbgprint(0, "Record " NR " md5sum field contains too many spaces")
+					exit 2
+				}
+				md5 = space_arr[2]
+			}
+			else if ($fnum ~ /^SHA1: /) {
+				if (nf != 2) {
+					dbgprint(0, "Record " NR " sha1 field contains too many spaces")
+					exit 2
+				}
+				sha1 = space_arr[2]
+			}
+			else if ($fnum ~ /^SHA256: /) {
+				if (nf != 2) {
+					dbgprint(0, "Record " NR " sha256 field contains too many spaces")
+					exit 2
+				}
+				sha256 = space_arr[2]
+			}
+		}
+		if (debfile == "" || size == "") {
+			dbgprint(1, "Record " NR " contained no filename and/or size fields")
+			next
+		}
+		dbgprint(2, ">>>>>> Validating " debfile)
+		cmd="stat --format=\"%s\" \"" debfile "\""
+		if ((cmd | getline) <= 0) {
+			dbgprint(0, "Record " NR " failed to calculate file size for " debfile)
+			next
+		}
+		debsize=$0
+		close(cmd)
+		if (debsize != size) {
+			dbgprint(0, "Record " NR " file " debfile " size mismatch: expected " size " calculated " debsize)
+			badlist[badcount]=debfile
+			badcount += 1
+			next
+		}
+
+		if (md5 != "" && validate_checksum("md5", md5, debfile, NR) != 0) {
+			badlist[badcount]=debfile
+			badcount += 1
+			next
+		}
+		if (sha1 != "" && validate_checksum("sha1", sha1, debfile, NR) != 0) {
+			badlist[badcount]=debfile
+			badcount += 1
+			next
+		}
+		if (sha256 != "" && validate_checksum("sha256", sha256, debfile, NR) != 0) {
+			badlist[badcount]=debfile
+			badcount += 1
+			next
+		}
+	}
+
+	END {
+		if (badcount != 0) {
+			dbgprint(0, badcount " bad files")
+			for (ii = 0 ; ii < badcount ; ii++) {
+				if (RM != 0) {
+					dbgprint(0, "  rm -f " badlist[ii])
+					system("rm -f " badlist[ii])
+				} else {
+					dbgprint(0, "    " badlist[ii])
+				}
+			}
+			exit 1
+		}
+		dbgprint(1, "no bad files")
+		exit 0
+	}' "${1}" || rval=1
+	[[ ${rval} -ne 0 && ${2} -ne 0 ]] && { print_and_log "rm -f ${1}" ; rm -f "${1}" ; }
+	return ${rval}
+}
+
+validate_mirrored_repo()
+{
+	local rval=0
+	# Was piping the output of find into while read, but that
+	# results in while running in a subshell, which means any
+	# shell variables set inside the while loop are only changed
+	# in the subshell. By sending the output to a file, and then
+	# reading the file, everything stays in a single shell.
+	# Not pretty, but it works.
+	find "${PUBREPO}/${1}" -name Packages > "${PKGLIST}"
+	while read fn ; do
+		validate_package_file "${fn}" "${2}" || rval=1
+	done < "${PKGLIST}"
+	return ${rval}
+}
+
+make_mirror_conf()
+{
+	make_mirror_head "${1}"
+	echo "${3}" | tr '|' '\n' | sed -e 's/^\( \)\{1,\}//' |\
+	gawk -F, -v REPO_HOST="${REPO_HOST}" '
+	{
+		if ($3 != "") {
+			printf "%s-%s http://%s/%s%s %s\n", $1, $2, REPO_HOST, $3, $4, $5
+		}
+		else if ($1 != "") {
+			printf "%s-%s http://%s/%s %s\n", $1, $2, REPO_HOST, $4, $5
+		}
+			
+	}' >> "${1}"
+	echo "" >> "${1}"
+	echo "clean http://${REPO_HOST}/${2}" >> "${1}"
+	validate_access_to_mirrored_repo "${1}"
+}
+
+# fix_link ensures that the first path passed in is a symlink to the
+# second path passed in. Used to create links under /var/www pointing
+# to the mirrored repositories.
+fix_link()
+{
+	[[ -e ${1} && ! -L ${1} ]] && mv -f ${1} ${1}.bu
+	[[ "$(readlink -f ${1})" != "${2}" ]] && { rm -f ${1} ; ln -sf ${2} ${1} ; }
+}
+
+# Given the package name, return the path used to select that package
+# with update-alternatives
+sfpkgpath()
+{
+	local pkg="$1"
+	local short_pkg_name="$2"
+	echo "/sf/packages/${pkg}/etc/current/${short_pkg_name}"
+}
+
+aptsearch()
+{
+	aptitude -q --disable-columns -F %p search "$@"
+}
+
+latest_package()
+{
+	# Select the latest package. Sort the package names based on the embedded version number and grab the last one.
+	# E.g. aptitude search output is converted from:
+	#     solidfire-fdva-tools-boron-5.123
+	#     solidfire-fdva-tools-boron-stest-5.124
+	#     solidfire-fdva-tools-boron-atest-5.125
+	# to
+	#     5.123 solidfire-fdva-tools-boron-5.123
+	#     5.124 solidfire-fdva-tools-boron-stest-5.124
+	#     5.125 solidfire-fdva-tools-boron-atest-5.125
+	# Then sort on the first field using sort's version sort,
+	# cut to remove the leading verison number, and grab the last one.
+	aptsearch ${1} | sed -e 's/\(.*-\)\(.*\)/\2 \1\2/' | sort -V -k1,1 | cut -d " " -f 2 | tail -1
+}
+
+compare_versions()
+{
+	[[ "$1" == "$2" ]] && { echo "0" ; return 0 ; }
+	local largest="$(echo "$1\n$2" | sort -V | tail -1)"
+	[[ "$largest" == "$1" ]] && { echo "1" ; return 0 ; }
+	echo "-1"
+	return 0
+}
+
+list_old_stuff()
+{
+	list=""
+	for d in /var/www/*.bu ; do
+		[[ -d ${d} ]] && list="${list:+$list }${d}"
+	done
+	if [[ -n "${list}" ]] ; then
+		sum=$(du -sm ${list} | gawk '{sum+=$1} END{print sum}')
+		echo -e "The following directories may be removed to free up ${sum}MB:\n  ${list}"
+	fi
+}
+
+remove_not_version()
+{
+	local rmlist=$(aptitude --disable-columns -q -F %p search "?and(?installed,$1)" | grep -E -v -- "$2")
+	[[ -z "${rmlist}" ]] && return 0
+	aptitude -q -y remove ${rmlist}
+}
+
+remove_collectd()
+{
+	# Blindly stop and remove collectd and friends
+	print_and_log "Removing collectd, collectd-core, and kcollectd"
+	/etc/init.d/collectd stop &>/dev/null
+	aptitude --purge -y remove collectd collectd-core kcollectd
+	# These files are not being cleaned up when collectd, et al. are removed
+	rm -rf /etc/collectd
+	rm -f /etc/default/collectd /etc/init.d/collectd /etc/rc?.d/[SK][0-9][0-9]collectd
+}
+
+usage()
+{
+	echo "Usage:"
+	echo "$CMD_NAME [-hrv] [version]"
+	echo "Update the FDVA with the latest commands and repository packages needed"
+	echo "to upgrade SolidFire SAN clusters."
+	echo "Options:"
+	echo "  -h           Print this help message."
+	echo "  -r repohost  Use repohost as the source to mirror install packages from"
+	echo "               default: pubrepo.solidfire.com"
+	echo "  -v           Print version information."
+}
+
+update_collector_files()
+{
+	local SFCOLLECTOR="sfcollector"
+	local SF_COLLECTOR_INIT="/sf/init/${SFCOLLECTOR}.conf"
+
+	[[ -f "${SF_COLLECTOR_INIT}" ]] && { cp -f "${SF_COLLECTOR_INIT}" /etc/init || die "Failed to copy ${SF_COLLECTOR_INIT} to /etc/init" ; }
+
+	# initctl shouldn't be necessary here, but it also doesn't hurt.
+	initctl reload-configuration
+	
+	# If it's not already running, don't want to hear upstart complain
+	stop "${SFCOLLECTOR}" &> /dev/null
+	start "${SFCOLLECTOR}"
+}
+
+update_httpd()
+{
+	# if SolidFire's lighttpd is not installed, install it.
+	httpd_pkg="$(aptitude --quiet --disable-columns -F %p search '?and(?installed, ^lighttpd-sfdev-'${UBUNTU_RELEASE}-${LIGHTTPD_VERSION}'$)')"
+	if [[ "${httpd_pkg}" != "lighttpd-sfdev-${UBUNTU_RELEASE}-${LIGHTTPD_VERSION}" ]] ; then
+		echo "Installing lighttpd-sfdev"
+		aptitude -y install lighttpd-sfdev-${UBUNTU_RELEASE}-${LIGHTTPD_VERSION} || die "failed to install lighttpd-sfdev-${UBUNTU_RELEASE}-${LIGHTTPD_VERSION}"
+	fi
+
+	# Create empty index file that lets the repo verification code on nodes know that
+	# the repository is accessible.
+	[[ -s /var/www/solidfire/index.html ]] || echo '<html><head></head><body></body></html>' > /var/www/solidfire/index.html
+}
+
+dump_apt_mirror_conf()
+{
+	echo ""
+	echo "    Mirror list for ${2}"
+	sed -e 's/^/    /' "${1}"
+	echo ""
+}
+
+is_integer()
+{
+	test "$1" -eq "$1" &>/dev/null
+	return $?
+}
+
+##
+## main
+##
+
+# Test issue
+# Wipe out LD_PRELOAD setting to prevent stdbuf from interfering
+# with APT commands. If we end up with a need to use LD_PRELOAD,
+# we will have to revisit how we are doing this.
+LD_PRELOAD=
+
+VALIDATE_REPOS=1
+ONLY_VALIDATE_REPOS=0
+MAX_MIRROR_ATTEMPTS=5
+
+while getopts "dhM:Nr:vV" opt ; do
+	case "${opt}" in
+		d) DEBUG=$((DEBUG + 1)) ;;
+		h) usage ; exit 0 ;;
+		M) MAX_MIRROR_ATTEMPTS="${OPTARG}" ;;
+		N) VALIDATE_REPOS=0 ;;
+		r) REPO_HOST="${OPTARG}" ;;
+		v) print_version ; exit 0 ;;
+		V) ONLY_VALIDATE_REPOS=1 ;;
+		*) usage ; die "Invalid option " ;;
+	esac
+done
+shift $((OPTIND - 1))
+
+is_integer ${MAX_MIRROR_ATTEMPTS} || die "Max mirror attempts is not an integer."
+[[ ${MAX_MIRROR_ATTEMPTS} -ge 1 ]] || die "Max mirror attempts must be >= 1."
+
+PUBREPO="${MIRROR_BASE_PATH}/mirror/${REPO_HOST}"
+
+if [[ ${ONLY_VALIDATE_REPOS} -ne 0 ]] ; then
+	RUN_APT_MIRROR=0
+	REMOVE_INVALID=0
+	for name in "${MIRROR_NAMES[@]}" ; do
+		print_and_log ">>> Validating ${REPO_HOST} ${name} repository"
+		validate_mirrored_repo "${name}" "${REMOVE_INVALID}" || RUN_APT_MIRROR=1
+	done
+	[[ ${RUN_APT_MIRROR} -ne 0 ]] && print_and_log "Rerun update-fdva to update repositories"
+	exit 0
+fi
+
+log "$(print_version)"
+log "REPO_HOST=${REPO_HOST}"
+log "start args=$*"
+
+[[ $# -gt 0 ]] && selected_version="$1"
+
+[[ $(id -u) = "0" ]] || die "Must be superuser to run ${CMD_NAME}"
+
+if ! aptitude help &>/dev/null ; then
+	echo ">>> Installing aptitude"
+	apt-get -qq update
+	apt-get -y install aptitude
+	[[ $? -ne 0 ]] && die "Failed to install aptitude."
+else
+	echo ">>> Updating list of available packages"
+	aptitude -q=2 update
+fi
+
+# Add the local solidfire repo to the local set of repos
+# so we can install from that repo
+APTCONF=/etc/apt/sources.list.d/solidfire.list
+grep -q -s 'http://localhost/solidfire/ precise main' ${APTCONF} || echo -e "deb [arch=amd64] http://localhost/solidfire/ precise main" >> ${APTCONF}
+
+# Install SolidFire's public APT key
+install_solidfire_apt_pubkey
+
+# Put apt-mirror runs inside a loop that reruns apt-mirror if there were
+# any issues with the downloaded packages. Unfortunately apt-mirror does
+# not validate the downloaded pacakges itself.
+REMOVE_INVALID=1
+RUN_APT_MIRROR=1
+MIRROR_ATTEMPTS=0
+while [[ ${RUN_APT_MIRROR} -gt 0 && ${MIRROR_ATTEMPTS} -lt ${MAX_MIRROR_ATTEMPTS} ]] ; do
+	RUN_APT_MIRROR=0
+	for idx in $(seq 0 $((${#MIRROR_LIST[@]} - 1))) ; do
+		mirror_name="${MIRROR_NAMES[$idx]}"
+		print_and_log ">>> Mirroring ${mirror_name} repository"
+		make_mirror_conf "${APT_MIRROR_CONF}" "${mirror_name}" "${MIRROR_LIST[${idx}]}"
+		[[ ${DEBUG} -gt 2 ]] && dump_apt_mirror_conf "${APT_MIRROR_CONF}" "${mirror_name}"
+		apt-mirror "${APT_MIRROR_CONF}" 2>"${APT_STDERR_OUTPUT}" || die "ERROR mirroring ${mirror_name}"
+		/bin/sh "${MIRROR_BASE_PATH}/var/clean.sh"
+		fix_link /var/www/${mirror_name} ${PUBREPO}/${mirror_name}
+
+		if [[ ${VALIDATE_REPOS} -ne 0 ]] ; then
+			# Check the repository for any issues, then validate_mirrored_repo
+			# will remove the offending file(s), and we run apt-mirror again.
+			print_and_log ">>> Validating ${mirror_name} repository"
+			validate_mirrored_repo "${mirror_name}" "${REMOVE_INVALID}" || RUN_APT_MIRROR=1
+		fi
+	done
+	MIRROR_ATTEMPTS=$((MIRROR_ATTEMPTS + 1))
+done
+
+if [[ ${REPO_ACCESS} -ne 1 ]] ; then
+	echo "Unable to access one or more repositories needed to setup the FDVA."
+	die "Contact SolidFire Support for assistance."
+fi
+
+
+# Update the local repo, and be really quiet. Errors are still printed.
+echo ">>> Updating local APT repository cache"
+aptitude -q=2 update
+
+echo ">>> Updating fdva tools"
+if [[ -n "${selected_version}" ]] ; then
+	last_fdva_tools="$(aptsearch solidfire-fdva-tools | grep -- -${selected_version}\$)"
+	[[ -n "${last_fdva_tools}" ]] || die "Could not find version ${selected_version} of solidfire-fdva-tools package to install"
+else
+	last_fdva_tools="$(latest_package solidfire-fdva-tools)"
+	[[ -n "${last_fdva_tools}" ]] || die "Could not find solidfire-fdva-tools package to install"
+fi
+last_fdva_tools_version="$(aptitude -q show ${last_fdva_tools} | grep '^Version: ' | sed 's/^Version: //')"
+
+if [[ $(compare_versions ${VERSION} ${last_fdva_tools_version}) -lt 0 ]] ; then
+	# Install new version of fdva-tools and restart with the new version of update-fdva
+	aptitude -q -y install ${last_fdva_tools} || die "Failed to install ${last_fdva_tools}"
+	# Force last_fdva_tools to be the one selected by update_alternatives
+	update-alternatives --altdir /sf/alternatives --set solidfire-fdva-tools $(sfpkgpath ${last_fdva_tools} "solidfire-fdva-tools") || die "Failed to set latest fdva-tools"
+
+	# The version check above should be enough, but the path check here is an extra step to ensure we don't end up in an infinite loop
+	[[ "${CMD_FULL_PATH}" == "$(readlink -f /usr/local/bin/update-fdva)" ]] && die "Script is attempting to recurse w/o a change in the script"
+
+	# Recurse - run the new update-fdva
+	export REPO_HOST
+	[[ $VALIDATE_REPOS -eq 0 ]] && args="${args:+$args }-N"
+	[[ $DEBUG -ne 0 ]] && args="${args:+$args }$(printf '-d %0.s' $(seq ${DEBUG}))"
+	log "calling update-fdva version ${last_fdva_tools_version}"
+	exec /usr/local/bin/update-fdva ${args} $@
+fi
+
+echo ">>> Removing old fdva-tools packages"
+remove_not_version "solidfire-fdva-tools" "${VERSION}|${last_fdva_tools}"
+
+update_collector_files
+
+# last_sfinstall is the latest available version of sfinstall
+# After upgrading all of the repositories, we install the latest sfinstall,
+# which can handle installing any of the packages in the repositories.
+if [[ -n "${selected_version}" ]] ; then
+	last_sfinstall="$(aptsearch solidfire-sfinstall | grep -- -${selected_version}\$)"
+	[[ -n "$last_sfinstall" ]] || die "Could not find version ${selected_version} of solidfire-sfinstall package to install"
+else
+	# Select the latest sfinstall. See notes above for fdva-tools
+	last_sfinstall="$(latest_package solidfire-sfinstall)"
+	[[ -n "$last_sfinstall" ]] || die "Could not find solidfire-sfinstall package to install"
+fi
+
+print_and_log ">>> Installing latest version of sfinstall: ${last_sfinstall}"
+apt-get -y install ${last_sfinstall}
+
+# Force last_sfinstall to be the one selected by update-alternatives
+update-alternatives --altdir /sf/alternatives --set solidfire-sfinstall $(sfpkgpath ${last_sfinstall} "solidfire-sfinstall") || die "Failed to set latest sfinstall"
+
+# Select the latest version of solidfire-python-framework
+last_python_framework="$(latest_package solidfire-python-framework)"
+update-alternatives --altdir /sf/alternatives --set solidfire-python-framework $(sfpkgpath ${last_python_framework} "solidfire-python-framework") || die "Failed to set latest python-framework"
+
+update_httpd
+
+# Override version string in SSHD to reduce security risks identifying host OS
+print_and_log ">>> Setting SSHD version"
+/usr/local/bin/setsshdversion || die "Failed to set SSHD version"
+
+echo ">>> Removing old solidfire-sfinstall packages"
+remove_not_version "solidfire-sfinstall" "${last_sfinstall}"
+
+remove_collectd
+
+list_old_stuff
+
+exit 0

@@ -1,0 +1,62 @@
+#
+#  AGENTSTOP module for RASSNAP Function
+#
+#  CREATED:             11/2004
+#  LAST UPDATE:         11/2004
+#
+#
+#-------------------------------------------------------------------------
+#set -x
+
+FVTtype() ##   Menu for selecting $TYPE
+
+{
+#set -x
+trap FVTtype EXIT
+
+#clear
+print "		  ---->    Ras Snap Menu    <----\n \n";
+
+    PS3="	
+	    What Function do You want to perform? : " 
+
+    select TYPE in "Discovery" "Audit" "Fault Injection"  \
+                  "Play Ras_Snap" "Copy DATA Directory" "Mass Ras_Snap Playback" "Main Menu"  #NSCC Audit" "Bug ID Snapshot" "Quit"
+do
+   case $TYPE in
+
+     "Discovery")
+	clear ;	Fdisco ;;
+
+     "Audit")
+	clear ;	Faudit ;;
+
+     "Fault Injection")
+	clear ;	Ffault ;;
+
+     "Play Ras_Snap")
+	clear ;	Fplay ;;
+
+     "Mass Ras_Snap Playback")
+	clear ; 	Mplay ;;
+
+     "Copy DATA Directory")
+	clear ; CPdata ;;
+	
+     "Bug ID Snapshot")
+	print "\n 	---> COMING SOON...STAY TUNED:" ;;
+     
+     "Main Menu")
+	clear ; Fquit ;;
+#-----------------------------  Try again
+     *) 	print " !! You Didn't enter a correct choice.  Please retry" ;;
+   esac
+done
+
+} #-----------------------------  TYPE  -------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

@@ -1,0 +1,7 @@
+#!/bin/ksh
+#       name = ppv-sched
+#       see schedule of ppv events in a pop-up window (xterm)
+############################################################
+ 
+print "PAY PER VIEW:\n"
+xterm -T "PPV Schedule" -geometry 130x55 -fn 7x14 -e /home/techsupt/fix/ppv_naru

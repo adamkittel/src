@@ -1,0 +1,31 @@
+#
+#  AGENTA module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+agentA()
+{
+#set -x
+
+print "	Running rasagent with the $DPARAM -r -A -M -a";
+
+print "        Press the Enter key to run rasagent: \c" ;
+read ENT ;  #--------  User Inter-action 
+
+print "\n  ===>: Running rasagent ......
+	\n	run tail -f $LOG to see agent output\n" ;
+
+`$RASAGENT $DPARAM -r -M -A -a >> $LOG 2>&1` ;
+
+print "  --->  AGENT COMPLETE \n" ;
+} #--------------------------  AGENTA  --------------------------------
+
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

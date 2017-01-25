@@ -1,0 +1,60 @@
+#!/usr/bin/ksh
+
+logfile=/tmp/`whoami`.`date +%d.%b.%H.%M.%S`
+
+infile=~oper/bin/.hosts.list
+#infile=./hosts.list
+
+hosts=`cat $infile | grep -v "#"`
+
+print "\n\n\
+ This script will use some xterms to display various messages\n\
+ about system's status.  To scroll in xterm you can use either\n\
+ the SHIFT-UP/DOWN PAGE keys, or the mouse - grab scrollbar\n\
+ by using the middle button, or left and right to go up/down\n\
+ one screen.\n"
+
+rm $logfile.ping 2>/dev/null
+touch $logfile.ping
+touch $logfile.uptime
+touch $logfile.messages
+#sk do not scroll back down if key pressed
+#sb scroll bar
+#sl nuber of scroll back memory (lines)
+xterm -sk -sb -sl  500 -bg black -fg green -geometry 80x11-1-1 -title "PING from `basename $logfile`" -e /usr/bin/tail -f $logfile.ping &
+xterm -sk -sb -sl  500 -bg black -fg yellow -geometry 95x11-1-180 -title "UPTIME from `basename $logfile`" -e /usr/bin/tail -f $logfile.uptime &
+xterm -sk -sb -sl 5000 -bg gray -fg red -geometry 186x28+1+145 -title "MESSAGES from `basename $logfile`" -e /usr/bin/tail -f $logfile.messages &
+
+for i in $hosts 
+do
+  #ping the machine with 1 ping 10 sec timeut
+  #trash output
+  ping $i 10 2 2>/dev/null 1>&2
+  #store exit code
+  e=$? 
+  if [ $e = 0 ]
+  then
+   #if fine do more
+   p=`ping -s $i 9 5`
+   print "$i pings ok `print $p | cut -d\, -f3-`" >> $logfile.ping
+   u=`rsh -l oper $i /usr/bin/uptime 2>/dev/null || print "CANNOT RSH!"`
+   print "$i - $u" >> $logfile.uptime
+   u=`rsh -l oper $i /usr/bin/tail -9 /var/adm/messages 2>/dev/null || print "CANNOT RSH!"`
+   print "******* $i *******\n$u\n" >> $logfile.messages
+  else
+   #if ping died ask to press any key and 
+   print "    *****\n$i IS DEAD! DEAD! DEAD! DEAD!!!!!!! ALL DEAD!!!!\
+          \n    *****">>$logfile.ping
+   print "$i is DEAD!">>$logfile.uptime
+   print "$i is DEAD!">>$logfile.messages
+  fi
+
+done
+print -n "\nSHIFT - PG UP/DOWN (or mouse) to scroll, CTRL-C TO EXIT.">>$logfile.ping
+rm $logfile.ping
+print -n "\nSHIFT - PG UP/DOWN (or mouse) to scroll, CTRL-C TO EXIT.">>$logfile.uptime
+rm $logfile.uptime
+print -n "\nSHIFT - PG UP/DOWN (or mouse) to scroll, CTRL-C TO EXIT.">>$logfile.messages
+rm $logfile.messages
+
+print "DONE AT `date`\n\n"

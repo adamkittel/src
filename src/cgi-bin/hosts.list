@@ -1,0 +1,110 @@
+### den-prod 1
+den-adr1
+den-aruc1
+den-bill1
+den-cst1
+den-dds1
+#den-dds2
+den-disp1
+den-eq1
+den-help1
+den-oars1
+den-xref1
+### den-prod 2
+den-adr2
+den-bill2
+den-cst2
+den-dds3
+den-dds4
+den-dds5
+den-dds6
+den-disp2
+den-eq2
+den-mon3
+den-ndb2
+den-naru2
+den-naru3
+den-xref2
+### den dev
+animas
+gunnison
+alamosa
+arkansas
+cimarron
+colorado
+conejas
+dds1
+dds4
+den1
+dolores
+fraser
+fryingpan
+laramie
+mancos
+plata
+poudre
+navajo
+### dal-prod 1
+dal-adr1
+dal-aruc1
+dal-backup2
+dal-bill1
+dal-cst1
+dal-dds1
+dal-disp1
+dal-eq1
+dal-xref1
+### dal-prod 2
+dal-adr2
+dal-bill2
+dal-cst2
+dal-dds3
+dal-dds4
+dal-dds5
+dal-dds6
+dal-digas
+dal-digdb
+dal-disp2
+dal-eq2
+dal-naru2
+dal-naru3
+dal-ndb2
+dal-xref2
+### dal dev
+### greeley
+gred_srv01
+gred_cli01
+gre-scli01
+gre-scli02
+gre-scli03
+gre-scli04
+gre-scli05
+gre-scli06
+gre_scli07
+gre_scli08
+gre_scli09
+#gre_scli10
+#gre_scli11
+#gre_scli12
+#gre_scli13
+#gre_scli14
+#gre_scli15
+### dal-opies
+#dal-con2
+dal-mon1
+dal-ops1
+dal-ops2
+### den-opies
+den-mon1
+den-ops1
+den-ops2
+den-ops3
+#den-ops4
+den-ops5
+den-ops6
+#other weirdos
+yukon
+dorado
+charlotte
+cppv1
+cppv2

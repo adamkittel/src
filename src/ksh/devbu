@@ -1,0 +1,113 @@
+#!/bin/ksh
+#	name = devbu(.ksh)
+#   set -x
+###########################################
+
+DAYOFWEEK=`date |awk '{print $1}'`
+DAY=`date |awk '{print $3}'`
+if [ "$DAYOFWEEK" = 'Mon' ];then
+   DAY=$((DAY - 2))
+else
+   DAY=$((DAY - 1))
+fi
+if [ "$DAY" -lt 10 ];then
+   DAY="0$DAY"
+fi
+if [ "$DAY" -lt 1 ];then
+   DAY="30"
+fi
+SEARCHSTRING='SYSTEM|error|offline|abort|busy|denied|No such|No tape'
+
+if [ "$1" = '?' ];then
+   more /home/agrimes/bin/backup_log.help
+   exit
+fi
+CATALL='NO'
+while [ "`echo "$1" |cut -c1`" = "-" ]
+do
+   if [ "`echo "$1" |grep h`" != "" ];then
+      more /home/agrimes/bin/backup_log.help
+      exit
+   fi
+   if [ "`echo "$1" |grep r`" != "" ];then
+      DAY=`date |awk '{print $3}'`
+   fi
+   if [ "`echo "$1" |grep a`" != "" ];then
+      CATALL='YES'
+   fi
+   if [ "`echo "$1" |grep c`" != "" ];then
+      C=ON
+   fi
+   if [ "`echo "$1" |grep f`" != "" ];then
+      SEARCHSTRING="[H]ost|Full|^-|^#|$SEARCHSTRING"
+   fi
+   if [ "`echo "$1" |grep d`" != "" ];then
+      if [ "$C" = 'ON' ];then
+      SEARCHSTRING="load|DONE|$SEARCHSTRING"
+      else
+      SEARCHSTRING="intern|stack|load|DONE|Back.*complet|$SEARCHSTRING"
+      fi
+   fi
+   if [ "`echo "$1" |grep t`" != "" ];then
+      SEARCHSTRING="tape|intern|^$|stacker|rew|volume|$SEARCHSTRING"
+   fi
+   shift
+done
+
+if [ -z "$1" ];then
+   LIST='animas gunnison mancos dal2 blab1 den1 navajo colorado arkansas poudre arikaree plata'
+else 
+   while [ -n "$1" ]
+   do
+      LIST="$LIST $1"
+      shift
+   done
+fi
+      SEARCHSTRING="Back.*complet|intern|stack|$SEARCHSTRING"
+
+###########################################
+###	END of definitions & setup
+###########################################
+
+clear
+echo > $HOME/bin/dev_backup.log
+
+for SYS in `echo "$LIST"`
+do
+   echo  >$HOME/bin/dev_backup.log
+   echo "\tSYSTEM = $SYS" >>$HOME/bin/dev_backup.log
+   if [ $SYS = 'animas' ];then
+      echo "----------- $SYS  internal --------------" >>$HOME/bin/dev_backup.log
+      rsh $SYS -l oper cat /var/log/backup/full_backup_int.$DAY \
+       >> $HOME/bin/dev_backup.log
+      rsh $SYS -l oper cat /var/log/backup/full_backup_st1.$DAY \
+       >> $HOME/bin/dev_backup.log
+      rsh $SYS -l oper cat /var/log/backup/full_backup_st2.$DAY \
+       >> $HOME/bin/dev_backup.log
+   elif [ $SYS = 'gunnison' ];then
+      rsh $SYS -l oper cat /var/log/backup/full_backup_int.$DAY \
+       >> $HOME/bin/dev_backup.log
+      rsh $SYS -l oper cat /var/log/backup/full_backup_st1.$DAY \
+       >> $HOME/bin/dev_backup.log
+   ###elif [ $SYS = 'mancos' ];then
+   ###   rsh $SYS -l oper cat /var/log/backup/ufsbackup.$DAY \
+   ###    >> $HOME/bin/dev_backup.log
+   else
+      rsh $SYS -l oper cat /var/log/backup/ufsbackup.$DAY \
+       >> $HOME/bin/dev_backup.log
+   fi
+   echo '##################### ' >> $HOME/bin/dev_backup.log
+   echo "##################### END OF BACKUP FILE:   $SYS" >> $HOME/bin/dev_backup.log
+   echo '##################### ' >> $HOME/bin/dev_backup.log
+   
+###begin if
+ if [ $CATALL != 'YES' ]; then
+      egrep "$SEARCHSTRING"  $HOME/bin/dev_backup.log | more
+      echo;echo
+###else condition
+ else
+      cat $HOME/bin/dev_backup.log |more
+ fi
+###end if
+
+done

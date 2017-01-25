@@ -1,0 +1,74 @@
+#
+#  DATAMV module for RASSNAP Function
+#
+#  CREATED:             11/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+#	Give the option to save current DATA directory
+#
+#	Check for the existence of playback $SN_DIR
+#	make $SN_DIR if it doesn't exist
+#
+#	Get the $FULL_PLOCAL of the ras_snap to be played
+#
+dataMv()
+{
+#set -x
+STADE=/var/opt/SUNWstade	#Storade base /var/directory
+D_DIR=$STADE/DATA	# DATA directory location	
+DATAMV="DATA-ORIGINAL"	# Format
+
+if [ ! $BACKDN ]
+   then
+      #clear
+      print "\n\n\n	Do you want to back up your current DATA directory? (Y/N) \c " ;
+      input ; B_DIR=$INPUT
+      
+      if [[ "$B_DIR" = [Yy]* ]]
+         then
+            BACKDN=Y;
+            /bin/cp -rf  $D_DIR $STADE/$DATAMV >> $LOG #2>&1 ;
+      fi
+fi
+} #---------------------------  RSDATAMV  --------------------------------
+
+#-----------------------------  DATABK  -------------------------------
+dataBk()
+{
+#set -x
+
+DATAMV="DATA-ORIGINAL"	# Format
+
+print "\n \n \n";
+
+if [ $BACKDN ]
+   then
+   print "\n      Do you want to restore your old DATA directory? (Y/N) \c" ;   
+   input ; RESTORE=$INPUT
+      if [[ "$RESTORE" != [Nn]* ]]
+         then
+           /bin/rm -rf $D_DIR >> $LOG #2>&1 ;
+           /bin/mv -f $STADE/$DATAMV $D_DIR >> $LOG #2>&1 ;
+   print "\n\n" ;
+   BACKDN=''
+      fi    
+fi
+} #-----------------------------  DATABK  -----------------------------
+
+#-------------------------------  CPDATA  -----------------------------
+
+#cpdata()
+#{
+#set -x
+
+##-----  Copy DATA Directory to DSQA directory
+
+#} #----------------------------  CPDATA  -----------------------------
+
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

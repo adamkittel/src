@@ -1,0 +1,23 @@
+From: Joe Kraft <jkraft@cgn.org>
+Newsgroups: comp.lang.perl,comp.lang.perl.misc,comp.lang.perl.modules
+Subject: Re: perl CGI for Calendar and Schedule Maintenance
+Date: Tue, 15 Oct 1996 14:46:24 -0500
+Organization: Consolidated Communications Incorporated
+Reply-To: jkraft@cgn.org
+
+Yes, go to 
+http://www.eff.org/~erict/Scripts
+and find the Calendar app there.  It is relatively easy to set up and
+get running, and it is free :)
+
+Chris Schnyder wrote:
+> 
+> Is anyone aware of the existance of any perl CGI scripts that handle
+> calendars and schedules for on-line use?
+> 
+> I really hope I can avoid writing this myself.
+> 
+> Thanks,
+> 
+> Chris Schnyder
+> schnyder@interaccess.com

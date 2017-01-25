@@ -1,0 +1,66 @@
+#!/bin/bash
+#
+#
+# VMware vMA/RCLI ESX Administration Helper
+# managing files
+
+# GLOBALS
+
+
+function create_vmfs {
+	echo "not real sure i want to include this"
+}
+
+## LIST DATASTORES
+function ls_ds() {
+	printf "${green}Executing.......\n/usr/bin/vifs $COM_OPS --listds\n${white}"
+	declare -a DSA
+	DSA=( `/usr/bin/vifs $COM_OPS --listds` )
+	DSACOUNT=${#DSA[@]}
+
+	for (( i=3;i<$DSACOUNT;i++)); do
+		x=$((i-2))
+		printf "${green}$x ${DSA[$i]} ${white}\n"
+	done 
+}
+
+## LIST DATASTORE CONTENTS
+function ls_vmfs {
+	DSA=( `/usr/bin/vifs $COM_OPS --listds` )
+	DSACOUNT=${#DSA[@]}
+
+	for (( i=3;i<$DSACOUNT;i++)); do
+		x=$((i-2))
+		printf "${green}$x ${DSA[$i]} ${white}\n"
+	done 
+	printf "${yellow}Select datastore to view: ${white}"
+	read CDS
+
+	printf "${green}Executing.......\n/usr/bin/vmkfstools $COM_OPS --queryfs /vmfs/volumes/$CDS\n${white}"
+	/usr/bin/vmkfstools $COM_OPS --queryfs /vmfs/volumes/$CDS
+}
+
+#Listing VMFS Volume Attributes
+function ls_att { 
+	echo "under construction"
+}
+
+function file_menu {
+PS3='File Ops Menu> '
+cls
+select CASE in "List Datastores" "List datastore attributes" "Return to main menu"
+do
+	case $CASE in
+		"List Datastores") 
+			ls_ds;;
+		"List datastore attributes")
+	       		ls_vmfs;;	
+		"Return to main menu")
+			main;;
+		*)
+		file_menu;;
+	esac
+done
+PS3='Select or Enter to continue> '
+}
+

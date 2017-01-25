@@ -1,0 +1,38 @@
+switcher|makeform
+count|4
+startdate|03/20/2010
+employee|adam
+batchid|03202010
+batchname|Bellona
+fermenter|1
+startvol|200
+startvoltype|gal
+startbrix|22
+startbrixtemp|75
+yeastdate|03/20/2010
+yeasttemp|70
+bonded|bondedyes
+ing1|clover honey
+ingamt1|200
+ingamttype1|lbs
+vendor1|madhava
+ingcosttype1|lbs
+ingcost1|1.83
+ing2|pumpkin blossom honey
+ingamt2|180
+ingamttype2|lbs
+vendor2|nectar honey company
+ingcosttype2|lbs
+ingcost2|2.25
+ing3|lalvin 71B
+ingamt3|1
+ingamttype3|lbs
+vendor3|morewine pro
+ingcosttype3|kg
+ingcost3|35.00
+ing4|sorbateK
+ingamt4|5
+ingamttype4|lbs
+vendor4|st pats
+ingcosttype4|lbs
+ingcost4|10.00

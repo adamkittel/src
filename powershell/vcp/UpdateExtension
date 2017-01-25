@@ -1,0 +1,143 @@
+<extension>
+   <description>
+      <label></label>
+      <summary></summary>
+   </description>
+   <key></key>
+   <!-- optional -->
+   <company></company>
+   <!-- optional -->
+   <type></type>
+   <version></version>
+   <!-- optional -->
+   <subjectName></subjectName>
+   <!-- optional -->
+   <!-- array start -->
+   <!-- optional -->
+   <server>
+      <url>"https://172.24.90.255:8443/solidfire/solidfire-vcp-plugin.zip"</url>
+      <description>
+         <label></label>
+         <summary></summary>
+      </description>
+      <company></company>
+      <type></type>
+      <!-- array start -->
+      <adminEmail>string</adminEmail>
+      <!-- array end -->
+      <!-- optional -->
+      <serverThumbprint></serverThumbprint>
+   </server>
+   <!-- array end -->
+   <!-- optional -->
+   <!-- array start -->
+   <!-- optional -->
+   <client>
+      <version></version>
+      <description>
+         <label></label>
+         <summary></summary>
+      </description>
+      <company></company>
+      <type></type>
+      <url>"https://172.24.90.255:8443/solidfire/solidfire-vcp-plugin.zip"</url>
+   </client>
+   <!-- array end -->
+   <!-- optional -->
+   <!-- array start -->
+   <!-- optional -->
+   <taskList>
+      <taskID></taskID>
+   </taskList>
+   <!-- array end -->
+   <!-- optional -->
+   <!-- array start -->
+   <!-- optional -->
+   <eventList>
+      <eventID></eventID>
+      <!-- optional -->
+      <eventTypeSchema></eventTypeSchema>
+   </eventList>
+   <!-- array end -->
+   <!-- optional -->
+   <!-- array start -->
+   <!-- optional -->
+   <faultList>
+      <faultID></faultID>
+   </faultList>
+   <!-- array end -->
+   <!-- optional -->
+   <!-- array start -->
+   <!-- optional -->
+   <privilegeList>
+      <privID></privID>
+      <privGroupName></privGroupName>
+   </privilegeList>
+   <!-- array end -->
+   <!-- optional -->
+   <!-- array start -->
+   <!-- optional -->
+   <resourceList>
+      <locale></locale>
+      <module></module>
+      <!-- array start -->
+      <data>
+         <key></key>
+         <value></value>
+      </data>
+      <!-- array end -->
+   </resourceList>
+   <!-- array end -->
+   <lastHeartbeatTime>1970-01-01T00:00:00Z</lastHeartbeatTime>
+   <!-- optional -->
+   <healthInfo>
+      <url></url>
+   </healthInfo>
+   <!-- optional -->
+   <ovfConsumerInfo>
+      <callbackUrl></callbackUrl>
+      <!-- array start -->
+      <sectionType>string</sectionType>
+      <!-- array end -->
+   </ovfConsumerInfo>
+   <!-- optional -->
+   <extendedProductInfo>
+      <!-- optional -->
+      <companyUrl></companyUrl>
+      <!-- optional -->
+      <productUrl></productUrl>
+      <!-- optional -->
+      <managementUrl></managementUrl>
+      <!-- optional -->
+      <self type="ManagedEntity">MOID</self>
+   </extendedProductInfo>
+   <!-- optional -->
+   <!-- array start -->
+   <!-- optional -->
+   <managedEntityInfo>
+      <type></type>
+      <!-- optional -->
+      <smallIconUrl></smallIconUrl>
+      <!-- optional -->
+      <iconUrl></iconUrl>
+      <!-- optional -->
+      <description></description>
+   </managedEntityInfo>
+   <!-- array end -->
+   <!-- optional -->
+   <shownInSolutionManager>false</shownInSolutionManager>
+   <!-- optional -->
+   <solutionManagerInfo>
+      <!-- optional -->
+      <!-- array start -->
+      <!-- optional -->
+      <tab>
+         <label></label>
+         <url></url>
+      </tab>
+      <!-- array end -->
+      <!-- optional -->
+      <smallIconUrl></smallIconUrl>
+   </solutionManagerInfo>
+</extension>
+

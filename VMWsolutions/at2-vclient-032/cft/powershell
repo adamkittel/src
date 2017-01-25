@@ -1,0 +1,39 @@
+#!/bin/bash
+
+WINPROXY=172.25.107.45
+SCRIPTS_PATH="C:\\proxy\\cft"
+USERNAME="script_user"
+PASSWORD="solidfire"
+
+if [ "$#" -lt "1" ]; then
+    echo "Run a powershell script"
+    echo "This functions by remotely executing the script on a 'proxy' Windows "
+    echo "machine and displaying the result here. The return code of the remote "
+    echo "script is preserved and returned by this script."
+    echo
+    echo "Usage `basename $0` [-c] scriptname.ps1 arg1 arg2"
+    echo
+    echo "scriptname.ps1 should be the name of a script that exists on the proxy"
+    echo "(the scripts from the CFT repository); the script does not have to "
+    echo "exist locally. Alternatively, the -c option will copy a local script "
+    echo "file to the proxy before executing it."
+    exit 1
+fi
+
+SCRIPTS_DRIVE=${SCRIPTS_PATH:0:1}
+
+script=$1
+if [ "$script" == "-c" ]; then
+# Copy the script to the server before executing it
+    shift
+    script=$1
+    smbclient //$WINPROXY/$SCRIPTS_DRIVE\$ $PASSWORD -U $USERNAME << EOC
+cd $SCRIPTS_PATH
+put $script
+exit
+EOC
+
+fi
+
+shift
+../winexe/bin/winexe.linux --system -U ENG/script_user%solidfire //$WINPROXY "powershell.exe -NoProfile -NoLogo -NonInteractive -File $SCRIPTS_PATH\\$script $*"

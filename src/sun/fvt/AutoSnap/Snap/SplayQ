@@ -1,0 +1,52 @@
+#
+#  PLAYQ module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+SplayQ()
+{
+#set -x 
+
+dataBk
+
+##-----  SUB MENU: Fplay
+
+print "      The play back of $P_ID is complete, 
+      Check $LOG log file for details
+                \n" ;
+
+    PS3="
+        What would you like to do next? "
+
+        select NEXT in "Play another ras_snap" "Run another mass ras_snap playback" "Go to Ras Snap Menu" "Go to Main Menu" ; #"Quit" ;
+
+do
+   case $NEXT in
+      "Play another ras_snap")
+          clear ; Fplay ;;
+
+      "Run another mass ras_snap playback")
+	  clear ; Mplay ;;
+
+      "Go to Ras Snap Menu")
+          clear ; FVTtype ;;
+
+      "Go to Main Menu")
+          clear ; Fquit ;;
+
+      *)
+          print " !! You Didn't enter a correct choice.  Please retry" ;;
+
+   esac
+done
+
+} #------------------------------  PLAYQ  -----------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

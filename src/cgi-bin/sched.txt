@@ -1,0 +1,73 @@
+From gtokarsk@elmer Sat Dec 14 09:42 MST 1996
+Return-Path: <gtokarsk@elmer>
+Received: from den-ops2.tci.com by elmer.tci.com (SMI-8.6/SMI-SVR4)
+	id JAA16805; Sat, 14 Dec 1996 09:42:23 -0700
+Received: by den-ops2.tci.com (SMI-8.6/SMI-SVR4)
+	id JAA17143; Sat, 14 Dec 1996 09:42:09 -0700
+Date: Sat, 14 Dec 1996 09:41:34 -0700 (MST)
+From: Greg Tokarski <gtokarsk@den-ops2>
+Subject: textified den-ops schedule
+To: smmt-oper@den-ops2
+Message-ID: <Pine.3.87.9612140934.A17139-0100000@den-ops2>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Mozilla-Status: 0001
+Content-Length: 2221
+
+Time	SUN	MON	TUES	WED	THUR	FRI	SAT	
+6:00	1AC	19B	19B	19B	2CD	2AC	2AC	
+7:00	13C	13BD	13BD	1BD	24CD	24C	24C	
+8:00	135	135D	135D	12D	246D	246	246	
+9:00	135	135D	135D	12D	246D	246	246	
+10:00	135	135D	135D	23D	246	246	246	
+11:00	135	135D	135D	23D	246	246	246	
+12:00	135	135D	135D	34D	246	246	246	
+13:00	135	135D	135D	34D	246	246	246	
+14:00	135	135D	135D	45D	246	246	246	
+15:00	135	135D	135D	45D	246	246	246	
+16:00	135	135D	135D	56D	246	246	246	
+17:00	135	135D	135D	56D	246	246	246	
+18:00	357	357D	357D	67DE	468E	468E	468E	
+19:00	579	579	579	67E	68AE	68AE	68AE	
+20:00	79B	79B	79B	78E	8ACE	8ACE	8ACE	
+21:00	79B	79B	79B	78E	8ACE	8ACE	8ACE	
+22:00	79B	79B	79B	89E	8ACE	8ACE	8AC	
+23:00	79B	79B	79B	89E	8ACE	8ACE	8AC	
+0:00	79B	79B	79B	9AE	8ACE	8ACE	8AC	
+1:00	79B	79B	79B	9AE	8ACE	8ACE	8AC	
+2:00	79B	79B	79B	ABE	8ACE	8ACE	8AC	
+3:00	79B	79B	79B	ABE	8ACE	8ACE	8AC	
+4:00	79B	79B	79B	BCE	8ACE	8ACE	8AC	
+5:00	79B	79B	79B	BCE	8ACE	8ACE	8AC	
+								
+  DAYS		TIMES	WED SHIFT	OPERATOR				
+1 SU-TUES	6-18	6-10		Max Klutke				
+2 THUR-SAT	6-18	8-12		Chuck Miller				
+3 SU-TUES	7-19	10-14		Dave Whittaker				
+4 THUR-SAT	7-19	12-16		Ryan Crapo				
+5 SU-TUES	8-20	14-18		Mike Burris				
+6 THUR-SAT	8-20	16-20		Alan Grimes				
+7 SU-TUES	18-6	18-22		Trish Billinger				
+8 THUR-SAT	18-6	20-0		Adam Kittel				
+9 SU-TUES	19-7	22-2		David Goedecke				
+A THUR-SAT	19-7	0-4		Oanh Duong				
+B SU-TUES	20-8	2-6		Greg Tokarski				
+C THUR-SAT	20-8	4-8		Jerel Blakely				
+D MO-WED	7-19	Thur 6-10	Ryan Shannon				
+E WED-FRI	18-6	Sat 18-22	TBA				
+
+
+________________________________________________________________________
+ Grzegorz "Greg" Tokarski                         GT_ on IRC's #polonia
+                                                               .,. .,.
+  __|__             mailto:gtokarsk@dimensional.com           :XXX,XXX:
+    |                 http://ccd.cccoes.edu/~greg             'XXXXXXX'
+    |M                                                         ':XXX:'
+                                                                 ':'
+ Give into love and thou shalt prevail,                        
+                                 give into hate and perish thou willst.
+------------------------------------------------------------------------ 
+
+
+
+

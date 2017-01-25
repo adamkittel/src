@@ -1,0 +1,35 @@
+#
+#  QMESSAGE module for RASSNAP Function
+#
+#  AUTHOR:              ADAM KITTEL / ART LARKIN
+#                       adam.kittel@sun.com / art.larkin@sun.com
+#                       303 272 6561 -- x76561 / 303-464-4879 -- x50879
+#
+#  CREATED:             12/2004
+#  LAST UPDATE:         12/2004
+#
+#-------------------------------------------------------------------------
+
+qmessage()
+{
+#set -x
+trap  exit EXIT
+
+##-----  Message to when leaving dsqatool
+
+print   "\n\n            GOOD BYE, if You Have Any Suggestions for improvements
+                     or enhancements please let us now.
+			
+		  :  Bugster Product = rsmfvt-tools  :
+
+		        :  adam.kittel@sun.com :
+                        :  art.larkin@sun.com  :\n
+                            ------------------\n\n\n\n\n";
+     exit
+} #----------------------------  QMESSAGE  -----------------------------
+
+#
+#  $.Log.$
+# 
+#  Copyright 2005 Sun Microsystems, Inc. 
+#

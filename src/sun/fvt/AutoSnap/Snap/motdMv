@@ -1,0 +1,44 @@
+#
+#  MOTD module for RASSNAP Function
+#
+#  CREATED:             11/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+
+
+#-------------------------------  MOTDBK  ----------------------------
+motdBk()
+{
+#set -x
+if [ $MOTDDN ]
+   then
+      /bin/mv $MOTDMV $MOTD >> $LOG #2>&1 ;
+fi
+
+} #--------------------------  MOTDBK  --------------------------------
+
+#####--------------------------  MOTDMV  ------------------------------
+motdMv()
+{
+#set -x
+MOTD=/etc/motd
+MOTDMV=$MOTD.snap
+
+if [ ! -f $MOTDMV ]
+    then
+       /bin/mv $MOTD $MOTDMV  >> $LOG #2>&1 ;
+       banner RSMFVT test in progress -- `who -q` > /etc/motd 
+#       MOTDDN=Y;
+fi
+
+MOTDDN=Y;
+
+} #-------------------------  MOTDMV  ---------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

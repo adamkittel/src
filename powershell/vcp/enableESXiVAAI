@@ -1,0 +1,9 @@
+esxcli system settings advanced set -i 1 -o /DataMover/HardwareAcceleratedMove
+esxcli system settings advanced set -i 1 -o /DataMover/HardwareAcceleratedInit
+esxcli system settings advanced set -i 1 -o /VMFS3/HardwareAcceleratedLocking
+esxcli system settings advanced set -i 1 -o /VMFS3/EnableBlockDelete
+esxcli system settings advanced set -i 16384 -o /DataMover/MaxHWTransferSize
+#esxcli storage nmp psp roundrobin deviceconfig set -d <device> -I 1 -t iops
+#esxcli storage core device set -d <device> -O 256
+esxcli system settings advanced set –int-value 64 -o /Disk/SchedQuantum
+ Get-ScsiLun -VmHost '172.24.67.2' -CanonicalName "naa.6f47*" | Set-ScsiLun -MultipathPolicy RoundRobin -Confirm:$false

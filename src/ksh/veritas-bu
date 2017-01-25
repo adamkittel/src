@@ -1,0 +1,105 @@
+#!/bin/ksh
+#	name = prodbu
+#	use  = to make it easy to check backup runs
+#   set -x
+###################################################
+
+#####stty rows 30
+DATE=`date |awk '{print $1" "$2" "$3" "$4} ' `
+DAY=`date |awk '{print $3}'`
+#### #DAY=$((DAY - 1))
+if [ "$DAY" -lt 10 ];then
+   DAY="0$DAY"
+fi
+SEARCHSTRING='error|offline|abort|busy|denied|[Tt]imed out|No such|No.*tape'
+
+if [ "$1" = '?' ];then
+      cat /home/agrimes/bin/backup_log.help
+   #####more /home/agrimes/bin/backup_log.help
+   exit
+fi
+while [ "`echo "$1" |cut -c1`" = "-" ]
+do
+   if [ "`echo "$1" |grep h`" != "" ];then
+      #####more /home/agrimes/bin/backup_log.help
+      cat /home/agrimes/bin/backup_log.help
+      exit
+   fi
+   if [ "`echo "$1" |grep a`" != "" ];then
+      CATALL='YES'
+   fi
+   if [ "`echo "$1" |grep c`" != "" ];then
+      SEARCHSTRING="Backups.*complet|internal|stacker|$SEARCHSTRING"
+   fi
+   if [ "`echo "$1" |grep f`" != "" ];then
+      SEARCHSTRING="[H]ost|Full|^-|^#|$SEARCHSTRING"
+   fi
+   if [ "`echo "$1" |grep d`" != "" ];then
+      if [ "$C" = 'ON' ];then
+         SEARCHSTRING="load|Log|DONE|$SEARCHSTRING"
+      else
+         SEARCHSTRING="internal|stacker|load|Log|DONE|Host|Backups.*complet|$SEARCHSTRING"
+      fi
+   fi
+   if [ "`echo "$1" |grep t`" != "" ];then
+      SEARCHSTRING="tape|rew|volume|$SEARCHSTRING"
+   fi
+   shift
+done
+
+if [ -z "$1" ];then
+   LIST='adr1 aruc1 bill1 cst1 dds1 dds2 disp1 eq1 oars1 xref1 help1 mon1 cppv1 '
+else
+   while [ -n "$1" ]
+   do
+      DEN=`echo "$[1]V" |cut -c-4`
+      if [ "$DEN" = "den-" ];then
+         sys=`echo "$1" |cut -c5-`
+         LIST="$LIST $sys"
+      else
+         LIST="$LIST $1"
+      fi
+      shift
+   done
+fi
+clear; echo "\n\n\tThis script will check production backup logs"
+echo "The current Date & Time is: $DATE"
+###########################################
+###	END of definitions & setup
+###########################################
+
+echo > $HOME/bin/prod_backup.log
+echo;echo "Please wait while I check on things.... "
+
+for SYS in `echo $LIST`
+do
+   echo > $HOME/bin/prod_backup.log
+   if [ "$SYS" = 'help1' ] || [ "$SYS" = 'mon1' ];then
+      rsh den-ops1 -l oper cat /var/log/backup/den-"$SYS"."$DAY" \
+         >> $HOME/bin/prod_backup.log
+      echo '###############################################' >>$HOME/bin/prod_backup.log
+      echo "############\tEND-OF-LOG-FILE for den-$SYS" >>$HOME/bin/prod_backup.log
+      echo '###############################################' >>$HOME/bin/prod_backup.log
+   elif [ "$SYS" = 'cppv1' ];then
+      rsh "$SYS" -l oper cat /var/log/full_backup."$DAY" >> $HOME/bin/prod_backup.log
+      echo '###############################################' >>$HOME/bin/prod_backup.log
+      echo "############\tEND-OF-LOG-FILE for   $SYS" >>$HOME/bin/prod_backup.log
+      echo '###############################################' >>$HOME/bin/prod_backup.log
+   else
+      rsh den-$SYS  -l oper cat /var/log/backup/ufsbackup."$DAY"V \
+        >> $HOME/bin/prod_backup.log
+      echo>>$HOME/bin/prod_backup.log
+      echo "#################\tEND-OF-FILE for den-$SYS" >>$HOME/bin/prod_backup.log
+      echo '#################' >>$HOME/bin/prod_backup.log
+   fi
+
+   echo
+   echo "Backup log of  --- $SYS --- : "   ###plain echo, not onto the log...
+   if [ "$SYS" = 'cppv1' ];then
+      egrep ^.*$ $HOME/bin/prod_backup.log
+   elif [ "$CATALL" = "YES" ];then
+      egrep ^.*$ $HOME/bin/prod_backup.log
+   else
+      egrep "$SEARCHSTRING|Backup.*complete"  $HOME/bin/prod_backup.log
+   fi
+done

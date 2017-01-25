@@ -1,0 +1,89 @@
+#
+#  FFAULT module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+Ffault()
+{
+#set -x
+
+#-------------------------------- INJECT  -----------------------------
+inject()
+{
+#set -x
+
+print "        Inject Your Fault and Press Enter" ; read ENT ;
+print "        Evaluating Fault Injection.....
+	Done Evaluating Fault Injection \n" ;
+
+} #--------------------------- INJECT  --------------------------------
+
+#-----------------------------  STOP  ---------------------------------
+
+sstop()
+{
+#set -x
+##-----  Stop recording and copying files
+
+#print "        This concludes the $TYPE ras_snap process 
+#        Please wait while the ras_snap directory is processed.\n\n" ;
+
+if [[ "$KEEP" = [Yy] ]]
+   then
+
+
+$RAS_SNAP stop -s $S_ID -b $SLOCAL >> $LOG #2>&1 ;
+
+print "\n\n	Files have been placed in: \n
+ ---->  $SLOCAL/$S_ID\n\n" ;
+
+fi
+ 
+clean
+##-----  SUB MENU: auto_ras_snap
+
+   PS3="
+        What would you like to do next? "
+        select NEXT in "Fault Injection" "Go to Ras Snap Menu" "Go to Main Menu"
+
+do
+   case $NEXT in
+   
+      "Fault Injection")
+     	clear ; Ffault ;;
+
+      "Go to Ras Snap Menu")
+         clear ; FVTtype ;;
+
+      "Go to Main Menu")
+         clear ; Fquit ;;
+
+      *)
+         print " !! You Didn't enter a correct choice.  Please retry" ;;
+   
+   esac
+done
+
+} #-----------------------------  STOP  ------------------------------
+
+Sinfo			#> GATHER INFO
+introF			#> EXPLAIN HOW
+agentC		#> BASE RUN
+start			#> START/FAIL RAS_SNAP
+inject			#> INJECT FAULT
+agentS			#> RUN AGENT
+repair			#> REPAIR DEVICE(S)
+agentS			#> AGENT RUN
+Sdump
+sstop			#> STOP FAULT_INJECTION
+
+} #----------------------------  FFAULT  ------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

@@ -1,0 +1,54 @@
+#
+#   DEBUGL module for RASSNAP Function
+#
+#  CREATED:             03/2005
+#  LAST UPDATE:         03/2005
+#
+#-------------------------------------------------------------------------
+
+debugL()
+{
+#set -x
+
+DLEVEL=''
+
+		
+while [[ "$DLEVEL" != [NnMmVv] ]]
+  do
+     print "\n\n		What level of debug output do you want displayed? 
+		None (N)   Medium (M)   Verbose (V)
+	
+		Select using the Letter: \c " ;
+     		
+		input ; DLEVEL=$INPUT
+ 
+  
+  if [[ "$DLEVEL" = [Nn] ]]
+      then
+         DPARAM=""
+   fi
+
+   if [[ "$DLEVEL" = [Mm] ]]
+      then
+         DPARAM="-d2"
+   fi
+
+   if [[ "$DLEVEL" = [Vv] ]]
+      then
+         DPARAM="-d3"
+   fi
+   
+      
+done
+
+
+## Select debug level for rasagent output
+
+} #---------------------------  DEBUGL  -------------------------------
+
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

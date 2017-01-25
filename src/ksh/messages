@@ -1,0 +1,187 @@
+Sep  9 21:17:42 den-adr1 unix:  Soft error rate (retries = 1) during writing was t
+Sep  9 21:17:42 den-adr1 unix: oo high
+Sep  9 21:17:42 den-adr1 unix:  Periodic head cleaning required and/or replace tape cartridge 
+Sep  9 21:01:01 den-aruc1 unix:  Soft error rate (retries = 4) during writing was t
+Sep  9 21:01:01 den-aruc1 unix: oo high
+Sep  9 21:01:01 den-aruc1 unix:  Periodic head cleaning required and/or replace tape cartridge 
+Sep  9 06:00:33 den-bill1 unix:         ASC = 0x3b (sequential positioning error), ASCQ = 0x0, FRU = 0x0 
+Sep  9 11:10:12 den-bill1 unix: 1 Corrected ECC Errors: Board 1, SIMM J3800
+Sep  9 13:51:57 den-bill1 su: 'su lboxadm' failed for billadm on /dev/pts/2
+Sep  9 21:01:15 den-cst1 unix:  Soft error rate (retries = 1) during writing was t
+Sep  9 21:01:15 den-cst1 unix: oo high
+Sep  9 21:01:15 den-cst1 unix:  Periodic head cleaning required and/or replace tape cartridge 
+Sep  9 07:42:37 den-dds1 xntpd-5.4[214]: time reset (step) 0.129319 s
+Sep  9 07:42:40 den-dds1 xntpd-5.4[214]: Previous time adjustment didn't complete
+Sep  9 21:42:25 den-dds1 xntpd-5.4[214]: time reset (step) -0.134166 s
+Sep  9 06:21:55 den-disp1 unix:  Sense Key: Hardware Error 
+Sep  9 06:21:55 den-disp1 unix:  Vendor 'ARCHIVE':  
+Sep  9 06:21:55 den-disp1 unix:         ASC = 0x44 (internal target failure), ASCQ = 0xb4, FRU = 0x0 
+Sep  9 21:30:17 den-eq1 unix:  Soft error rate (retries = 1) during writing was t
+Sep  9 21:30:17 den-eq1 unix: oo high
+Sep  9 21:30:17 den-eq1 unix:  Periodic head cleaning required and/or replace tape cartridge 
+Sep  9 21:09:19 den-help1 unix:  Soft error rate (retries = 1) during writing was t
+Sep  9 21:09:20 den-help1 unix: oo high
+Sep  9 21:09:20 den-help1 unix:  Periodic head cleaning required and/or replace tape cartridge 
+Sep  9 21:00:59 den-oars1 unix:  Soft error rate (retries = 2) during writing was t
+Sep  9 21:01:00 den-oars1 unix: oo high
+Sep  9 21:01:00 den-oars1 unix:  Periodic head cleaning required and/or replace tape cartridge 
+Sep  9 21:16:50 den-xref1 unix:  Soft error rate (retries = 1) during writing was t
+Sep  9 21:16:50 den-xref1 unix: oo high
+Sep  9 21:16:50 den-xref1 unix:  Periodic head cleaning required and/or replace tape cartridge 
+Sep  9 16:53:02 den-adr2 login: REPEATED LOGIN FAILURES ON /dev/pts/3 FROM cssr1.tcinc.com
+Sep  9 17:29:27 den-adr2 xntpd-5.5[784]: time reset (step) 0.147348 s
+Sep  9 17:29:30 den-adr2 xntpd-5.5[784]: Previous time adjustment didn't complete
+Sep  9 14:42:04 den-bill2 xntpd-5.5[754]: time reset (step) 0.131021 s
+Sep  9 14:42:07 den-bill2 xntpd-5.5[754]: Previous time adjustment didn't complete
+Sep  7 19:38:08 den-cst2 xntpd-5.5[805]: Previous time adjustment didn't complete
+Sep  8 06:09:31 den-cst2 unix: 1 Corrected ECC Errors: Board 3, SIMM J3300
+Sep  8 15:32:52 den-cst2 xntpd-5.5[805]: time reset (step) -0.139507 s
+Sep  9 06:41:32 den-dds4 xntpd-5.5[7837]: time reset (step) 0.148396 s
+Sep  7 21:10:29 den-dds6 unix:         ASC = 0x44 (internal target failure), ASCQ = 0xb4, FRU = 0x0 
+Sep  8 14:52:55 den-dds6 xntpd-5.5[257]: time reset (step) -0.149928 s
+Sep  9 02:02:23 den-dds6 xntpd-5.5[257]: time reset (step) -0.134849 s
+Sep  8 09:22:16 den-disp2 unix: 1 Corrected ECC Errors: Board 2, SIMM J2900
+Sep  7 04:42:44 den-eq2 xntpd-5.5[772]: Previous time adjustment didn't complete
+Sep  7 23:14:18 den-eq2 xntpd-5.5[772]: time reset (step) -0.154663 s
+Sep  8 02:56:17 den-eq2 xntpd-5.5[772]: time reset (step) -0.130580 s
+Sep  8 21:51:10 den-mon3 unix: 	Sense Key: Media Error 
+Sep  8 21:51:10 den-mon3 unix: 	ASC: 0x3 (peripheral device write fault), ASCQ: 0x2, FRU: 0x0 
+Sep  8 22:21:33 den-mon3 sudo:     oper : command not allowed ; PWD=/export/home/oper ; COMMAND=/sa/bin ufsbackup.ksh -v 
+Sep  8 07:25:53 den-ndb2 unix:         ASC = 0x3 (peripheral device write fault), ASCQ = 0x2, FRU = 0x0 
+Sep  8 08:13:05 den-ndb2 unix: WARNING: /io-unit@f,e0200000/sbi@0,0/dma@0,81000/esp@0,80000/st@5,0 (st5):  
+Sep  8 08:13:05 den-ndb2 unix:  DAT soft error reporting failed  
+Sep  7 23:50:44 den-naru2 xntpd-5.5[517]: time reset (step) -0.136090 s
+Sep  9 03:30:05 den-naru2 xntpd-5.5[517]: time reset (step) -0.129577 s
+Sep  8 15:56:13 den-naru3 unix: SUNW,hme0: Link Down - cable problem?
+Sep  8 15:57:02 den-naru3 last message repeated 3 times
+Sep  9 06:38:05 den-xref2 xntpd-5.5[759]: time reset (step) 0.135442 s
+Sep  9 06:38:08 den-xref2 xntpd-5.5[759]: Previous time adjustment didn't complete
+Sep  9 12:33:33 den-xref2 unix: 1 Corrected ECC Errors: Board 0, SIMM J3600
+Sep  9 17:50:02 animas automountd[967]: server spock not responding
+Sep  9 17:50:10 animas last message repeated 3 times
+Sep  9 21:01:55 animas automountd[967]: yukon:/export/root/aitsun53 server not responding: RPC: Timed out
+Sep  9 12:06:17 arkansas automountd[429]: Could not remount /net/animas/export/loadrunner 
+Sep  9 21:01:06 arkansas unix: NFS getattr failed for server animas: error 5 (RPC: Timed out)
+Sep  9 21:01:06 arkansas automountd[429]: Mount of animas:/opensys/dev/lib/generic on /net/animas/opensys/dev/lib/generic : Connection timed out
+Sep  8 21:06:09 colorado xntpd-5.4[365]: time reset (step) 0.137440 s
+Sep  8 22:54:52 colorado xntpd-5.4[365]: time reset (step) 0.153866 s
+Sep  9 03:06:43 colorado xntpd-5.4[365]: time reset (step) -0.144580 s
+Sep  8 14:59:03 dds1 xntpd-5.4[186]: time reset (step) -0.144399 s
+Sep  9 07:25:17 dds1 xntpd-5.4[186]: time reset (step) 0.157400 s
+Sep  9 18:50:49 dds1 xntpd-5.4[186]: time reset (step) 0.135928 s
+Sep  8 01:34:35 den1 xntpd-5.4[523]: time reset (step) 0.186783 s
+Sep  9 01:26:09 den1 xntpd-5.4[523]: time reset (step) -0.677805 s
+Sep  9 01:31:49 den1 xntpd-5.4[523]: time reset (step) 0.773861 s
+Sep  9 19:32:45 fraser sendmail[14380]: NOQUEUE: SYSERR(root): Cannot bind to domain nprod.dev.comp: no such map in server's domain: Bad file number
+Sep  9 20:32:46 fraser sendmail[14447]: NOQUEUE: SYSERR(root): Cannot bind to domain nprod.dev.comp: no such map in server's domain: Bad file number
+Sep  9 21:32:46 fraser sendmail[14522]: NOQUEUE: SYSERR(root): Cannot bind to domain nprod.dev.comp: no such map in server's domain: Bad file number
+Sep  9 21:46:45 laramie unix: NFS getattr failed for server animas: error 5 (RPC: Timed out)
+Sep  9 21:46:45 laramie automountd[224]: Mount of animas:/opensys2 on /net/animas/opensys2 : Connection timed out
+Sep  9 21:46:45 laramie automountd[224]: Could not remount /net/animas/opensys2 
+Sep  8 21:16:47 mancos xntpd-5.5[724]: Previous time adjustment didn't complete
+Sep  9 00:11:34 mancos xntpd-5.5[724]: time reset (step) 0.143960 s
+Sep  9 00:11:37 mancos xntpd-5.5[724]: Previous time adjustment didn't complete
+Sep  9 03:12:53 plata xntpd-5.5[306]: time reset (step) -0.138343 s
+Sep  9 03:12:54 plata xntpd-5.5[306]: Previous time adjustment didn't complete
+Sep  9 15:12:15 poudre automountd[232]: Mount of animas:/opt on /net/animas/opt : Connection timed out
+Sep  9 19:27:46 poudre xntpd-5.5[312]: time reset (step) 0.131174 s
+Sep  9 19:27:49 poudre xntpd-5.5[312]: Previous time adjustment didn't complete
+Sep  8 15:49:59 dal-adr1 xntpd-5.4[298]: time reset (step) -0.131906 s
+Sep  9 03:18:07 dal-adr1 xntpd-5.4[298]: time reset (step) -0.135685 s
+Sep  7 09:35:14 dal-aruc1 xntpd-5.4[217]: time reset (step) -0.132546 s
+Sep  7 12:42:48 dal-aruc1 xntpd-5.4[217]: time reset (step) -0.142436 s
+Sep  9 15:16:30 dal-backup2-h0 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  9 18:45:50 dal-backup2-h0 xntpd-5.5[5198]: time reset (step) -0.134825 s
+Sep  9 21:21:05 dal-backup2-h0 xntpd-5.5[5198]: time reset (step) -0.134715 s
+Sep  8 01:01:49 dal-bill1 syslogd: Bad terminal owner; root owns '/dev/console' but utmp says LOGIN
+Sep  8 01:01:48 dal-bill1 CLARiiON Agent [362]: for device array1a: FRU 50 changed from 2 to 1
+Sep  8 01:01:49 dal-bill1 syslogd: Bad terminal owner; root owns '/dev/console' but utmp says LOGIN
+Sep  8 01:04:18 dal-cst1 xntpd-5.4[1687]: time reset (step) -0.134581 s
+Sep  9 03:20:23 dal-cst1 xntpd-5.4[1687]: time reset (step) -0.131851 s
+Sep  8 12:57:09 dal-disp1 xntpd-5.4[1527]: time reset (step) 0.136540 s
+Sep  9 13:59:46 dal-eq1 unix:  Soft error rate (retries = 1) during writing was t
+Sep  9 13:59:46 dal-eq1 unix: oo high
+Sep  9 13:59:46 dal-eq1 unix:  Periodic head cleaning required and/or replace tape cartridge 
+Sep  9 07:46:17 dal-xref1 xntpd-5.4[503]: time reset (step) 0.131872 s
+Sep  9 07:46:20 dal-xref1 xntpd-5.4[503]: Previous time adjustment didn't complete
+Sep  9 07:46:20 dal-xref1 xntpd-5.4[503]: *** No more 'Prev time adj didn't complete'
+Sep  9 15:43:08 dal-adr2 unix: SUNW,hme0: Link Down
+Sep  9 15:43:14 dal-adr2 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:43:14 dal-adr2 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  9 15:15:48 dal-bill2 unix: SUNW,hme0: Link Down
+Sep  9 15:15:54 dal-bill2 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:15:54 dal-bill2 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  9 15:40:06 dal-cst2 unix: SUNW,hme0: Link Down
+Sep  9 15:40:13 dal-cst2 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:40:13 dal-cst2 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  9 15:51:03 dal-dds3 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:51:03 dal-dds3 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  9 03:19:36 dal-dds4 xntpd-5.5[237]: Previous time adjustment didn't complete
+Sep  9 15:50:53 dal-dds4 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:50:53 dal-dds4 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  9 02:47:09 dal-dds5 xntpd-5.5[234]: time reset (step) -0.144914 s
+Sep  9 15:50:42 dal-dds5 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:50:42 dal-dds5 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  8 15:20:00 dal-dds6 xntpd-5.5[291]: time reset (step) -0.129370 s
+Sep  9 15:42:26 dal-dds6 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:42:26 dal-dds6 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  9 15:46:51 dal-digas unix: SUNW,hme0: Link Down
+Sep  9 15:46:56 dal-digas unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:46:57 dal-digas unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  7 23:45:13 dal-digdb xntpd-5.5[557]: time reset (step) -0.138002 s
+Sep  9 15:46:40 dal-digdb unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:46:40 dal-digdb unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  9 15:35:45 dal-disp2 unix: SUNW,hme0: Link Down
+Sep  9 15:35:51 dal-disp2 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:35:51 dal-disp2 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  9 15:15:06 dal-eq2 unix: SUNW,hme0: Link Down - cable problem?
+Sep  9 15:15:09 dal-eq2 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:15:09 dal-eq2 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  9 15:51:02 dal-naru2 unix: SUNW,hme0: Link Down
+Sep  9 15:51:08 dal-naru2 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:51:08 dal-naru2 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  7 23:09:30 dal-naru3 xntpd-5.5.1[296]: time reset (step) -0.147506 s
+Sep  8 15:56:18 dal-naru3 unix: SUNW,hme1: Link Down - cable problem?
+Sep  8 15:57:02 dal-naru3 last message repeated 3 times
+Sep  9 15:42:01 dal-ndb2 unix: SUNW,hme0: Link Down
+Sep  9 15:42:07 dal-ndb2 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:42:07 dal-ndb2 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  9 15:16:45 dal-xref2 unix: SUNW,hme0: Link Down
+Sep  9 15:16:51 dal-xref2 unix: SUNW,hme0: Using Internal Transceiver
+Sep  9 15:16:51 dal-xref2 unix: SUNW,hme0: 100 Mbps Link Up 
+Sep  7 23:48:37 gred_cli01 xntpd[183]: time reset (step) -0.141152 s
+Sep  8 09:09:11 gre_scli01 xntpd[173]: time reset (step) 0.130778 s
+Sep  8 09:09:14 gre_scli01 xntpd[173]: Previous time adjustment didn't complete
+Sep  7 15:37:15 gre_scli05 xntpd[173]: time reset (step) 0.129662 s
+Sep  7 15:37:18 gre_scli05 xntpd[173]: Previous time adjustment didn't complete
+Sep  9 20:29:01 dal-mon1 oserv94[414]: Undo conflict.  Bad locking protocol
+Sep  9 21:08:02 dal-mon1 xntpd-5.5[377]: time reset (step) 0.168093 s
+Sep  9 21:08:05 dal-mon1 xntpd-5.5[377]: Previous time adjustment didn't complete
+Sep  7 08:51:53 dal-ops1 xntpd-5.5[262]: Previous time adjustment didn't complete
+Sep  7 20:35:52 dal-ops1 xntpd-5.5[262]: time reset (step) 0.129591 s
+Sep  7 20:35:55 dal-ops1 xntpd-5.5[262]: Previous time adjustment didn't complete
+Sep  9 06:39:00 dal-ops2 unix:  
+Sep  9 06:39:00 dal-ops2 unix: sparc ipl 11
+Sep  9 06:39:00 dal-ops2 unix: SUNW,fdtwo0 is /obio/SUNW,fdtwo@0,700000
+Sep  9 21:00:04 den-mon1 unix:  target 4 lun 0
+Sep  9 21:00:04 den-mon1 unix: st11 is /iommu@f,e0000000/sbus@f,e0001000/dma@2,81000/esp@2,80000/st@4,0
+Sep  9 21:00:05 den-mon1 unix: Unable to install/attach driver 'isp'
+Sep  9 21:29:58 den-ops1 unix:  Sense Key: Hardware Error 
+Sep  9 21:29:58 den-ops1 unix:  Vendor 'ARCHIVE':  
+Sep  9 21:29:58 den-ops1 unix:         ASC = 0x44 (internal target failure), ASCQ = 0xb4, FRU = 0x0 
+Sep  7 16:41:03 den-ops2 automountd[123]: yukon:/export/home/alasda: No such file or directory
+Sep  9 08:03:29 den-ops3 xntpd[188]: Previous time adjustment didn't complete
+Sep  9 09:18:55 den-ops3 automountd[128]: yukon:/export/home/alasda: No such file or directory
+Sep  9 09:18:55 den-ops3 automountd[128]: yukon:/export/home/alasda: No such file or directory
+Sep  8 07:08:37 den-ops5 rpc.ttdbserverd[323]: _Tt_db_server_db("/usr"): 4 (/usr/TT_DB/file_table)
+Sep  9 07:08:09 den-ops5 rpc.ttdbserverd[323]: _Tt_db_server_db("/usr"): 4 (/usr/TT_DB/file_table)
+Sep  9 19:32:45 den-ops5 rpc.ttdbserverd[323]: _Tt_db_server_db("/usr"): 4 (/usr/TT_DB/file_table)
+Sep  9 13:59:20 den-ops6 unix: fd0: crc error blk 0
+Sep  9 13:59:22 den-ops6 unix: fd0: read failed (40 20 20)
+Sep  9 13:59:22 den-ops6 unix: fd0: crc error blk 0
+Sep  9 18:17:22 dorado automountd[252]: Mount of animas:/opensys on /net/animas/opensys : Connection timed out
+Sep  9 20:33:21 dorado automountd[252]: animas:/export/loadrunner server not responding: RPC: Timed out
+Sep  9 21:47:11 dorado automountd[252]: animas:/opt server not responding: RPC: Timed out
+Sep  9 07:25:36 cppv1 unix:         ASC = 0x3b (sequential positioning error), ASCQ = 0x0, FRU = 0x0 
+Sep  9 18:11:01 cppv1 xntpd-5.4[496]: time reset (step) 0.130448 s
+Sep  9 18:11:04 cppv1 xntpd-5.4[496]: Previous time adjustment didn't complete

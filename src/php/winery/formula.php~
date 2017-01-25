@@ -1,0 +1,24 @@
+<form action="batch.php" method="post">
+<h1>Adam's winery software - test mode</h1>
+
+<?php
+
+// build inital batch form
+function makeform() {
+	echo "<title>Adam's winery software</title>
+		<h1>Batch Form</h1>
+		<p>
+		Start Date: mm/dd/yyyy <input type="text" name="startdate" size="10">
+		Employee Name: <input type="text" name="employee" size="20">
+		Batch ID: <input type="text" name="batchid" size="20">
+		Batch Name: <input type="text" name="batchname" size="20">
+		</p>
+		";
+}
+
+
+
+
+echo makeform();
+
+?>

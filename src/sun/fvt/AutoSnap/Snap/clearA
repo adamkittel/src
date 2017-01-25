@@ -1,0 +1,26 @@
+#
+#   CLEARA module for RASSNAP Function
+#
+#  CREATED:             03/2005
+#  LAST UPDATE:         03/2005
+#
+#-------------------------------------------------------------------------
+
+clearA()
+{
+#set -x
+
+print	"\n	Clearing Alarms ....\n"
+
+`$RAS_ADMIN alert_delete -A  >> $LOG 2>&1`
+
+## Clear alarms and alerts before creating the baseline for the ras_snap.
+
+} #---------------------------  CLEARA  -------------------------------
+
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

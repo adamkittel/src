@@ -1,0 +1,27 @@
+#
+#  QUIT module for RASSNAP Function
+#
+#  CREATED:             11/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+Fquit()
+{
+#set -x
+#clear
+
+#dataBk
+confBk
+motdBk
+clean
+EADDR=''
+fvt_menu
+	 
+} #----------------------------- QUIT  --------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

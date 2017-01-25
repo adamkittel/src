@@ -1,0 +1,65 @@
+# THE CHANGEME THING
+HOSTNAME="vwc-en51"
+NETMASK="255.255.224.0"
+VMK1IP=""
+VMK2IP=""
+VMK1NIC=vmnic0
+VMK2NIC=vmnic1
+
+#enable and start ssh & shell
+vim-cmd hostsvc/enable_ssh
+vim-cmd hostsvc/start_ssh
+vim-cmd hostsvc/enable_esx_shell
+vim-cmd hostsvc/start_esx_shell
+#supress warnings about ssh
+esxcli system settings advanced set -o /UserVars/SuppressShellWarning -i 1
+
+#disable ipv6
+esxcli system module parameters set -m tcpip3 -p ipv6=0
+
+# create iscsi vss and add NICs  
+esxcli network vswitch standard add --ports 128 --vswitch-name vSwitchSF  
+esxcli network vswitch standard uplink add --uplink-name ${VMK1NIC} --vswitch-name vSwitchSF  
+esxcli network vswitch standard uplink add --uplink-name ${VMK2NIC} --vswitch-name vSwitchSF  
+
+# setup port groups  
+esxcli network vswitch standard portgroup add --portgroup-name "SF1" --vswitch-name vSwitchSF  
+esxcli network vswitch standard portgroup add --portgroup-name "SF2" --vswitch-name vSwitchSF  
+
+# setup vss
+esxcli network vswitch standard set --mtu 9000 --cdp-status both --vswitch-name vSwitchSF  
+esxcli network vswitch standard policy failover set --active-uplinks ${VMK1NIC},${VMK2NIC} --vswitch-name vSwitchSF  
+esxcli network vswitch standard policy failover set --failback yes --failure-detection link --load-balancing portid --notify-switches yes --vswitch-name vSwitchSF
+esxcli network vswitch standard policy security set --allow-forged-transmits yes --allow-mac-change yes --allow-promiscuous no --vswitch-name vSwitchSF
+
+# setup nics
+esxcli network ip interface add --interface-name vmk1 --mtu 9000 --portgroup-name SF1  
+esxcli network ip interface add --interface-name vmk2 --mtu 9000 --portgroup-name SF2  
+esxcli network ip interface ipv4 set --interface-name vmk1 --type dhcp
+esxcli network ip interface ipv4 set --interface-name vmk2 --type dhcp 
+esxcli network vswitch standard portgroup policy failover set --active-uplinks ${VMK1NIC} --portgroup-name SF1  
+esxcli network vswitch standard portgroup policy failover set --active-uplinks ${VMK2NIC} --portgroup-name SF2  
+
+# overrid switch failover setting
+esxcli network vswitch standard portgroup policy failover set --portgroup-name SF1 --active-uplinks ${VMK1NIC} 
+esxcli network vswitch standard portgroup policy failover set --portgroup-name SF2 --active-uplinks ${VMK2NIC} 
+
+# iscsi setup
+esxcli iscsi software set --enabled=true  
+SW=`esxcli iscsi adapter list | grep iscsi_vmk | awk '{print $1}'`
+export SW
+esxcli iscsi adapter set -A ${SW} --name iqn.1998-01.com.vmware:${HOSTNAME}
+
+# Bond NICs to ISCSI Adapters  
+esxcli iscsi networkportal add -A ${SW} -n vmk1  
+esxcli iscsi networkportal add -A ${SW} -n vmk2  
+
+# backup ESXi configuration to persist changes   
+/sbin/auto-backup.sh  
+
+# enter maintenance mode  
+esxcli system maintenanceMode set -e true  
+
+# reboot
+esxcli system shutdown reboot -d 60 -r "rebooting after host configurations"
+

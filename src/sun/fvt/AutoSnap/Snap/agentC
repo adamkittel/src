@@ -1,0 +1,48 @@
+#
+#  AGENTC module for RASSNAP Function
+#
+#  CREATED:             04/2004
+#  LAST UPDATE:         11/2004
+#
+#-------------------------------------------------------------------------
+
+agentC()
+{
+#set -x
+
+C_FILE=/tmp/clean	#tmp file for clean check
+A_FILE=/tmp/agent	#place holder for clean test
+
+print "	Running rasagent with the $DPARAM -r -M options.
+   	A \"Clean\" run of the agent is required to create
+	a baseline.  The agent will run until it is clean.\n" ;
+
+print "        Press the Enter key to run rasagent: \c" ;
+read ENT ;  #--------  User Inter-action
+
+print "\n ===>:  Running rasagent .....
+	\n	run tail -f $LOG to see agent output\n" ;
+
+`$RASAGENT $DPARAM -r -M >> $LOG 2>&1` > $C_FILE ;
+`grep -i clean $C_FILE >> $LOG 2>&1` > $A_FILE ; CLEAN=$? ;
+clean ;
+
+#######-------   Run rasagent until clean
+while [ "$CLEAN" != "0" ]
+   do
+      print " ===>: Running rasagent again...waiting for clean run.
+      \nrun tail -f $LOG to see agent output\n" ;
+      `$RASAGENT -$DPARAM -r -M >> $LOG 2>&1` > $C_FILE ;
+      `grep -i clean $C_FILE >> $LOG 2>&1` > $A_FILE ; CLEAN=$? ;
+      clean ;
+   done
+
+clean ;
+print "\n --->:  AGENT COMPLETE\n" ;
+} #----------------------------  AGENTC  ------------------------------
+
+#
+#  $.Log.$
+#
+#  Copyright 2005 Sun Microsystems, Inc.
+#

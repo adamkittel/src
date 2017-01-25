@@ -1,0 +1,34 @@
+#!/bin/ksh
+# automagicly run grits on mounted filesystems in the 
+# grits config_file
+
+if (($# < 1))
+then
+	print "usage: fvt-grits.ksh [GRITS base directory]\n"
+	print "example: fvt-grits.ksh /GRITS\n"
+	exit 0
+fi
+
+# set some global variables
+GBASEDIR=$1
+GCONFIG="${GBASEDIR}/config_file"
+
+# gather mount points from config_file
+MOUNTPOINTS=`awk '{print $1}' ${GCONFIG} | grep -v '#'`
+
+# gather contents of config_file
+CONFIGFILE=`cat ${GCONFIG}`
+
+# check mount points for mounted filesystems
+for MP in `echo ${MOUNTPOINTS}`
+do
+echo "\tChecking $MP"
+grep $MP /etc/mnttab >/dev/null 2>&1
+if (($? >= 1))
+then
+echo "\tFAILURE: $MP is not in /etc/mnttab\n\t$MP will not be used\n"
+
+fi
+done
+
+

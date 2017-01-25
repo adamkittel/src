@@ -1,0 +1,19 @@
+#!/bin/ksh
+#get last lines of backup logs
+#
+
+print "enter the day of the month"
+read DAY
+LIST='adr1 adr2 aruc1 bill1 bill2 cst1 cst2 dds1 dds2 disp1 disp2 eq1 eq2 naru2 ndb2 oars1 oars2 xref1 xref2 mon1'
+  
+for SYS in `echo $LIST`
+do
+  print $SYS
+  rsh -l oper den-$SYS tail /var/log/backup/ufsbackup."$DAY"V > ${HOME}/tmp/$SYS.veritas.$DAY &
+done
+
+
+
+
+
+

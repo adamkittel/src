@@ -1,0 +1,22 @@
+#!/bin/ksh
+#get last lines of backup logs
+#
+
+print "enter the day of the month"
+read DAY
+
+LIST='poudre blab1 den1 colorado mancos arkansas'
+  
+for SYS in `echo $LIST`
+do
+  print $SYS
+  rsh -l oper $SYS tail /var/log/backup/ufsbackup."$DAY" > ${HOME}/tmp/$SYS.$DAY &
+done
+
+print animas
+rsh -l oper animas tail /var/log/backup/full_backup_int."$DAY" > ${HOME}/tmp/animas-int.$DAY &
+rsh -l oper animas tail /var/log/backup/full_backup_st1."$DAY" > ${HOME}/tmp/animas-st1.$DAY &
+rsh -l oper animas tail /var/log/backup/full_backup_st2."$DAY" > ${HOME}/tmp/animas-st2.$DAY &
+print gunnison
+rsh -l oper gunnison tail /var/log/backup/full_backup_int."$DAY" > ${HOME}/tmp/gunnison-int.$DAY &
+rsh -l oper gunnison tail /var/log/backup/full_backup_st1."$DAY" > ${HOME}/tmp/gunnison-st1.$DAY &
